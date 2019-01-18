@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>引用类型</title>
+<style>
+p {font-size:1em;font-weight:bold;}
+dt{font-size:1.875em; color:blue;}
+pre{line-height:17px; font-size:15px;}
+a:link{ color:#20B2AA;text-decoration:none;}
+a:visited {color:  #B0C4DE ;}
+a:hover{ color:green;text-decoration:underline;}
+</style>
+<base href="../basicsProblem/Ch05/"/>
+</head>
+<body>
+<dl>
+	<dt>Object类型</dt>
+	<dd>
+		<ol>
+			<li><p><a href="ObjectTypeExample01.htm">Object类实例</a></p></li>
+		</ol>
+	</dd>
+	<dt>Array类型:动态 + length属性不是只读的</dt>
+	<dd>
+		<ol>
+			<li><p><a href="ArrayTypeExample01.htm">Array类实例</a></p></li>
+			<li><p><a href="ArrayTypeExample02.htm">方便快捷向Array数组末尾添加新项</a></p></li>
+			<li><p>检测数组：Array.isArray(value);instanceof作用在同一个全局执行环境，而isArray()可以跨越作用于任何全局环境</p></li>
+			<li><p><a href="ArrayTypeExample03.htm">转换方法：toString():返回数组中每个值的字符串拼接形式;<br>toLocalString():数组中每一项的toLocalString()方法，而不是每个值的拼接，只不过形式上都是用","隔开而已;<br>valueOf():返回的就是数组，会调用toString()方法</a></p></li>
+			<li><p><a href="ArrayTypeJoinExample01.htm">转换方法：join():使用不同分隔符;如果是null/undefined,所有转换方法都显示空字符串</a></p></li>
+			<li><p><a href="ArrayTypeExample04.htm">栈方法（push()/pop()）</a></p></li>
+			<li><p><a href="ArrayTypeExample05.htm">队列方法（unshift()/pop()）</a></p></li>
+			<li id="reference5_5_1"><p><a href="ArrayTypeExample06.htm">重排序方法（reverse()/sort()方法比较的是字符串，无论数组中的各项类型是什么，都会先调用toString()方法）</a></p></li>
+			<li><p>操作方法:<a href="ArrayTypeConcatExample01.htm">concat()：返回操作之后的数组，不改变原数组；<br></a>
+						 <a href="ArrayTypeSliceExample01.htm">slice()：返回操作之后的值，不改变原数组；<br></a>
+						 <a href="ArrayTypeSpliceExample01.htm">splice(起始位置,要删除的项数,要插入项,要插入项,要插入项,...):
+						 		删除(要删除的项数>0)，插入(要插入项不为空)，替换(起始位置,要删除的项数>0,要插入项,要插入项...)，会改变原数组</a></p></li>
+			<li><p><a href="ArrayIndexOfExample01.htm">位置方法参数(要查找的项，查找起点的位置索引【可选的】)：indexOf():从前向后/lastIndexOf():从后向前</a></p></li>
+			<li><p><a href="ArrayESFFMExample01.htm">迭代方法every():booean/some():boolean/filter():array/forEach():void/map():array都不会修改原数组<br>5种迭代方法名(在每项上运行的函数(item=数组项的值,index=该项的索引位置,array=数组本身),运行该函数的作用域对象【可选】)</a></p></li>
+			<li><p><a href="ArrayReductionExample01.htm">归并方法：reduce()/reduceRight()<br>归并方法名(在每项上调用的函数(前一个值，当前值，项的索引，数组对象),作为归并基础的初始值【可选】)</a></p></li>
+		</ol>
+	</dd>
+	<dt style="color:red">Date类型</dt>
+	<dd>
+		<ol>
+			<li><p><a href="#">……</a></p></li>
+		</ol>
+	</dd>
+	<dt>RegExp类型</dt>
+	<dd>
+		<ol>
+			<li><p><a href="http://www.runoob.com/jsref/jsref-obj-regexp.html">RegExp基础知识</a></p></li>
+			<li><p><a href="RegExpInstanceExample01.htm">正则表达式字面量共享同一个RegExp实例，而使用构造函数创建的每个RegExp对象都是一个新实例</a></p></li>
+			<li><p><a href="RegExpInstancePropertiesExample01.htm">RegExp实例属性</a></p></li>
+			<li><p>RegExp实例方法</p>
+				<ol>
+					<li><p>exec():为捕获组而设计<br><a href="RegExpExecExample01.htm">返回值：包含第一个匹配项信息的数组【Array】+该Array的2个额外属性：【index】匹配项的位置和【input】应用正则表达式的字符串或者null没有匹配项 <br></a>
+						   <a href="RegExpExecExample02.htm">exec()在设置全局标志的情况下，每次调用都会在字符串中继续查找新匹配项，而不设置全局标志始终返回第一个匹配项信息</a></p></li>
+					<li><p><a href="RegExpTestExample01.htm">test():返回boolean</a></p></li>
+					<li><p><a  href="RegExpToStringExample01.htm">toString() 和toLocalString()都会返回正则表达式的字面量，valueOf()返回正则表达式本身</a></p></li>
+				</ol>
+			</li>
+			<li><p><a href="RegExpConstructorPropertiesExample01.htm">RegExp构造函数属性</a></p></li>
+		</ol>
+	</dd>
+	<dt>Function类型</dt>
+	<dd>
+		<ol>
+			<li><p><a href="FunctionAsAnArgumentExample01.htm">函数作为参数</a></p></li>
+			<li><p><a href="FunctionReturningFunctionExample01.htm">函数作为返回值：sort()举例。</a>更多实例：<a href="../../basicsProblem/Global05.html#reference5_5_1">参见sort()简单排序</a></p></li>
+			<li><p>函数内部属性：arguments+this+caller</p>
+				<ol>
+					<li><p>arguments的<a href="FunctionTypeArgumentsExample01.htm">callee属性，解除耦合实例;</a>其他属性:<a href="../../basicsProblem/Global03.html#reference5_3_1">参见第三章</a></p></li>
+					<li><p><a href="FunctionTypeThisExample01.htm">this属性</a></p></li>
+					<li><p><a href="FunctionTypeArgumentsCallerExample01.htm">caller属性：保存着调用当前函数的函数的引用</a></p></li>
+				</ol>
+			</li>
+			<li><p>函数的属性(length,prototype)和方法(apply(),call(),bind())</p>
+				<ol>
+					<li><p><a href="FunctionTypeApplyMethodExample01.htm">apply()</a></p></li>
+					<li><p><a href="FunctionTypeCallMethodExample01.htm">call()</a></p></li>
+					<li><p><a href="FunctionTypeBindMethodExample01.htm">bind()</a></p></li>
+					<li><p><a href="FunctionTypeCallExample01.htm">apply()/call()用于扩充函数赖以运行的作用域</a></p></li>
+				</ol>
+			</li>
+		</ol>
+	</dd>
+	<dt>基本包装类型:Boolean+Number+String（不建议显示创建）</dt>
+	<dd>
+		<ol>
+			<li><p><a href="BooleanTypeExample01.htm">Boolean</a></p></li>
+			<li><p>Number</p>
+				<ol>
+					<li><p>Number重写方法：toString(),toLocalString(),valueOf()</p></li>
+					<li><p>数字格式化字符串:toFixed()+toExponential()=toPrecision()</p>
+						<ol>
+							<li><p><a href="NumberTypeExample01.htm">toFixed():指定小数位数返回字符串</a></p></li>
+						</ol>
+					</li>
+				</ol>
+			</li>
+			<li><p>String类型</p>
+				<ol>
+					<li><p>字符方法：charAt(),charCodeAt():</p>
+					<pre>
+		var strValue="hello";
+		alert(strValue.charAt(1));//e
+		alert(strValue.charCodeAt(1));//字符编码 101
+		alert(strValue[1]);//e
+					</pre>
+					</li>
+					<li><p>字符串操作方法</p>
+					<pre>
+(1)concat()或者+:返回新字符串，不修改原字符串
+	var str="hello ";	
+	var result=str.concat("world");	
+	var result1=str.concat("world","!");
+	alert(result);//hello world   
+	alert(str);//hello
+	alert(result1);//hello world!
+(2)<a href="StringTypeManipulationMethodsExample01.htm">slice(),substr(),substring():返回新字符串，不修改原字符串</a>
+(3)字符串位置方法：
+	var str="hello world";
+	alert(str.indexOf("o"));//4
+	alert(str.lastIndexOf("o"));//7
+	alert(str.indexOf("o",6));//7
+	alert(str.lastIndexOf("o",6))//4
+   <a href="StringTypeLocationMethodsExample01.htm">循环调用indexOf()或者lastIndexOf()找到所有匹配的子字符串</a>
+(4)trim()方法：删除前置和后缀的所有空格:返回字符串副本，不修改原字符串	
+	var str="   hello world   ";
+	var trimmedStr=str.trim();
+	alert(trimmedStr);//"hello world"
+	alert(str);//"   hello world   "
+	此外有的浏览器还支持非标准的trimLeft()、trimRight()方法
+(5)大小写转换：toLowerCase()/toUpperCase();	toLocalLowerCase()/toLocalUpperCase();	
+   一般在不知道代码在何种语言环境中运行的情况下，使用针对地区的方法更稳妥。
+(6)<a href="StringTypePatternMatchingExample01.htm">字符串模式匹配方法：a-d实例</a>
+	a.match()与调用RegExp的exec()一样
+	b.search():返回第一个匹配项的索引
+	c.replace()
+	d.split()
+(7)<a href="StringTypeLocaleCompareExample01.htm">字符串比较：localeCompare()</a>
+(8)<a href="StringTypeFromCharCodeExample01.htm">String类的静态方法fromCharCode()，与charCodeAt()执行相反的操作</a>
+(9)HTML方法（尽量不使用）<a>P130</a>	
+					</pre>
+					</li>
+				</ol>
+			</li>
+		</ol>
+	</dd>
+	<dt>单体内置对象</dt>
+	<dd>
+		<ol>
+			<li><p>Global对象</p>
+				<ol>
+					<li><p><a href="GlobalObjectURIEncodingExample01.htm">URI编码方法</a></p>
+					<p><a href="GlobalObjectURIDecodingExample01.htm">URI解码方法</a></p>
+						<p>区别在于：encodeURI()不会对本身属于URI的特殊字符进行编码；而encodeURIComponent()会对任何非标准字符进行编码</p>
+					</li>
+					<li><p>eval()方法：只有一个参数，即要执行的字符串形式的js代码</p></li>
+					<li>Global对象的属性</li>
+					<li>window对象</li>
+				</ol>
+			</li>
+			<li><p>Math对象</p>
+				<ol>
+					<li>Math对象的属性：Math.E,Math.PI等等</li>
+					<li>min()和max()方法：
+					<pre>
+			var max=Math.max(3,5,7,2);
+			alert(max);//7
+			var min=Math.min(3,5,7,2);
+			alert(min);//2
+			var values=[1,22,3,4,5];
+			var max=Math.max.apply(Math,values);//22
+					</pre>
+					</li>
+					<li>舍入方法：Math.ceil(),Math.floor(),Math.round()</li>
+					<li><a href="MathObjectRandomExample03.htm">Math.random()方法返回大于等于0小于1的一个随机数</a></li>
+					<li>其他方法：Math.abs(num),Math.exp(num),Math.pow(num,power),Math.sqrt(num)</li>
+				</ol>
+			</li>
+		</ol>
+	</dd>
+</dl>
+</body>
+</html>

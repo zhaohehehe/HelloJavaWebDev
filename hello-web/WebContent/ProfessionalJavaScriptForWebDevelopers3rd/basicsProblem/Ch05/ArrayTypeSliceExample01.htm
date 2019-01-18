@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Array Type Slice Example</title>
+    <script type="text/javascript">
+    
+        var colors = ["red", "green", "blue", "yellow", "purple"];
+        var colors2 = colors.slice(1);//一个参数，从该位置到末尾
+        var colors3 = colors.slice(1,4);//两个参数，起始到结束位置之间的（不包括结束位置）
+        var colors4 = colors.slice(-2,-1);//如果是负数，则加上数组的长度，即slice(3,4);
+        var colors5 = colors.slice(-2,-3);//返回空数组
+        
+        alert(colors2);   //green,blue,yellow,purple
+        alert(colors3);   //green,blue,yellow
+        alert(colors4);	  //yellow
+        alert(colors5.length);//0
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

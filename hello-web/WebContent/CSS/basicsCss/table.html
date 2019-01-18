@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CSS Table</title>
+<style>
+#table1 {
+font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+width:100%;
+border-collapse:collapse;
+}
+#table1 td,#table1 th {
+font-size:1em;
+border:1px solid red;
+padding:3px 7px 2px 7px;
+white-space:nowrap;
+}
+#table1 th {
+font-size:1.1em;
+text-align:left;
+padding-top:5px;
+padding-bottom:4px;
+background-color:green;
+color:white;
+}
+#table1 tr.alt{
+background-color:#EAF2D3;
+}
+</style>
+</head>
+<body>
+<table id="table1">
+	<caption>1.默认上方个性表格</caption>
+	<caption style="caption-side:top">2.top个性表格</caption>
+	<caption style="caption-side:bottom">3.bottom个性表格</caption>
+	<thead><tr><th>属性名</th><th>作用</th><th>取值</th></tr></thead>
+	<tbody>
+		<tr><td>border-collapse</td>
+			<td>属性设置表格的边框是否被合并为一个单一的边框</td>
+			<td><p>1.collapse 如果可能，边框会合并为一个单一的边框。会忽略 border-spacing 和 empty-cells 属性</p> 
+				<p>2.separate 默认值。边框会被分开。不会忽略 border-spacing 和 empty-cells 属性</p>
+				<p>3.inherit</p>
+			</td>
+		</tr>
+		<tr class="alt"><td>caption-side</td><td>设置表格标题的位置</td><td>top,bottom,inherit</td></tr>
+		<tr><td>Alfreds Futterkiste</td><td>Maria Anders</td><td>Germany</td></tr>
+		<tr class="alt"><td>Alfreds Futterkiste</td><td>Maria Anders</td><td>Germany</td></tr>
+		<tr><td>Alfreds Futterkiste</td><td>Maria Anders</td><td>Germany</td></tr>
+		<tr class="alt"><td>Alfreds Futterkiste</td><td>Maria Anders</td><td>Germany</td></tr>
+	</tbody>
+</table>
+</body>
+</html>

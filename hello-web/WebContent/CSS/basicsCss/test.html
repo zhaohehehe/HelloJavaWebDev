@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Text</title>
+<style type="text/css">
+/*文本阴影 text-shadow: h-shadow v-shadow blur color; */
+h1{color:white;text-shadow:2px 2px 5px #000000;}
+h2{text-align:center;letter-spacing:-3px; text-shadow:0 0 3px green}
+/*文本缩进  */
+p{text-indent:50px; word-spacing:30px;}
+/*不允许文字环绕,不允许换行  */
+p.nowrap{white-space:nowrap;}
+p.date{text-align:right;}
+p.main{text-align:justify;}
+p.uppercase{text-transform:uppercase;}
+p.lowercase{text-transform:lowercase;}
+p.capitalize{text-transform:capitalize;}
+/*文本行高 */
+p.small{ling-height:70%;}
+p.big {line-height:200%;}
+a{text-decoration:none;}
+h3{text-decoration:overline;}
+h4{text-decoration:line-through;}
+h5{text-decoration:underline;}
+h6{text-decoration:blink;}
+/*文本书写方向  */
+div.rtl{direction:rtl;}
+/*垂直对齐图片方式
+baseline 默认。元素放置在父元素的基线上。 
+sub 垂直对齐文本的下标。 
+super 垂直对齐文本的上标 
+top 把元素的顶端与行中最高元素的顶端对齐 
+text-top 把元素的顶端与父元素字体的顶端对齐 
+middle 把此元素放置在父元素的中部。 
+bottom 把元素的顶端与行中最低的元素的顶端对齐。 
+text-bottom 把元素的底端与父元素字体的底端对齐。 
+length   
+% 使用 "line-height" 属性的百分比值来排列此元素。允许使用负值。 
+inherit 规定应该从父元素继承 vertical-align 属性的值。  */ 
+img.middle{vertical-align:middle;}
+img.top{vertical-align:text-top;}
+img.bottom{vertical-align:text-bottom;}
+
+</style>
+</head>
+<body>
+<div><h1 style="text-align:center">CSS Text 学习</h1>
+<h2>CSS text-align 实例</h2>
+<p class="date">2016 年 9 月 117 号</p></div>
+
+<p class="main">“当我年轻的时候，我梦想改变这个世界；当我成熟以后，我发现我不能够改变这个世界，我将目光缩短了些，决定只改变我的国家；当我进入暮年以后，我发现我不能够改变我们的国家，我的最后愿望仅仅是改变一下我的家庭，但是，这也不可能。当我现在躺在床上，行将就木时，我突然意识到：如果一开始我仅仅去改变我自己，然后，我可能改变我的家庭；在家人的帮助和鼓励下，我可能为国家做一些事情；然后，谁知道呢?我甚至可能改变这个世界。”</p>
+<p><b>注意：</b> 重置浏览器窗口大小查看 &quot;justify&quot; 是如何工作的。</p>
+<hr>
+<h2>text-decoration 属性用来设置或删除文本的装饰。从设计的角度看 text-decoration属性主要是用来删除链接的下划线</h2>
+<a href="http://www.baidu.com">百度一下</a>
+<h3>overline</h3>
+<h4>line-through</h4>
+<h5>underline</h5>
+<h6>blink</h6>
+<hr>
+<p class="uppercase">I love China!</p>
+<p class="lowercase">I love China!</p>
+<p class="capitalize">I love China!</p>
+<p class="small">行高为small<br>行高为small<br>行高为small</p>
+<p class="big">行高为big<br>行高为big<br>行高为big</p>
+<hr>
+<p style="white-space:nowrap">
+	white-space:nowrap
+	normal 默认。空白会被浏览器忽略。 
+	pre 空白会被浏览器保留。其行为方式类似 HTML 中的 pre 标签。 
+	nowrap 文本不会换行，文本会在在同一行上继续，直到遇到  br 标签为止。 
+	pre-wrap 保留空白符序列，但是正常地进行换行。 
+	pre-line 合并空白符序列，但是保留换行符。 
+	inherit 规定应该从父元素继承 white-space 属性的值。 
+</p>
+<p style="white-space:pre-wrap">
+	white-space:pre-wrap
+	normal 默认。空白会被浏览器忽略。 
+	pre 空白会被浏览器保留。其行为方式类似 HTML 中的 pre 标签。 
+	nowrap 文本不会换行，文本会在在同一行上继续，直到遇到  br 标签为止。 
+	pre-wrap 保留空白符序列，但是正常地进行换行。 
+	pre-line 合并空白符序列，但是保留换行符。 
+	inherit 规定应该从父元素继承 white-space 属性的值。 
+</p>
+<p style="white-space:pre">
+	white-space:pre
+	normal 默认。空白会被浏览器忽略。 
+	pre 空白会被浏览器保留。其行为方式类似 HTML 中的 pre 标签。 
+	nowrap 文本不会换行，文本会在在同一行上继续，直到遇到  br 标签为止。 
+	pre-wrap 保留空白符序列，但是正常地进行换行。 
+	pre-line 合并空白符序列，但是保留换行符。 
+	inherit 规定应该从父元素继承 white-space 属性的值。 
+</p>
+<p style="white-space:pre-line">
+	white-space:pre-line
+	normal 默认。空白会被浏览器忽略。 
+	pre 空白会被浏览器保留。其行为方式类似 HTML 中的 pre 标签。 
+	nowrap 文本不会换行，文本会在在同一行上继续，直到遇到  br 标签为止。 
+	pre-wrap 保留空白符序列，但是正常地进行换行。 
+	pre-line 合并空白符序列，但是保留换行符。 
+	inherit 规定应该从父元素继承 white-space 属性的值。 
+</p>
+
+<hr>
+<div class="rtl">one two three four five 从右到左书写</div>
+<div>
+	<p>第一张<img class="top" src="http://www.runoob.com/try/demo_source/img_tree.png" width=60px height=50px/>图片,默认对齐</p>
+	<p>第二张<img class="top" src="http://www.runoob.com/try/demo_source/img_tree.png" class="top" width=60px height=50px/>图片,text-top</p>
+	<p>第三张<img class="bottom" src="http://www.runoob.com/try/demo_source/img_tree.png" class="bottom" width=60px height=50px/>图片,text-bottom </p>
+	<p>第三张<img class="middle" src="http://www.runoob.com/try/demo_source/img_tree.png" class="middle" width=60px height=50px/>图片,middle </p>
+</div>
+<hr>
+<div style="direction:rtl;unicode-bidi:bidi-override;">与direction合用,unicode-bidi=bidi-override:创建一个附加的嵌入层面。重新排序取决于 direction 属性。 </div>
+<div style="direction:rtl;unicode-bidi:embed;">与direction合用，unicode-bidi=embed：创建一个附加的嵌入层面。重新排序取决于 direction 属性。</div>
+<hr>
+
+
+</body>
+</html>

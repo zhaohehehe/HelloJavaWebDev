@@ -1,0 +1,235 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CSS伪类</title>
+<!--[if lt IE 9]> 
+ <script src="http://cdn.static.runoob.com/libs/html5shiv/3.7/html5shiv.min.js"></script> 
+ <![endif]--> 
+ <style>
+table{
+font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+width:100%;
+border-collapse:collapse;
+}
+table td,table th {
+font-size:1em;
+border:1px solid #339999;
+padding:3px 7px 2px 7px;
+white-space:nowrap;
+}
+table th {
+font-size:1.1em;
+text-align:left;
+padding-top:5px;
+padding-bottom:4px;
+background-color:green;
+color:white;
+}
+table tr.alt{
+background-color:#EAF2D3;
+}
+/*伪类  */
+input:checked{ background-color:red; outline:red;font-weight:bold;}
+/* input{
+display:inline;
+} */
+ </style>
+<base href="http://www.runoob.com"/>
+</head>
+<body>
+<table width="100%" cellspacing="0" cellpadding="0">
+	<tbody>
+		<tr>
+    		<th width="15%">选择器</th>
+    		<th width="15%">示例</th>
+    		<th width="20%">示例说明</th>
+    		<th width="50%">示例Demo</th>
+  		</tr>
+		<tr>
+   			<td><a href="/cssref/sel-checked.html">:checked</a></td>
+    		<td>input:checked</td>
+    		<td>选择所有选中的表单元素（仅适用于单选按钮或复选框）</td>
+    		<td>
+    			<div><input type="radio" name="sex" value="male" checked="checked"/>Male
+    				 <input type="radio" name="sex" value="female"/>Female<br>
+    				 <input type="checkbox" value="one"/>一级
+    				 <input type="checkbox" value="two"/>二级
+    				 
+    			</div>
+    		</td>
+  		</tr>
+<tr>
+    <td><a href="cssref/sel-disabled.html">:disabled</a></td>
+    <td class="notranslate">input:disabled</td>
+    <td>选择所有禁用的表单元素</td>
+  </tr>
+<tr>
+    <td><a href="/cssref/sel-empty.html">:empty</a></td>
+    <td class="notranslate">p:empty</td>
+    <td>选择所有没有子元素的p元素</td>
+  </tr>
+<tr>
+    <td><a href="/cssref/sel-empty.html">:enabled</a></td>
+    <td class="notranslate">input:enabled</td>
+    <td>选择所有启用的表单元素</td>
+  </tr>
+<tr>
+    <td><a href="/cssref/sel-first-of-type.html">:first-of-type</a></td>
+    <td class="notranslate">p:first-of-type</td>
+    <td>选择每个父元素是p元素的第一个p子元素</td>
+  </tr>
+<tr>
+    <td><a href="/cssref/sel-in-range.html">:in-range</a></td>
+    <td class="notranslate">input:in-range</td>
+    <td>选择元素指定范围内的值</td>
+  </tr>
+<tr>
+    <td><a href="/cssref/sel-invalid.html">:invalid</a></td>
+    <td class="notranslate">input:invalid</td>
+    <td>选择所有无效的元素</td>
+  </tr>
+<tr>
+    <td><a href="/cssref/sel-last-child.html">:last-child</a></td>
+    <td class="notranslate">p:last-child</td>
+    <td>选择所有p元素的最后一个子元素</td>
+  </tr>
+<tr>
+    <td><a href="/cssref/sel-last-of-type.html">:last-of-type</a></td>
+    <td class="notranslate">p:last-of-type</td>
+    <td>选择每个p元素是其母元素的最后一个p元素</td>
+  </tr>
+<tr>
+    <td><a href="/cssref/sel-not.html">:not(selector)</a></td>
+    <td class="notranslate">:not(p)</td>
+    <td>选择所有p以外的元素</td>
+  </tr>
+<tr>
+    <td><a href="/cssref/sel-nth-child.html">:nth-child(n)</a></td>
+    <td class="notranslate">p:nth-child(2)</td>
+    <td>选择所有p元素的第二个子元素</td>
+  </tr>
+<tr>
+    <td><a href="/cssref/sel-nth-last-child.html">:nth-last-child(n)</a></td>
+    <td class="notranslate">p:nth-last-child(2)</td>
+    <td>选择所有p元素倒数的第二个子元素</td>
+  </tr>
+<tr>
+    <td><a href="/cssref/sel-nth-last-of-type.html">:nth-last-of-type(n)</a></td>
+    <td class="notranslate">p:nth-last-of-type(2)</td>
+    <td>选择所有p元素倒数的第二个为p的子元素</td>
+  </tr>
+<tr>
+    <td><a href="/cssref/sel-nth-of-type.html">:nth-of-type(n)</a></td>
+    <td class="notranslate">p:nth-of-type(2)</td>
+    <td>选择所有p元素第二个为p的子元素</td>
+  </tr>
+<tr>
+    <td><a href="/cssref/sel-only-of-type.html">:only-of-type</a></td>
+    <td class="notranslate">p:only-of-type</td>
+    <td>选择所有仅有一个子元素为p的元素</td>
+  </tr>
+<tr>
+    <td><a href="/cssref/sel-only-child.html">:only-child</a></td>
+    <td class="notranslate">p:only-child</td>
+    <td>选择所有仅有一个子元素的p元素</td>
+  </tr>
+<tr>
+    <td><a href="/cssref/sel-optional.html">:optional</a></td>
+    <td class="notranslate">input:optional</td>
+    <td>选择没有"required"的元素属性</td>
+  </tr>
+<tr>
+    <td><a href="/cssref/sel-out-of-range.html">:out-of-range</a></td>
+    <td class="notranslate">input:out-of-range</td>
+    <td>选择指定范围以外的值的元素属性</td>
+  </tr>
+<tr>
+    <td><a href="/cssref/sel-read-only.html">:read-only</a></td>
+    <td class="notranslate">input:read-only</td>
+    <td>选择只读属性的元素属性</td>
+  </tr>
+<tr>
+    <td><a href="/cssref/sel-read-write.html">:read-write</a></td>
+    <td class="notranslate">input:read-write</td>
+    <td>选择没有只读属性的元素属性</td>
+  </tr>
+<tr>
+    <td><a href="/cssref/sel-required.html">:required</a></td>
+    <td class="notranslate">input:required</td>
+    <td>选择有"required"属性指定的元素属性</td>
+  </tr>
+<tr>
+    <td><a href="/cssref/sel-root.html">:root</a></td>
+    <td class="notranslate">root</td>
+    <td>选择文档的根元素</td>
+  </tr>
+<tr>
+    <td><a href="/cssref/sel-target.html">:target</a></td>
+    <td class="notranslate">#news:target</td>
+    <td>选择当前活动#news元素(点击URL包含锚的名字)</td>
+  </tr>
+<tr>
+    <td><a href="/cssref/sel-valid.html">:valid</a></td>
+    <td class="notranslate">input:valid</td>
+    <td>选择所有有效值的属性</td>
+  </tr>
+  <tr>
+    <td><a href="/cssref/sel-link.html">:link</a></td>
+    <td class="notranslate">a:link</td>
+    <td>选择所有未访问链接</td>
+  </tr>
+	<tr>
+    <td><a href="/cssref/sel-visited.html">:visited</a></td>
+    <td class="notranslate">a:visited</td>
+    <td>选择所有访问过的链接</td>
+  </tr>
+	<tr>
+    <td><a href="/cssref/sel-active.html">:active</a></td>
+    <td class="notranslate">a:active</td>
+    <td>选择正在活动链接</td>
+  </tr>
+	<tr>
+    <td><a href="/cssref/sel-hover.html">:hover</a></td>
+    <td class="notranslate">a:hover</td>
+    <td>把鼠标放在链接上的状态</td>
+  </tr>
+	<tr>
+    <td><a href="/cssref/sel-focus.html">:focus</a></td>
+    <td class="notranslate">input:focus</td>
+    <td>选择元素输入后具有焦点</td>
+  </tr>
+	<tr>
+    <td><a href="/cssref/sel-firstletter.html">:first-letter</a></td>
+    <td class="notranslate">p:first-letter</td>
+    <td>选择每个&lt;p&gt; 元素的第一个字母</td>
+  </tr>
+	<tr>
+    <td><a href="/cssref/sel-firstline.html">:first-line</a></td>
+    <td class="notranslate">p:first-line</td>
+    <td>选择每个&lt;p&gt; 元素的第一行</td>
+  </tr>
+  <tr>
+    <td><a href="/cssref/sel-firstchild.html">:first-child</a></td>
+    <td class="notranslate">p:first-child</td>
+    <td>选择器匹配属于任意元素的第一个子元素的 &lt;]p&gt; 元素</td>
+  </tr>
+	<tr>
+    <td><a href="/cssref/sel-before.html">:before</a></td>
+    <td class="notranslate">p:before</td>
+    <td>在每个&lt;p&gt;元素之前插入内容</td>
+  </tr>
+	<tr>
+    <td><a href="/cssref/sel-after.html">:after</a></td>
+    <td class="notranslate">p:after</td>
+    <td>在每个&lt;p&gt;元素之后插入内容</td>
+  </tr>
+	<tr>
+    <td><a href="/cssref/sel-lang.html">:lang(<i>language</i>)</a></td>
+    <td class="notranslate">p:lang(it)</td>
+    <td>为&lt;p&gt;元素的lang属性选择一个开始值</td>
+  </tr>
+	</tbody></table>			
+
+</body>
+</html>

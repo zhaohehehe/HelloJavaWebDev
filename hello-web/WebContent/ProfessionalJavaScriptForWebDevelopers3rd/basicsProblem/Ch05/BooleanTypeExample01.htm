@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Boolean Type Example</title>
+    <script type="text/javascript">
+    
+        var falseObject = new Boolean(false);
+        var result = falseObject && true;//强制转换为boolean基本数据类型，布尔表达式中的所有对象都会转换为true
+        alert(Boolean(falseObject));//true
+        alert(result);  //true
+
+        var falseValue = false;
+        result = falseValue && true;
+        alert(result);  //false
+        
+        alert(typeof falseObject);   //object
+        alert(typeof falseValue);    //boolean
+        alert(falseObject instanceof Boolean);  //true
+        alert(falseValue instanceof Boolean);   //false
+        
+    </script>
+</head>
+<body>
+
+</body>
+</html>

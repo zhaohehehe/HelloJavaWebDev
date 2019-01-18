@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Array Type Example</title>
+    <script type="text/javascript">
+	/*new Array()构造函数创建*/
+        var colors1 = new Array(3);      //create an array with three items
+        var names1 = new Array("Greg");  //create an array with one item, the string "Greg"
+
+        alert(colors1.length);//3
+        alert(names1.length);//1
+        
+    /*数组字面量创建  */    
+        var colors2 = ["red", "blue", "green"]; //creates an array with three strings
+        var names2 = [];                        //creates an empty array
+        var values2 = [1,2,];                   //AVOID! Creates an array with 2 or 3 items
+        var options2 = [,,,,,];                 //AVOID! creates an array with 5 or 6 items
+        
+        alert(colors2.length);    //3
+        alert(names2.length);     //0
+        alert(values2.length);    //2 (FF, Safari, Opera) or 3 (IE) 不要这样做！
+        alert(options2.length);   //5 (FF, Safari, Opera) or 6 (IE) 不要这样做！
+	/*length不是只读的  */
+	  	var colors3 = ["red", "blue", "green"];    //creates an array with three strings
+        colors3.length = 2;
+        alert(colors3[2]);        //undefined
+        var colors4 = ["red", "blue", "green"];    //creates an array with three strings
+        colors4.length = 4;
+        alert(colors4[3]);        //undefined
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

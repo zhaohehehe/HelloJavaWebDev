@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>背景色</title>
+</head>
+<style>
+#p1{
+background-color:#ffff00;
+}
+#p21{
+background-image:url("http://www.runoob.com/try/demo_source/gradient2.png");
+}
+#p22{
+background-image:url("http://www.runoob.com/try/demo_source/gradient2.png");
+/*设置图像只在水平高方向平铺  */
+background-repeat:repeat-x; 
+}
+#p3{
+	background-image:url('http://www.runoob.com/try/demo_source/img_tree.png');
+	background-repeat:no-repeat;
+}
+#p4{
+	background-image:url('http://www.runoob.com/try/demo_source/img_tree.png');
+	background-repeat:no-repeat;
+	background-position:right top;
+}
+#p5{
+background:grey url("http://www.runoob.com/try/demo_source/img_tree.png") no-repeat right top;
+}
+h1{
+background-color:rgb(0,0,255);
+}
+p{
+height:200px;
+}
+</style>
+
+<body>
+<p id="p1">背景颜色</p><hr>
+<p id="p21" style="height:350px">背景图片默认平铺</p><hr>
+<p id="p22">设置图像只在水平高方向平铺</p><hr>
+<p id="p3">让背景图像不影响文本的排版;如果你不想让图像平铺，你可以使用 background-repeat 属性</p><hr>
+<p id="p4">让页面排版更加合理，不影响文本的阅读，我们可以改变图像的位置。可以利用 background-position 属性改变图像在背景中的位置</p><hr>
+<pre id="p5">背景-简写属性,顺序:
+background-color
+background-image
+background-repeat
+background-attachment
+background-position		
+以上属性无需全部使用，你可以按照页面的实际需要使用.
+
+
+</pre><hr>
+
+</body>
+
+</html>

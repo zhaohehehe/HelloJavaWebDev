@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Function Type Arguments Caller Example</title>
+    <script type="text/javascript">
+
+        function outer1(num){
+            inner1(num);
+        }
+        function inner1(num){
+            alert(inner1.caller);
+            alert(inner1.caller.length);//1
+        }
+        outer1(2);
+        
+        
+        function outer(){
+            inner();
+        }
+        function inner(){
+            alert(arguments.callee.caller);
+        }
+        outer();
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

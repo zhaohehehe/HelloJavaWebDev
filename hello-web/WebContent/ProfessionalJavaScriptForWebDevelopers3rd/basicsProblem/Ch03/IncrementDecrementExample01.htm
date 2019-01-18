@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Increment/Decrement Example 4</title>
+    <script type="text/javascript">
+          
+        var s1 = "2";
+        var s2 = "z";
+        var s3 = "12f";
+        var b = false;
+        var f = 1.14;
+        var g = 1.2+f;//2.34
+        var o = { 
+            valueOf: function() {
+                return -1;
+            }
+        };
+        
+        var t1 = "01";
+        var t2 = "1.1";
+        var t3 = "z";
+        var b1 = false;
+        var f1 = 1.14;//0.139999999999999
+        var o1 = { 
+            valueOf: function() {
+                return -1;
+            }
+        };
+        
+        s1++;   //value becomes numeric 3
+        s2++;   //value becomes NaN
+        s3++;	//先转换为数字
+        b++;    //value becomes numeric 1
+        f--;    //value becomes 0.13999999999999999
+        o--;    //value becomes numeric -2  
+        
+        t1 = -t1;   //value becomes numeric -1
+        t2 = -t2;   //value becomes numeric -1.1
+        t3 = -t3;   //value becomes NaN
+        b1 = -b1;     //value becomes numeric 0
+        f1 = -f1;     //change to -1.14
+        o1 = -o1;     //value becomes numeric 1
+
+        alert(s1);
+        alert(s2);
+        alert(s3);
+        alert(b);
+        alert(f);
+        alert(g);
+        alert(o);
+        
+        alert(t1);
+        alert(t2);
+        alert(t3);
+        alert(b1);
+        alert(f1);
+        alert(o1);
+        
+
+    </script>
+
+</head>
+<body>
+  
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--maximum-scale=1.0 与 user-scalable=no 一起使用。这样禁用缩放功能后，用户只能滚动屏幕  -->
+<meta name="viewport" content="width=device-width,initial-scale=1.0" charset="UTF-8">                         
+<title>辅助类</title>
+<!-- 新 Bootstrap 核心 CSS 文件 -->
+<link href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- 可选的Bootstrap主题文件（一般不使用） -->
+<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap-theme.min.css"></script>
+
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<base href="../../../bootstrapResource">
+</head>
+
+<body>
+<hr>
+<h3>文本</h3>
+<div class="container">
+	<div>
+		<p class="text-muted">.text-muted</p>
+		<a href="#" class="text-muted">链接.text-muted</a>
+	</div>
+	<div>
+		<p class="text-primary">.text-primary</p>
+		<a href="#" class="text-primary">链接.text-primary</a>
+	</div>
+	<div>
+		<p class="text-success">.text-success</p>
+		<a href="#" class="text-success">链接.text-success</a>
+	</div>
+	<div>
+		<p class="text-info">.text-info</p>
+		<a href="#" class="text-info">链接.text-info</a>
+	</div>
+	<div>
+		<p class="text-warning">.text-warning</p>
+		<a href="#" class="text-warning">链接.text-warning</a>
+	</div>
+	<div>
+		<p class="text-danger">.text-danger</p>
+		<a href="#" class="text-danger">链接.text-danger</a>
+	</div>
+</div>
+<h3>背景</h3>
+<div class="container">
+	<div>
+		<p class="bg-primary">.bg-primary</p>
+		<a href="#" class="bg-primary">链接.bg-primary</a>
+	</div>
+	<div>
+		<p class="bg-success">.bg-success</p>
+		<a href="#" class="bg-success">链接.bg-success</a>
+	</div>
+	<div>
+		<p class="bg-info">.bg-info</p>
+		<a href="#" class="bg-info">链接.bg-info</a>
+	</div>
+	<div>
+		<p class="bg-warning">.bg-warning</p>
+		<a href="#" class="bg-warning">链接.bg-warning</a>
+	</div>
+	<div>
+		<p class="bg-danger">.bg-danger</p>
+		<a href="#" class="bg-danger">链接.bg-danger</a>
+	</div>
+</div>
+<h3>其他</h3>
+<div class="text-hide center-block" style="background-color:red;height:100px;width:200px;float:right">在 div 元素中插入一些文本。with .text-hide</div>
+<div class="center-block" style="background-color:green;height:100px;width:200px">在 div 元素中插入一些文本。without .text-hide</div>
+<p>关闭图标实例
+	<button type="button" class="close" aria-hidden="true">&times;</button>
+</p>
+<p>插入符实例
+	<span class="caret"></span>
+</p>
+<hr>
+<div>先.clearfix清除浮动</div>
+<div class="clearfix"  style="background: #D8D8D8;border: 1px solid #000;padding: 10px;">
+	<div class="pull-left" style="background:#58D3F7;">向左快速浮动</div>
+   	<div class="pull-right" style="background: #DA81F5;">向右快速浮动</div>
+</div>
+<div class="row" style="padding: 21px 10px 19px 50px;">
+  <div class="show" style="left-margin:10px;width:300px;background-color:#ccc;"> 这是 show class 的实例</div>
+  <div class="hidden" style="width:200px;background-color:#ccc;">  这是 hide class 的实例</div>
+</div>
+<hr>
+<p class="text-info">标签带有 class sr-only，因此标签将只对屏幕阅读器可见</p>
+<hr>
+</body>
+</html>

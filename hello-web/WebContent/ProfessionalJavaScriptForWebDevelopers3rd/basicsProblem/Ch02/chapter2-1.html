@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>在HTML中使用js</title>
+</head>
+<style>
+pre{
+	font-size:1em;
+	color: #008080;
+}
+h3{
+	color:blue;
+	font-weight:bold;
+}
+</style>
+<body>
+<pre>
+<h4>
+<h3>(1)方法一:用相应的HTML实体(&amp;lt;)替换所有小于号等其他符号 </h3>
+&lt;script type="text/javascript">
+function compare1(a,b){
+	if(a &lt; b){
+		alert("A小于B");
+	}
+	else if(a>b){
+		alert("A大于B");
+	}
+	else{
+		alert("A等于B");
+	}
+}
+&lt;/script>
+<h3>(2)方法二：CData片段包含js代码 </h3>
+&lt;script type="text/javascript">
+&lt;![CDATA[
+         function compare2(a,b){
+        	 if(a &lt; b){
+        		 alert("A小于B");
+        		 }
+        	 else if(a>b){
+				 alert("A大于B");
+				 }
+        	 else{
+				 alert("A等于B");
+				 }
+        	 }
+]]>
+&lt;/script>
+<h3>(3)方法三(完美写法)：因为很多浏览器不兼容XHTML，因而不兼容CData片段，所以用js注释将cData标记注释掉即可 </h3>
+&lt;script type="text/javascript">
+//&lt;![CDATA[
+         function compare3(a,b){
+        	 if(a &lt; b){
+        		 alert("A小于B");
+        		 }
+        	 else if(a>b){
+				 alert("A大于B");
+				 }
+        	 else{
+				 alert("A等于B");
+				 }
+        	 }
+//]]>
+&lt;/script>
+</h4>
+</pre>
+</body>
+<script type="text/javascript">
+/* 方法一:用相应的HTML实体（&lt;）替换所有小于号等其他符号 */
+function compare1(a,b){
+	if(a &lt; b){
+		alert("A小于B");
+	}
+	else if(a>b){
+		alert("A大于B");
+	}
+	else{
+		alert("A等于B");
+	}
+}
+</script>
+<script type="text/javascript">
+/*方法二：CData片段包含js代码  */
+<![CDATA[
+         function compare2(a,b){
+        	 if(a &lt; b){
+        		 alert("A小于B");
+        		 }
+        	 else if(a>b){
+				 alert("A大于B");
+				 }
+        	 else{
+				 alert("A等于B");
+				 }
+        	 }
+]]>
+</script>
+<script type="text/javascript">
+/*方法三(完美写法)：因为很多浏览器不兼容XHTML，因而不兼容CData片段，所以用js注释将cData标记注释掉即可  */
+//<![CDATA[
+         function compare3(a,b){
+        	 if(a &lt; b){
+        		 alert("A小于B");
+        		 }
+        	 else if(a>b){
+				 alert("A大于B");
+				 }
+        	 else{
+				 alert("A等于B");
+				 }
+        	 }
+//]]>
+</script>
+</html>

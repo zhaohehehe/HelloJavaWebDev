@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Number Example 1</title>
+    <script type="text/javascript">
+    	var a=0.1,b=0.2;
+        alert(0.1 + 0.2);//0.30000000000000004
+        alert((a+b)==0.3);//false
+      
+        var octalNum1=070;
+        var octalNum2=078;
+        alert(octalNum1);// 八进制56
+        alert(octalNum2);//无效八进制 --解析为78    
+        
+        var hexNum1 = 0xa;
+        var hexNum2 = 0x1f;
+       // var hexNum3 = 0x1g; error,定义错误
+        alert(hexNum1);//10
+        alert(hexNum2);//31
+        
+        var result = Number.MAX_VALUE + 1;
+        var result2=Number.MAX_VALUE+Number.MAX_VALUE;
+        alert(isFinite(result));    // true 是否位于最大，最小值之间
+        alert(isFinite(result2));   //false 是否位于最大，最小值之间
+        
+        alert(NaN == NaN);       //false
+        alert(isNaN(NaN));       //true
+        alert(isNaN(10));        //false  10 is a number
+        alert(isNaN("10"));      //false  can be converted to number 10
+        alert(isNaN("blue"));    //true  cannot be converted to a number
+        alert(isNaN(true));      //false  can be converted to number 1
+
+        
+        
+
+ 
+              
+    </script>
+
+</head>
+<body>
+  
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Logical AND Example 1</title>
+    <script type="text/javascript">
+    
+    	var op1={
+    			valueOf:function(){
+    				name:"bird"
+    				return name;
+    			}
+    	};
+    	var op2={
+    			valueOf:function(){
+    				name:"fish"
+    				return name;
+    			}
+    	};
+       
+         alert(op1 && op2);//op2
+         alert(op1 && true);//true
+         
+         alert(false && op2);//false
+         
+         alert(null && op2);//null 
+         alert(op1 && null);//null
+         
+         alert(NaN && NaN);//NaN
+         
+         alert(undefined && op2);//undefined 
+         alert(op1 && undefined);//undefined
+         
+         var found1=false;
+         var result = (found1 && someUndeclaredVariable);    //no error
+         alert(result);    //works false
+         
+         var found = true;
+         var result = (found && someUndeclaredVariable);    //error occurs here
+         alert(result);    //this line never executes
+
+         
+         
+         
+         
+        
+
+
+
+    </script>
+
+</head>
+<body>
+  
+</body>
+</html>

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--maximum-scale=1.0 与 user-scalable=no 一起使用。这样禁用缩放功能后，用户只能滚动屏幕  -->
+<meta name="viewport" content="width=device-width,initial-scale=1.0" charset="UTF-8">                         
+<title>Veeva测试</title>
+<!--[if lt IE 9]>
+   <script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
+   <![endif]-->
+<!-- 新 Bootstrap 核心 CSS 文件 -->
+<link href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- 可选的Bootstrap主题文件（一般不使用） -->
+<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap-theme.min.css"></script>
+
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<base href="../../Demo/demoResource/">
+</head>
+
+<body>
+<div class="container well">
+	<h1 style="margin-bottom:15px;margin-top:0px">The Flash Cast and Crew</h1>
+	<div class="row">
+		<div class="col-xs-12 col-md-6">
+			<div class="row">
+				<div class="col-md-offset-2 col-md-5 ">
+					<!--人物图片 -->
+					<img name="crewImage" src="images/MV5BMjcxNzA0MzI0OV5BMl5BanBnXkFtZTgwNDQ0MjU2MzE@._V1_SY317_CR9,0,214,317_AL_.jpg" class="img-thumbnail img-responsive" alt="Carlos Valdes"/>
+					<address><p class="text-info text-center hidden"></p></address> 
+				</div>
+				<div  class="col-md-5">
+					<div class="row">
+						<div class="show"><button name="show" class="btn btn-default btn-xs">Show Bio</button></div>
+						<!--展示名字  -->
+						<div class=""><h3></h3></div>
+						<!--展示Bio  -->
+						<div class="text-left hidden"></div>
+						<div class="hidden"><button name="hide" class="btn btn-default btn-xs">Hide Bio</button></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-12 col-md-6">
+			<div class="row">
+				<div class="col-md-offset-1 col-md-5 ">
+					<img name="crewImage" src="images/MV5BMjE3NjE4MjQxNl5BMl5BanBnXkFtZTgwMTg0MTYzNDE@._V1_SY317_CR51,0,214,317_AL_.jpg" class="img-thumbnail img-responsive" alt="John Wesley Shipp"/>
+					<address><p class="text-info text-center"></p></address> 
+				</div>
+				<div class="col-md-5">
+					<div class="row">
+						<div class="show"><button name="show" class="btn btn-default btn-xs">Show Bio</button></div>
+						<div class=""><h3></h3></div>
+						<div class="text-left hidden"></div>
+						<div class="hidden"><button name="hide" class="btn btn-default btn-xs">Hide Bio</button></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12 col-md-6">
+			<div class="row">
+				<div class="col-md-offset-2 col-md-5 ">
+					<!--人物图片 -->
+					<img name="crewImage" src="images/MV5BMjM4NTY2Mjc4NF5BMl5BanBnXkFtZTgwNDg0MDM4MTE@._V1_SY317_CR2,0,214,317_AL_.jpg" class="img-thumbnail img-responsive" alt="Patrick Sabongui"/>
+					<address><p class="text-info text-center"></p></address> 
+				</div>
+				<div class="col-md-5">
+					<div class="row">
+						<div class="show"><button  name="show" class="btn btn-default btn-xs">Show Bio</button></div>
+						<!--展示名字  -->
+						<div><h3></h3></div>
+						<!--展示Bio  -->
+						<div class="text-left hidden"></div>
+						<div class="hidden"><button name="hide" class="btn btn-default btn-xs">Hide Bio</button></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-12 col-md-6">
+			<div class="row">
+				<div class="col-md-offset-1 col-md-5 ">
+					<img name="crewImage" src="images/MV5BMTg5NjQwMjY5MF5BMl5BanBnXkFtZTcwMDQ0MTU4OA@@._V1_SX214_CR0,0,214,317_AL_.jpg" class="img-thumbnail img-responsive" alt="Robbie Amell"/>
+					<address><p class="text-info text-center"></p></address> 
+				</div>
+				<div class="col-md-5">
+					<div class="row">
+						<div class="show"><button name="show" class="btn btn-default btn-xs">Show Bio</button></div>
+						<div class=""><h3></h3></div>
+						<div class="text-left hidden"></div>
+						<div class="hidden"><button name="hide" class="btn btn-default btn-xs">Hide Bio</button></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12 col-md-6">
+			<div class="row">
+				<div class="col-md-offset-2 col-md-5 ">
+					<!--人物图片 -->
+					<img name="crewImage" src="images/MV5BMTI4Mzg1MDQ0OF5BMl5BanBnXkFtZTcwNjI4MzA1Mw@@._V1_SY317_CR4,0,214,317_AL_.jpg" class="img-thumbnail img-responsive" alt="Jesse L. Martin"/>
+					<address><p class="text-info text-center"></p></address> 
+				</div>
+				<div class="col-md-5">
+					<div class="row">
+						<div class="show"><button  name="show" class="btn btn-default btn-xs">Show Bio</button></div>
+						<!--展示名字  -->
+						<div><h3></h3></div>
+						<!--展示Bio  -->
+						<div class="text-left hidden"></div>
+						<div class="hidden"><button name="hide" class="btn btn-default btn-xs">Hide Bio</button></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-12 col-md-6">
+			<div class="row">
+				<div class="col-md-offset-1 col-md-5 ">
+					<img name="crewImage" src="images/MV5BMTMzNDI4MTI1OV5BMl5BanBnXkFtZTcwNTY3NTQyMg@@._V1_SY317_CR6,0,214,317_AL_.jpg" class="img-thumbnail img-responsive" alt="Tom Cavanagh"/>
+					<address><p class="text-info text-center"></p></address> 
+				</div>
+				<div class="col-md-5">
+					<div class="row">
+						<div class="show"><button name="show" class="btn btn-default btn-xs">Show Bio</button></div>
+						<div class=""><h3></h3></div>
+						<div class="text-left hidden"></div>
+						<div class="hidden"><button name="hide" class="btn btn-default btn-xs">Hide Bio</button></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12 col-md-6">
+			<div class="row">
+				<div class="col-md-offset-2 col-md-5 ">
+					<!--人物图片 -->
+					<img name="crewImage" src="images/MV5BMTQwNDkyMzE1M15BMl5BanBnXkFtZTcwODcwOTEwNA@@._V1_SY317_CR32,0,214,317_AL_.jpg" class="img-thumbnail img-responsive" alt="Rick Cosnett"/>
+					<address><p class="text-info text-center"></p></address> 
+				</div>
+				<div class="col-md-5">
+					<div class="row">
+						<div class="show"><button  name="show" class="btn btn-default btn-xs">Show Bio</button></div>
+						<!--展示名字  -->
+						<div><h3></h3></div>
+						<!--展示Bio  -->
+						<div class="text-left hidden"></div>
+						<div class="hidden"><button name="hide" class="btn btn-default btn-xs">Hide Bio</button></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-12 col-md-6">
+			<div class="row">
+				<div class="col-md-offset-1 col-md-5 ">
+					<img name="crewImage" src="images/MV5BMTYxNzc1NDA4OF5BMl5BanBnXkFtZTgwMzExMzQzMjE@._V1_SX214_CR0,0,214,317_AL_.jpg" class="img-thumbnail img-responsive" alt="Danielle Panabaker"/>
+					<address><p class="text-info text-center"></p></address> 
+				</div>
+				<div class="col-md-5">
+					<div class="row">
+						<div class="show"><button name="show" class="btn btn-default btn-xs">Show Bio</button></div>
+						<div class=""><h3></h3></div>
+						<div class="text-left hidden"></div>
+						<div class="hidden"><button name="hide" class="btn btn-default btn-xs">Hide Bio</button></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12 col-md-6">
+			<div class="row">
+				<div class="col-md-offset-2 col-md-5 ">
+					<!--人物图片 -->
+					<img name="crewImage" src="images/MV5BMTYxOTM4MzI4MF5BMl5BanBnXkFtZTcwMTc0MjQyNA@@._V1_SY317_CR20,0,214,317_AL_.jpg" class="img-thumbnail img-responsive" alt="Grant Gustin"/>
+					<address><p class="text-info text-center"></p></address> 
+				</div>
+				<div class="col-md-5">
+					<div class="row">
+						<div class="show"><button  name="show" class="btn btn-default btn-xs">Show Bio</button></div>
+						<!--展示名字  -->
+						<div><h3></h3></div>
+						<!--展示Bio  -->
+						<div class="text-left hidden"></div>
+						<div class="hidden"><button name="hide" class="btn btn-default btn-xs">Hide Bio</button></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-12 col-md-6">
+			<div class="row">
+				<div class="col-md-offset-1 col-md-5 ">
+					<img name="crewImage" src="images/MV5BNDYwNTEzOTA1OF5BMl5BanBnXkFtZTgwNTE1NjIxMTE@._V1_SX214_CR0,0,214,317_AL_.jpg" class="img-thumbnail img-responsive" alt="Candice Patton"/>
+					<address><p class="text-info text-center"></p></address> 
+				</div>
+				<div class="col-md-5">
+					<div class="row">
+						<div class="show"><button name="show" class="btn btn-default btn-xs">Show Bio</button></div>
+						<div class=""><h3></h3></div>
+						<div class="text-left hidden"></div>
+						<div class="hidden"><button name="hide" class="btn btn-default btn-xs">Hide Bio</button></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+$(document).ready(function(){
+	 $("button[name='show']").click(function(){
+		//1.获取和button关联的img标签
+		var temp=$(this).parent().parent().parent().parent();
+		var imgTemp=temp.find("img")[0];
+		//alert(img.src);
+		//var document.getElement
+		//result: { "casts":[{},{},...] }
+		//2.解析json文件,定位obj 
+		$.getJSON("json/theFlash.json",function(result){
+			//traverse Array
+			var arr=result.casts;
+			$.each(arr, function(i, val){
+				//traverse Object 
+				var start=imgTemp.src.lastIndexOf("/");
+				if(imgTemp.src.match(val.img)==val.img){
+					$(temp.find("p")[0]).text(val.name);
+					$(temp.find("h3")[0]).text(val.name);
+					$(temp.find("div.text-left")[0]).text(val.bio);
+					$(temp.find("div.show")[0]).addClass("hidden");
+					$(temp.find("div.show")[0]).removeClass("show");
+					$(temp.find("p")[0]).removeClass("hidden");
+					$(temp.find("div.text-left")[0]).removeClass("hidden");
+					$(temp.find("div.hidden")[1]).removeClass("hidden");
+					return;
+				}
+			});
+		});
+	});
+	 
+	 $("button[name='hide']").click(function(){
+			//1.获取和button关联的img标签
+			//$(this).addClass("hidden");
+			var temp=$(this).parent().parent().parent().parent();
+			var imgTemp=temp.find("img")[0];
+			//alert(img.src);
+			//var document.getElement
+			//result: { "casts":[{},{},...] }
+			//2.解析json文件,定位obj 
+			$.getJSON("json/theFlash.json",function(result){
+				//traverse Array
+				var arr=result.casts;
+				$.each(arr, function(i, val){
+					//traverse Object 
+					var start=imgTemp.src.lastIndexOf("/");
+					if(imgTemp.src.match(val.img)==val.img){
+						
+						$(temp.find("h3")[0]).text("");
+						$(temp.find("div.text-left")[0]).addClass("hidden");
+						$(temp.find("div.hidden")[0]).addClass("show");
+						$(temp.find("div.hidden")[0]).removeClass("hidden");
+						$(temp.find("p")[0]).addClass("hidden");
+						$($(temp.find("div.row")[0]).find("div")[3]).addClass("hidden");
+						return;
+					}
+				});
+			});
+		});
+});
+</script>
+</body>
+</html>

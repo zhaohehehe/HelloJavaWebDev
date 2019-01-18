@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>将项目打包成war包发布到tomcat</title>
+</head>
+<body>
+<ol>
+	<li><h2>推荐部署方法：不需要拷贝项目，效率高</h2>
+		<ol>
+			<li>配置web.xml文件&lt;Context docBase="D:\Users\zhaohe\Documents\workspace\workspace_JavaW\HelloWeb\WebContent" 
+			path="/HelloWeb" reloadable="true"/>
+			</li>
+		</ol>
+	</li>
+	<li><h2>将项目Export成war包</h2>
+		<ol>
+			<li>将项目Export成war包，将war包放到tomcat安装路径的webapps路径下</li>
+			<li>在tomcat安装路径下的conf/server.xml文件中  &lt;Host>标签中添加如下代码：
+				<pre>
+	&lt;Context docBase="C:\Program Files\Java\tomcat-8.0.23\webapps\HelloWeb.war" path="/HelloWeb" reloadable="true"/>
+				</pre>
+				(1)运行startup.bat，启动tomcat，就可以在浏览器地址中输入：http://localhost:8080/HelloWeb/index.jsp，访问应用HelloWeb的首页;<br>
+				<b>注意：</b>可能出现<em>HTTP Status 500 - java.lang.IllegalStateException: No output folder error</em>错误<br>
+				&nbsp;&nbsp;这是因为是因为执行tomcat的startup.bat的用户的权限不够导致的，解决办法如下：
+				<ol style="list-style-type:square">
+					<li>找到tomcat安装文件，如：tomcat-8.0.23，右击文件，选择&nbsp;属性-->安全-->编辑；</li>
+					<li>选择Users权限，允许完全控制，之后重新启动tomcat，成功！</li>
+					<li>之后也可以将权限改回来，对运行不会再有影响（Users默认权限为：读取和执行+列出文件夹内容+读取）</li>
+				</ol>
+				(2)配置是为了在index.jsp中配置 &lt;a>标签的href="/HelloWeb/Demo/jsonDemo/jsonDemo_1.html"等价于<br>
+				&nbsp;&nbsp;href="<%=path %>/Demo/jsonDemo/jsonDemo_1.html"<br>不配置会找不到资源。
+			</li>
+		</ol>
+	</li>
+	<li>HTTPステータス 500 - Error instantiating servlet class com.shengsiyuan.study.servlet.LoginServlet<br>
+		<ol>
+			<li>右击项目-->Build Path，将Default Output Folder改为：HelloWebWorld/WebContent/WEB-INF/classes</li>
+			<li>重启服务器</li>
+		</ol>
+	</li>
+</ol>
+
+
+</body>
+</html>

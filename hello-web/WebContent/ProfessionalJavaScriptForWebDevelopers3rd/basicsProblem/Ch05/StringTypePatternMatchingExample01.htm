@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>String Type Pattern Matching Example</title>
+    <script type="text/javascript">
+    
+        var text = "cat, bat, sat, fat"; 
+        var pattern = /.at/;
+        
+        var matches = text.match(pattern);        
+        alert(matches.index);        //0
+        alert(matches[0]);           //"cat"
+        alert(pattern.lastIndex);    //0
+
+        var pos = text.search(/at/);
+        alert(pos);   //1
+
+        var result = text.replace("at", "ond");
+        alert(result);    //"cond, bat, sat, fat"
+
+        result = text.replace(/at/g, "ond");
+        alert(result);    //"cond, bond, sond, fond"
+
+        result = text.replace(/(.at)/g, "word ($1)");
+        alert(result);    //word (cat), word (bat), word (sat), word (fat)
+        
+        function htmlEscape(text){
+        	//参数：模式的匹配项，模式匹配项在字符串中的位置，原始字符串
+            return text.replace(/[<>"&]/g, function(match, pos, originalText){
+                switch(match){
+                    case "<":
+                        return "&lt;";
+                    case ">":
+                        return "&gt;";
+                    case "&":
+                        return "&amp;";
+                    case "\"":
+                        return "&quot;";
+                }             
+            });
+        }
+        
+        alert(htmlEscape("<p class=\"greeting\">Hello world!</p>")); 
+         //&lt;p class=&quot;greeting&quot;&gt;Hello world!&lt;/p&gt;
+
+        var colorText = "red,blue,green,yellow";
+        var colors1 = colorText.split(",");      //["red", "blue", "green", "yellow"]
+       //第二个参数指定数组的大小
+        var colors2 = colorText.split(",", 2);   //["red", "blue"]
+       //取得包含逗号字符的数组
+        var colors3 = colorText.split(/[^\,]+/); //["", ",", ",", ",", ""]
+
+
+        
+    </script>
+</head>
+<body>
+
+</body>
+</html>

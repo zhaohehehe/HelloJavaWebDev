@@ -1,0 +1,2 @@
+pom文件配置，点击右侧的连接可看见详细pom.xml文件
+groupId,artifactid等信息需要根据不同项目进行修改

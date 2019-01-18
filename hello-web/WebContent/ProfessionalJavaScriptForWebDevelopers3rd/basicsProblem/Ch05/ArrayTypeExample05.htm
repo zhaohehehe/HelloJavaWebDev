@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Array Type Example 11</title>
+    <script type="text/javascript">
+    
+    var colors = new Array();                      //create an array
+    var count = colors.unshift("1", "2");    //push two items
+    alert(count);  //2
+    
+    count = colors.unshift("0");               //push another item on
+    alert(count);  //3
+    
+    var item = colors.pop();                     //get the first item
+    alert(item);   //"2"
+    alert(colors.length);  //2
+
+        var count = colors.push("2", "3");       //push two items
+        alert(count);  //4
+        
+        var item = colors.shift();                     //get the first item
+        alert(item);   //"0"
+        var item = colors.shift();                     //get the first item
+        alert(item);   //"1"
+        alert(colors.length);  //2
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--maximum-scale=1.0 与 user-scalable=no 一起使用。这样禁用缩放功能后，用户只能滚动屏幕  -->
+<meta name="viewport" content="width=device-width,initial-scale=1.0" charset="UTF-8">                         
+<title>表单</title>
+<!-- 新 Bootstrap 核心 CSS 文件 -->
+<link href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- 可选的Bootstrap主题文件（一般不使用） -->
+<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap-theme.min.css"></script>
+
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<base href="../../../bootstrapResource">
+</head>
+<body>
+<h2>表单中有时div和label在布局上功能类似</h2>
+<h3 style="color:green">垂直或基本表单</h3>
+<form role="form">
+	<div class="form-group">
+		<label for="name">姓名</label>
+		<input type="text" class="form-control" id="name" placeholder="请输入名称"/>
+	</div>
+	<div class="form-group">
+		<label for="inputfile">文件输入</label>
+		<input type="file" id="inputfile" class="form-control"/>
+		<p class="help-block text-info">块级帮助文本块级帮助文本块级帮助文本块级帮助文本块级帮助文本块级帮助文本块级帮助文本块级帮助文本块级帮助文本块级帮助文本</p>
+	</div>
+	<div class="checkbox">
+		<label>
+			<input type="checkbox">请打勾
+		</label>
+	</div>
+	<button type="submit" class="btn btn-default">提交</button>
+</form>
+<h3 style="color:green">内联表单
+	<small>默认情况下，Bootstrap 中的 input、select 和 textarea 有 100% 宽度。在使用内联表单时，您需要在表单控件上设置一个宽度。
+			使用 class .sr-only，您可以隐藏内联表单的标签。
+	</small>
+</h3>
+<form role="form" class="form-inline">
+	<div class="form-group">
+		<label for="name">姓名</label>
+		<input type="text" class="form-control" id="name" placeholder="请输入名称"/>
+	</div>
+	<div class="form-group">
+		<label for="inputfile">文件输入</label>
+		<input type="file" id="inputfile" class="form-control"/>
+		<p class="help-block sr-only">块级帮助文本</p>
+	</div>
+	<div class="checkbox">
+		<label>
+			<input type="checkbox">请打勾
+		</label>
+	</div>
+	<button type="submit" class="btn btn-default">提交</button>
+</form>
+<h3 style="color:green">表单控件验证状态
+	<small>Bootstrap 包含了错误、警告和成功消息的验证样式。只需要对父元素简单地添加适当的 class（.has-warning、 .has-error 或 .has-success）即可使用验证状态</small>
+</h3>
+<form role="form" class="form-horizontal">
+	<div class="form-group has-success">
+		<label class="col-sm-2 control-label" for="inputSuccess">输入成功</label>
+		<div class="col-sm-10">
+			<input type="text" class="form-control" id="inputSuccess">
+		</div>
+	</div>
+    <div class="form-group has-warning">
+    	<label class="col-sm-2 control-label" for="inputWarning">输入警告</label>
+    	<div class="col-sm-10">
+      		<input type="text" class="form-control" id="inputWarning">
+   		</div>
+   	</div>
+    <div class="form-group has-error">
+    	<label class="col-sm-2 control-label" for="inputError">输入错误</label>
+    	<div class="col-sm-10">
+        	<input type="text" class="form-control" id="inputError">
+    	</div>
+    </div>
+</form>
+<h3 style="color:green">表单控件大小</h3>
+<form role="form" class="form-horizontal">
+	<div class="form-group">
+		<label class="col-sm-2 control-label">.input-lg</label>
+		<div class="col-sm-10"><input type="text" class="form-control input-lg"></div>
+	</div>
+	<div class="form-group">
+		<label class="col-sm-2 control-label">default</label>
+		<div class="col-sm-10"><input type="text" class="form-control"></div>
+	</div>
+	<div class="form-group">
+		<label class="col-sm-2 control-label">.input-sm</label>
+		<div class="col-sm-10"><input type="text" class="form-control input-sm"></div>
+	</div>
+	<div class="form-group">
+		<select class="col-sm-offset-2 form-control input-lg"><option value="">select.input-lg</option></select>
+	</div>
+	<div class="form-group">
+		<select class="col-sm-offset-2 form-control"><option value="">default</option></select>
+	</div>
+	<div class="form-group">
+		<select class="col-sm-offset-2 form-control input-sm"><option value="">select.input-sm</option></select>
+	</div>
+	<div class="row">
+    	<div class="col-lg-offset-2 col-lg-2"><input type="text" class="form-control" placeholder=".col-lg-2"></div>
+    	<div class="col-lg-3"><input type="text" class="form-control" placeholder=".col-lg-3"></div>
+    	<div class="col-lg-5"><input type="text" class="form-control" placeholder=".col-lg-4"></div>
+   </div>
+</form>
+<h3 style="color:green">水平表单
+	<small>
+		向父 form元素添加 class .form-horizontal。把标签和控件放在一个带有 class .form-group 的 div 中。向标签添加 class .control-label
+	</small>
+</h3>
+<hr>
+<fieldset form="recruitForm" disabled="disabled">
+	<legend>薪资水平</legend>
+	<div class="form-group">
+		<label for="salary" class="col-sm-2 control-label">实习生不用选，默认3000/月</label>
+		<div class="col-sm-10">
+			<select id="salary" class="form-control">
+				<option>禁止选择</option>
+				<option>5000-7000</option>
+				<option>7000-9000</option>
+				<option>10000-15000</option>
+				<option>15000-20000</option>
+				<option>>20000</option>
+			</select>
+		</div>
+	</div>
+</fieldset>
+<form role="form" class="form-horizontal" id="recruitForm">
+	<div class="form-group">
+		<label class="col-sm-2 control-label">公司名称</label>
+		<div class="col-sm-10"><p class="form-control-static">***公司</p></div>
+	</div>
+	<div class="form-group">
+		<label for="validCode"class="col-sm-2 control-label">邮件验证码</label>
+		<div class="col-sm-10"><input type="password"class="form-control" id="validCode"  placeholder="请输入验证码"/></div>
+	</div>
+	<div class="form-group">
+		<label for="name" class="col-sm-2 control-label">姓名</label>
+		<div class="col-sm-10"><input type="text" class="form-control" id="name" placeholder="请输入名称"/></div>
+	</div>
+	<div class="form-group">
+		<label for="sex" class="col-sm-2 control-label">性别</label>
+		<div class="col-sm-10">
+			<label for="maleRadio" class="checkbox-inline"><input type="radio" name="sexRadiosinline" id="maleRadio"value="option1" checked>男</label>
+			<label for="famaleRadio" class="checkbox-inline"><input type="radio"name="sexRadiosinline" id="famaleRadio"value="option2">女</label>
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="position" class="col-sm-2 control-label">申请职位</label>
+		<div class="col-sm-10">
+			<select id="position"class="form-control">
+				<option>Java工程师</option>
+				<option>Web前端开发工程师</option>
+				<option>项目经理</option>
+				<option>软件开发实习生</option>
+				<option>Html5开发</option>
+				<option>其他</option>
+			</select>
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="cities" class="col-sm-2 control-label">工作地点（可多选）</label>
+		<div class="col-sm-10">
+			<select id="cities"class="form-control" multiple>
+				<option>北京</option>
+				<option>杭州</option>
+				<option>深圳</option>
+				<option>上海</option>
+				<option>大连</option>
+				<option>内蒙古</option>
+			</select>
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="position" class="col-sm-2 control-label">IT技能</label>
+		<div class="col-sm-2">
+			<div class="checkbox"><label for="javaCheckbox"><input type="checkbox" id="javaCheckbox"value="option1">Java</label></div>
+			<div class="checkbox"><label for="jsCheckbox"><input type="checkbox" id="jsCheckbox"value="option2">JS</label></div>
+			<div class="checkbox"><label for="bootstrapCheckbox"><input type="checkbox" id="bootstrapCheckbox"value="option3">Bootstrap</label></div>
+			<div class="checkbox"><label for="sshCheckbox"><input type="checkbox" id="sshCheckbox"value="option4">SSH</label></div>
+		</div>
+		<div class="col-sm-2">
+			<div class="checkbox"><label for="phpCheckbox"><input type="checkbox" id="phpCheckbox"value="option1">PHP</label></div>
+			<div class="checkbox"><label for="nodejsCheckbox"><input type="checkbox" id="nodejsCheckbox"value="option2">node.js</label></div>
+			<div class="checkbox"><label for="psCheckbox"><input type="checkbox" id="psCheckbox"value="option3">PS</label></div>
+			<div class="checkbox"><label for="extCheckbox"><input type="checkbox" id="extCheckbox"value="option4">Ext</label></div>
+		</div>
+		<div class="col-sm-2">
+			<div class="checkbox"><label for="cCheckbox"><input type="checkbox" id="cCheckbox"value="option1">C语言</label></div>
+			<div class="checkbox"><label for="c++Checkbox"><input type="checkbox" id="c++Checkbox"value="option2">C++</label></div>
+			<div class="checkbox"><label for="datastructCheckbox"><input type="checkbox" id="datastructCheckbox"value="option3">数据结构</label></div>
+			<div class="checkbox"><label for="umlCheckbox"><input type="checkbox" id="umlCheckbox"value="option4">UML</label></div>
+		</div>
+		<div class="col-sm-2">
+			<div class="checkbox"><label for="cCheckbox"><input type="checkbox" id="cCheckbox"value="option1">C语言</label></div>
+			<div class="checkbox"><label for="c++Checkbox"><input type="checkbox" id="c++Checkbox"value="option2">C++</label></div>
+			<div class="checkbox"><label for="datastructCheckbox"><input type="checkbox" id="datastructCheckbox"value="option3">数据结构</label></div>
+			<div class="checkbox"><label for="umlCheckbox"><input type="checkbox" id="umlCheckbox"value="option4">UML</label></div>
+		</div>
+		<div class="col-sm-2">
+			<div class="checkbox"><label for="cCheckbox"><input type="checkbox" id="cCheckbox"value="option1">C语言</label></div>
+			<div class="checkbox"><label for="c++Checkbox"><input type="checkbox" id="c++Checkbox"value="option2">C++</label></div>
+			<div class="checkbox"><label for="datastructCheckbox"><input type="checkbox" id="datastructCheckbox"value="option3">数据结构</label></div>
+			<div class="checkbox"><label for="umlCheckbox"><input type="checkbox" id="umlCheckbox"value="option4">UML</label></div>
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="level" class="col-sm-2 control-label">水平</label>
+		<div class="col-sm-10">
+			<div class="radio"><label for="lowLevelRadio"><input type="radio" name="levelRadiosinline" id="lowLevelRadio"value="option1" checked>初级</label></div>
+			<div class="radio"><label for="mediumLevelRadio"><input type="radio"name="levelRadiosinline" id="mediumLevelRadio"value="option2">中级</label></div>
+			<div class="radio"><label for="highLevelRadio"><input type="radio"name="levelRadiosinline" id="highLevelRadio"value="option3">高级</label></div>
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="language" class="col-sm-2 control-label">语言</label>
+		<div class="col-sm-10">
+			<label for="englishCheckbox" class="checkbox-inline"><input type="checkbox" id="englishCheckbox"value="option1" checked>英语</label>
+			<label for="japaneseCheckbox" class="checkbox-inline"><input type="checkbox" id="japaneseCheckbox"value="option2">日语</label>
+			<label for="koreanCheckbox" class="checkbox-inline"><input type="checkbox" id="koreanCheckbox"value="option3">韩语</label>
+			<label for="franceCheckbox" class="checkbox-inline"><input type="checkbox" id="franceCheckbox"value="option4">法语</label>
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="inputFile" class="col-sm-2 control-label">上传简历</label>
+		<div class=" col-sm-10"><input type="file" id="inputFile" class="form-control"/></div>
+	</div>
+	<div class="form-group">
+		<label for="alternative" class="col-sm-2 control-label">是否服从调剂</label>
+		<label for="yesRadio" class="checkbox-inline"><input type="radio" name="alternativeRadiosinline" id="yesRadio"value="option1" checked>是</label>
+		<label for="noRadio" class="checkbox-inline"><input type="radio"name="alternativeRadiosinline" id="noRadio"value="option2">否</label>
+	</div>
+	<div class="form-group">
+    	<label for="memo" class="col-sm-2 control-label">备注</label>
+    	<div class="col-sm-10">
+    		<textarea class="form-control" rows="3"></textarea>
+    	</div>
+    </div>
+	<div class="form-group">
+		<div class="col-sm-offset-2 col-sm-10">
+			<div class="checkbox">
+				<label class="control-label">
+					<input type="checkbox">请记住我
+				</label>
+			</div>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="col-sm-offset-2 col-sm-10">
+			<button type="submit" class="btn btn-default">提交（button）</button>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="col-sm-offset-2 col-sm-10">
+			<input type="submit" class="btn btn-default" value="登陆(input)"></input>
+		</div>
+	</div>
+	
+</form>
+
+</body>
+</html>

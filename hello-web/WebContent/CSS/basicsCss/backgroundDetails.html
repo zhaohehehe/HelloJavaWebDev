@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>background</title>
+<style>
+#div1 
+{
+height:200px;
+background-image:url('http://www.runoob.com/try/demo_source/img_tree.png');
+background-repeat:no-repeat;
+background-attachment:fixed;
+}
+div{
+height:200px;
+}
+</style>
+</head>
+<body>
+<dl>
+	<dt><h2>background-image</h2></dt>
+	<dd><b>(1)版本</b><ol><li>CSS1</li></ol></dd>
+	<dd><b>(2)取值</b>
+		<ol>
+			<li>url('URL') 图像的URL </li>
+			<li>none 无图像背景会显示。这是默认 </li>
+			<li>inherit 指定背景图像应该从父元素继承</li>
+		</ol>
+	</dd>
+	<dd><b>(3)JavaScript 语法</b><ol><li>object	object.style.backgroundImage="url(stars.gif)" </li></ol></dd>	
+	<dd><b>(4)实例：</b>
+		<ol>
+			<li><a href="backgroundDemo.html#demo2">多张背景图片</a></li>
+		</ol>
+	</dd>
+	<dt><h2>background-attachment:设置背景图像是否固定或者随着页面的其余部分滚动</h2></dt>
+	<dd><b>(1)版本</b><ol><li>CSS1</li></ol></dd>
+	<dd><b>(2)取值</b>
+		<ol>
+			<li>scroll:默认，图片随页面滚动</li>
+			<li>fixed:图像固定，不随页面的滚动发生变化</li>
+			<li>inherit:指定background-attachment的设置应该从父元素继承</li>
+		</ol>
+	</dd>
+	<dd><b>(3)JavaScript 语法</b><ol><li>object.style.backgroundAttachment="fixed" </li></ol></dd>	
+	<dd><b>(4)实例：</b>
+		<ol>
+			<li><a href="backgroundDemo.html#demo1">背景图片固定</a></li>
+		</ol>
+	</dd>
+	<dt><h2>background-position:设置背景图像的起始位置</h2></dt>
+	<dd><b>(1)版本</b><ol><li>CSS1</li></ol></dd>
+	<dd><b>(2)取值</b>
+		<ol>
+			<li>left top、left center、left bottom、right top、right center、right bottom、center top、center center、center bottom(如果仅指定一个关键字，其他值将会是"center")</li>
+			<li>x% y% :第一个值是水平位置，第二个值是垂直。左上角是0％0％。右下角是100％100％。如果仅指定了一个值，其他值将是50％。 。默认值为：0％0％ </li>
+			<li>xpos ypos :第一个值是水平位置，第二个值是垂直。左上角是0。单位可以是像素（0px0px）或任何其他 CSS单位。如果仅指定了一个值，其他值将是50％。你可以混合使用％和positions  </li>
+			<li>inherit :指定background-position属性设置应该从父元素继承</li>
+		</ol>
+	</dd>
+	<dd><b>(3)JavaScript 语法</b><ol><li>object	object.style.backgroundPosition="center" </li></ol></dd>	
+	<dd><b>(4)实例：</b>
+		<ol>
+			<li><a href="backgroundDemo.html#?"></a></li>
+		</ol>
+	</dd>
+	<dt><h2>background-repeat</h2></dt>
+	<dd><b>(1)版本</b><ol><li>CSS1</li></ol></dd>
+	<dd><b>(2)取值</b>
+		<ol>
+			<li>repeat 背景图像将向垂直和水平方向重复。这是默认  </li>
+			<li>repeat-x 只有水平位置会重复背景图像 </li>
+			<li>repeat-y 只有垂直位置会重复背景图像</li>
+			<li>no-repeat background-image不会重复 </li> 
+			<li>inherit 指定background-repea属性设置应该从父元素继承</li>
+		</ol>
+	</dd>
+	<dd><b>(3)JavaScript 语法</b><ol><li>object.style.backgroundRepeat="repeat-y" </li></ol></dd>	
+	<dd><b>(4)实例：</b>
+		<ol>
+			<li><a href="backgroundDemo.html#?"></a></li>
+		</ol>
+	</dd>
+	<dt><h2>background-size</h2></dt>
+	<dd><b>(1)版本</b><ol><li>CSS3</li></ol></dd>
+	<dd><b>(2)取值</b>
+		<ol>
+			<li>length 设置背景图片高度和宽度。第一个值设置宽度，第二个值设置的高度。如果只给出一个值，第二个是设置为"atuo(自动)" </li>
+			<li>percentage 将计算相对于背景定位区域的百分比。第一个值设置宽度，第二个值设置的高度。如果只给出一个值，第二个是设置为"auto(自动)"  </li>
+			<li>cover 此时会保持图像的纵横比并将图像缩放成将完全覆盖背景定位区域的最小大小。 </li>
+			<li>contain 此时会保持图像的纵横比并将图像缩放成将适合背景定位区域的最大大小。 </li> 
+		</ol>
+	</dd>
+	<dd><b>(3)JavaScript 语法</b><ol><li>object.style.backgroundSize="60px 80px"</li></ol></dd>	
+	<dd><b>(4)实例：</b>
+		<ol>
+			<li><a href="backgroundDemo.html#demo3">拉伸背景图像完全覆盖内容面积</a></li>
+			<li><a href="backgroundDemo.html#demo4">拉伸4个横向背景图片</a></li>
+		</ol>
+	</dd>
+	<dt><h2>background-origin:background-Origin属性指定background-position属性应该是相对位置。
+			<b>注意</b>如果背景图像background-attachment是"固定"，这个属性没有任何效果。
+	</h2></dt>
+	<dd><b>(1)版本</b><ol><li>CSS3</li></ol></dd>
+	<dd><b>(2)取值</b>
+		<ol>
+			<li>padding-box 背景图像填充框的相对位置 (相对于padding的位置) </li>
+			<li>border-box 背景图像边界框的相对位置 (相对于border的位置) </li>
+			<li>content-box 背景图像的相对位置的内容框(相对于内容的位置)</li>
+		</ol>
+	</dd>
+	<dd><b>(3)JavaScript 语法</b><ol><li>object.style.backgroundRepeat="repeat-y" </li></ol></dd>	
+	<dd><b>(4)实例：</b>
+		<ol>
+			<li><a href="backgroundDemo.html#demo5">background-origin指定background-position属性应该是相对位置</a></li>
+		</ol>
+	</dd>
+	<dt><h2>background-clip:指定背景绘制区域</h2></dt>
+	<dd><b>(1)版本</b><ol><li>CSS3</li></ol></dd>
+	<dd><b>(2)取值</b>
+		<ol>
+			<li>border-box 默认值。背景绘制在边框方框内（剪切成边框方框）。</li>
+			<li>padding-box 背景绘制在衬距方框内（剪切成衬距方框）。 </li>
+			<li>content-box 背景绘制在内容方框内（剪切成内容方框）。 </li>
+		</ol>
+	</dd>
+	<dd><b>(3)JavaScript 语法</b><ol><li>object.style.backgroundClip="content-box" </li></ol></dd>	
+	<dd><b>(4)实例：</b>
+		<ol>
+			<li><a href="backgroundDemo.html#demo6">background-clip背景绘制区域</a></li>
+		</ol>
+	</dd>				
+</dl>
+</body>
+</html>

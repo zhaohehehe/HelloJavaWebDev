@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>For-In Statement Example 1</title>
+</head>
+<body>
+    <script type="text/javascript">
+    
+        for (var propName in window) {
+             document.write(propName);
+             document.write("<br />");
+        } 
+        var obj=[
+                  {name:"bird",age:18},
+                  {name:"fish",age:18}
+                 ];
+        var obj1=["bird","fish"];
+        for(var animal in obj1){
+        	document.write(animal);
+        	document.write("<br/>");
+        	//如果obj为null 或者 undefined，ECMAScript3会报错;ECMAScript5不执行循环体
+        }//0 1
+
+
+    </script>
+</body>
+</html>

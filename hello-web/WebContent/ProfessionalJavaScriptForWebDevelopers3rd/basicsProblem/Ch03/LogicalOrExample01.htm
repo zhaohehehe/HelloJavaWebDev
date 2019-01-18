@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Logical OR Example 1</title>
+    <script type="text/javascript">
+    	var obj1={ name:"bird"};
+    	var obj2={ name:"fish"};
+
+    	alert(obj1||true);//obj1
+    	alert(false||obj1);//obj1
+    	alert(obj1 || obj1);//obj1
+    	alert(null || null);//null
+    	alert(NaN || NaN);//NaN
+    	alert(undefined || undefined);//undefined
+    	
+        var found = true;
+        var result = (found || someUndeclaredVariable);    //no error
+        alert(result);    //works true
+        
+        var found = false;
+        var result = (found || someUndeclaredVariable);    //error occurs here
+        alert(result);    //this line never executes
+
+
+    </script>
+
+</head>
+<body>
+  
+</body>
+</html>

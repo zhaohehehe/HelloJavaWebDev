@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>struts2</title>
+<style>
+body{
+line-height:35px;
+}
+li.head{
+	font-style:italic;
+	font-size:1.4em;
+	color: #008080;
+}
+dt{
+ color:blue;
+ font-size:1em;
+}
+.content{
+	color: #DAA520;
+	list-style-type:decimal-leading-zero;
+	font-style:normal;
+	font-size:0.9em;
+}
+span{
+ color:blue;
+ font-size:0.9em;
+}
+h1{
+	font-size:1.2em;
+}
+figcaption{
+	font-style:italic;
+}	
+figure{
+	text-align:center;
+}
+</style>
+</head>
+<body>
+<ol>
+	<li class="head">类型转换:<span>类型转换converter的返回值会被Action set/get()，所以类型要一致</span>
+		<ol class="content">
+			<li>类型转换器：
+				<ol>
+					<li>struts2可以使用内建的类型转换器实现自动的转化:对于8个原生数据类型以及Date,String等常见类型;</li>
+					<li>自己指定类型转换方式:对于自定义的对象类型来说;自定义类型转换器需要3个信息:
+						<ol style="color:black">
+							<li>Action的名字</li>
+							<li>Action中待转换的属性名以及该属性对应的了类型转换器</li>
+							<li>Action的名字是通过属性文件名来获得的，该属性对应的类型转换器是通过该key所对应的value来获得的,例如：配置识别User的属性文件UserAction-conversion.properties,在struts2包下，user=com.***.converter.UserConverter</li>
+						</ol>
+						<ol>实例：<br>
+							import ognl.DefaultTypeConveerter<br>
+							public class UserConverter extends DefaultTypeConverter{<br>
+							public Object convertValue(Map context,Object value,Class toType){...} }<br>
+							import com.opensymphony.xwork2.ActionSupport;<br>
+							public class UserAction extends ActionSupport{...}
+						</ol>
+					</li>
+					<li>struts封装的转换器（对2的封装）：import org.apache.struts2.util.StrutsTypeConverter;</li>
+					<li>批量转换，页面form中有多个name="user"的input</li>
+					<li>全局转换：全局转换用的很少，在src目录下创建xwork-conversion.properties文件：待转换的类=转换器的名字；</li>
+				</ol>
+			</li>
+			<li>问题：
+				<ol>
+					<li><span>问题1(可能不成立)：该部分实践过程中，经常出现“HTTP Status 404 - No result defined for action com.zhaohe.study.struts2.RegisterAction and result input”这种错误提示，<br>
+							原因是在Action类中成员变量定义中有Date类型的变量，而jsp页面type="text"，导致无法解析，所以会出现以上问题。<br>
+							解决办法：将input标签的type="date"(html5支持)
+					</span></li>
+					<li><span>问题2：一般当页面表单验证不通过时，也会出现问题1的提示；<br>
+							解决办法：在struts.xml中配置input页面，通常指的就是原输入页面；
+					</span></li>
+				</ol>
+			</li>
+			
+		</ol>
+	</li>
+	<li class="head">struts2标签库
+		<ol class="content">
+			<li>声明：
+				<ol>
+					<li>&lt;%@ taglib prefix="s" uri="/struts-tags"%>//prefix什么都可以,常使用"s"</li>
+					<li>&lt;s:property value="user"/></li>
+				</ol>
+			</li>
+		</ol>
+	</li>
+	<li class="head">自定义/重写方法
+		<ol class="content">
+			<li>execute()
+				<ol>
+					<li>struts.xml文件中指定执行方法，也可以在在action标签中添加method=“myExecuteName”属性自定义execute；</li>
+					<li>但是实际开发过程不建议自定义execute，因为容易造成代码混乱；所以，在实际项目中，可以将不同的逻辑功能对应不同的Action，每个Action中都有struts自带的execute()方法;</li>
+				</ol>
+			</li>
+			<li>输入校验validate()
+				<ol>
+					<li>输入校验:在Action中编写，因为ActionSupport中实现了校验接口，校验提示分为Action级别错误+Field级别错误</li>
+					<li>（1）AddActionError()方法的实现：首先创建一个ArrayList对象，然后将错误信息添加到该ArrayList对象中；<br>
+						（2）调用this.getActionErrors()方法返回Action级别的错误信息列表时，返回的实际上是<span>集合的一个副本</span>,因此对集合副本调用clear()方法清除的依旧是副本中的元素，原集合不受任何影响。即Action级别的错误信息列表对开发者来说是只读的。只有调用this.ClearActionErrors()才可以真正删除；<br>
+					</li>
+					<li>AddFieldError()方法的实现：底层使用LinkedHashMap&lt;String,List&lt;String>>实现的，一个FieldName可以对应多条错误信息</li>
+					<li>Action自定义方法对应的输入校验：自定义输入校验方法名和自定义execute方法名字是有关系的!!!:validateMyExecuteName()<br>
+						<ol>自定义错误提示：
+							<li>对应的配置文件位置：和Action在同级目录下，ActionName.properties(ActionName指的是对应的Action,固定的)</li>
+							<li>文件内容：invalid.fieldvalue（固定）.age（Actions.java中的属性字段）=提示信息（不需要加""）</li>
+						</ol>
+					</li>
+				</ol>
+			</li>
+			<li>执行顺序：先执行validateMyExecuteName()，然后执行validate(),然后自定义myExecuteName(),最后execute()</li>
+		</ol>
+	</li>
+	<li class="head">校验框架：可以通过com/opensymphony/xwork2/validator/validators/default.xml查看校验器类型名称；
+		<ol class="content">
+			<li>配置校验框架的xml配置文件:分为字段优先和校验器优先（可以混用）
+				<ol>字段优先：
+					<li>文件位置和Action同级目录</li>
+					<li>名字为ActionName-validation.xml</li>
+				</ol>
+				<ol>校验器优先：
+					<li>文件位置和Action同级目录</li>
+					<li>名字为ActionName-validation.xml</li>
+				</ol>
+			</li>
+		</ol>
+	</li>
+	<li class="head">Struts2的国际化支持和JDK对国际化的支持
+		<ol class="content">
+			<li>配置提示信息对国际化的支持：
+				<ol>
+					<li>配置package_zh_US.properties类似的属性文件，文件位置和Action同级目录</li>
+					<li>名字是有格式的，不能任意指定</li>
+					<li>可以通过在校验框架的配置文件中通过message元素的key="properties文件中的key"属性指定使用哪一种语言来提示</li>
+				</ol>
+			</li>
+			<li>可能出现转换失败问题的问题：
+				<ol>
+					<li>对于输入的日期格式：中文默认为2015-12-2</li>
+					<li>但是对于英文格式为：12/2/2015</li>
+				</ol>
+			</li>
+		</ol>
+	</li>
+	<li class="head">Struts2框架校验执行顺序：
+		<ol class="content">
+			<li>
+				<ol>
+					<li>先转换</li>
+					<li>首先执行校验框架（xml文件）</li>
+					<li>执行自定义方法的校验方法（validateMyExecute()）</li>
+					<li>执行validate方法（推荐使用）</li>
+				</ol>
+			</li>
+			<li>可能出现转换失败问题的问题：
+				<ol>
+					<li>对于输入的日期格式：中文默认为2015-12-2</li>
+					<li>但是对于英文格式为：12/2/2015</li>
+				</ol>
+			</li>
+		</ol>
+	</li>
+	<li class="head">Struts2的异常处理：
+		<ol class="content">
+			<li>在struts.xml配置异常Bean和结果，
+				<ol>
+					<li>可以在Action中定义局部异常或结果，也可以在package中定义异常或者结果；但是局部优于全局</li>
+				</ol>
+			</li>
+		</ol>
+	</li>
+	<li class="head">Struts2模型驱动：
+		<ol class="content">
+			<li>之前所学内容都是属性驱动，建议使用属性驱动
+				<ol>
+					<img src="../Struts2/images/PDVSMD.png" alt="属性驱动VS模型驱动" width="80%" height="200px"  style="margin-top:0px;">
+				</ol>
+				<ol><span>两种驱动方法都可以实现Preparable接口，作用是让Action完成一些初始化工作，这些工作是放在Preparable接口的prepare方法中完成的，该方法会在execute方法执行之前得到调用。
+				</span></ol>
+			</li>
+		</ol>
+	</li>
+	<li class="head">Struts2访问Servlet API
+		<ol class="content">Struts是基于Servlet的，但是对其进行了很好的封装：
+			<li>Struts有2种方法获取session信息：
+				<ol>
+					<li>真正的Session:<br>
+						<span><code>HttpServletRequest request=ServletActionContext.getRequest();<br>
+		HttpSession session=request.getSession();</code></span>
+					</li>
+					<li>Session底层维护的Map:线程安全的，每个Context都有自己的Session<br>
+						<span><code>ActionContext actionContext=ActionContext.getContext();<br>
+		Map&lt;String, Object> map=actionContext.getSession();</code></span>
+					</li>
+				</ol>
+			</li>
+			<li>服务器端代码的单元测试有2种模式：：
+				<ol>
+					<li>容器内测试:Jetty<br>
+						<span>Java代码中嵌入容器请求服务器创建Servlet对象</span>
+					</li>
+					<li>Mock测试:<br>
+						<span>继承HttpServletRequest、HttpSession、HttpServletResponse等Servlet API</span>
+					</li>
+				</ol>
+			</li>
+		</ol>
+	</li>
+	<li class="head">Struts2项目开发模式，完美实践result-type name="redirectAction/chain/redirect/dispatche...."：
+		<ol class="content">
+			<li>Struts2默认result-type name="dispatcher"</li>
+			<li>struts.xml文件中 result中的参数&lt;param name="username">${username}&lt;/param>类似这种只适合于<span>重定向</span>，对转发没有效果(即和请求转发没有任何关系)</li>
+		</ol>
+		<ol class="content">
+			<li>
+				<img src="../Struts2/images/forwardAdd.png" alt="转发添加" width="80%" height="220px"  style="margin-top:0px;">
+			</li>
+			<li>
+				<img src="../Struts2/images/redirectAdd.png" alt="重定向添加" width="80%" height="350px"  style="margin-top:0px;">
+			</li>
+		</ol>
+	</li>
+	<li class="head">防止表达重复提交两种方式：
+		<ol class="content">
+			<li>通过重定向</li>
+			<li>通过Session Token（Session 令牌）：jsp页面必须使用struts2的标签库:<br>
+				注意：&lt;result name="invalid.token">/tokenFail.jsp&lt;/result><br>
+				页面表单隐藏域中存储令牌（随机数GUID，不变的），服务器端session中也保存着（彼此刷新随机数都会变化）
+			</li>
+		</ol>
+	</li>
+	<li class="head">拦截器：是无状态的，不能写，单例模式;struts2的核心。
+					
+		<dl><dt>1).拦截器的配置：</dt><dd><ol class="content">
+			<li>编写拦截器类（拦截器类的定义）</li>
+			<li>struts.xml中定义拦截器:
+				<ol>
+					<li>在struts-default.xml中定义了好多拦截器，可以通过配置name使用</li>
+					<li>interceptor-stack标签用于组织拦截器，可包括拦截器或者其他的拦截器栈</li>
+					<li>struts有默认的拦截器栈defaultStack，自定义拦截器后，必须将defaultStack放在最后，否则struts的部分功能可能无法使用。</li>
+				</ol>
+			<li>action中使用</li>
+		</ol></dd></dl>
+		<dl><dt>2).拦截器类的定义方式：</dt><dd><ol class="content">
+			<li><span>实现Interceptor接口:</span>
+				<ol>
+					<li>void destroy()</li>
+					<li>void init()</li>
+					<li>public String intercept(ActionInvocation arg0)</li>
+				</ol>
+			</li>
+			<li><span>继承AbstractInterceptor，该类实现了Interceptor接口:</span>
+				<ol>
+					<li>空实现void destroy()</li>
+					<li>空实现void init()</li>
+					<li>public abstract  String intercept(ActionInvocation arg0)</li>
+				</ol>
+			</li>
+			<li><span>方法过滤拦截器MethodFilterInterceptor:默认对execute进行拦截，拦截的方法还是执行的只不过拦截该方法的拦截器不执行；<br>
+					具体应该拦截什么，由applyMethod()决定；
+				</span>
+				<ol>
+					<li>成员变量：底层维护2个集合 protected Set&lt;String> excludeMethods(includeMethods)=Collections.emptySet()空集合。</li>
+					<li>abstract String doIntercept(ActionInvocation arg0)</li>
+				</ol>
+			</li>
+		</ol></dd></dl>
+		<dl><dt>3).ActionInvocation的重要方法：</dt><dd><ol class="content">
+			<li>String invoke()：调用下一个拦截器，如果没有则调用Action</li>
+			<li>Object getAction()：获取关联的Action</li>
+			<li>void addPreResultListener(PreResultListener obj):在Action执行之后和result之前执行，主要用于用过注册PreResultListener接口（观察者模式）监听一些额外的事情</li>
+		</ol></dd></dl>
+		<dl><dt>4).ExecuteAndWaitInterceptor:</dt><dd><ol class="content">
+			<li>如果使用该拦截器，客户端请求服务器时会创建2个进程，一个后台进程用于执行Action，另一个进程用于监控Action是否执行完毕，如果未执行完，会请求wait.jsp页面；如果执行完了，请求success.jsp页面。</li>
+			<li>因为ExecuteAndWaitInterceptor之后的拦截器都不会执行，所以配置该拦截器时，配置信息要放到所有拦截器定义的最后一行。</li>
+			<li>注意：在wait.jsp页面中要配置该HTML标签(每隔5秒刷新，并且带有原来的所有请求参数，可选的值还有get,post)：<br>
+				<span>&lt;meta http-equiv="refresh" content="5;url=&gt;s:url includeParams="all"/>" /></span>
+			</li>
+			<li>可以使用Ajax技术替换，开发时用的不多。</li>
+		</ol></dd></dl>
+	</li>
+	<li class="head">...
+		<figure class="content">
+ 				<img src="../JavaWeb/images/..." alt="javaBeanParam" width="80%" height="160px"  style="margin-top:-30px;">
+  				<figcaption  style="margin:-20px auto"><span>...</span><br></figcaption>
+		</figure>
+	</li>
+	<li class="head">...<br>
+		<div>
+			<div style="float:left">
+				...
+			</div>
+			<div style="float:left">
+			 	<video width="420" controls>
+			 		<source src="../JavaWeb/videos/..." type="video/mp4">
+			 	</video>
+			</div>
+		</div>
+	</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

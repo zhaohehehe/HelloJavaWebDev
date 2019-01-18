@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--maximum-scale=1.0 与 user-scalable=no 一起使用。这样禁用缩放功能后，用户只能滚动屏幕  -->
+<meta name="viewport" content="width=device-width,initial-scale=1.0" charset="UTF-8">                         
+<title>课程一：环境搭建</title>
+<!-- 新 Bootstrap 核心 CSS 文件 -->
+<link href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- 可选的Bootstrap主题文件（一般不使用） -->
+<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap-theme.min.css"></script>
+
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<base href="../../../bootstrapResource">
+</head>
+<body style="color:green">
+<header><h1>2016/9/9:Bootstrap概览</h1></header>
+<h3><strong>语法1：</strong>class="col-sm-9 col-md-6 col-lg-4"适用不同屏幕大小</h3>
+<h3><strong>语法2：</strong>box-shadow: h-shadow v-shadow blur（可选，模糊距离） spread（可选阴影大小） color（阴影颜色） inset;<br>
+<strong style="font-color:green">注意：</strong>inset可选，代表在背景上层添加阴影</h3>
+<h3><strong>语法3：</strong>user-scalable=no在移动设备上不可缩放网页；通常情况下，maximum-scale=1.0 与 user-scalable=no 一起使用。这样禁用缩放功能后，用户只能滚动屏幕</h3>
+<h3></h3>
+<div id="eg1"calss="container">
+	<div class="row">
+		<div class="col-sm-9 col-md-6 col-lg-4" style="background-color:#dedef8;box-shadow:inset 10px 10px 30px yellow;">9</div>
+		<div class="col-sm-3 col-md-6 col-lg-8" style="background-color:black;box-shadow:inset -10px 10px 20px red">3</div>
+	</div>
+</div>
+<h3><strong>语法1：</strong>当a标签内嵌套img标签时，起作用的是img的title属性</h3>
+<h3><strong>语法2：</strong>class="image-responsive"中display 属性设置为 inline-block，元素相对于它周围的内容以内联形式呈现，但与内联不同的是，这种情况下我们可以设置宽度和高度</h3>
+<div id="eg2" class="container">
+	<div style="background-color:#dedef8"><img src="images/bird.jpg" class="image-responsive" alt="响应式图片"/></div>
+</div>
+<h3><strong>语法1：响应式的列重置</strong>class="clearfix visible-xs"超小屏幕才可见,参考：<a href="http://www.runoob.com/bootstrap/bootstrap-responsive-utilities.html" target="_blank">响应式工具</a></h3>
+<h3><strong>语法2：列偏移</strong>.col-xs=*类不支持偏移，但是它们可以简单地通过使用一个空的单元格来实现该效果;为了在大屏幕显示器上使用偏移，请使用 .col-md-offset-*会把一个列的左外边距（margin）增加 * 列，其中 * 范围是从 1 到 11。</h3>
+<h3><strong>语法3：列排序</strong>.col-md-push-*(addTo);.col-md-pull-*(minusTo)</h3>
+<div id="eg3"class="container">
+	<div class="row">
+		<div class="col-xs-6 col-md-3" style="background:red;box-shadow:inset 1px -1px 1px #444, inset -1px 1px 1px #444"><p>3</p></div>
+		<div class="col-xs-6 col-md-3" style="background:red;box-shadow:inset 1px -1px 1px #444, inset -1px 1px 1px #444"><p>3</p></div>
+		<div class="clearfix visible-xs">列重置</div>
+		<div class="col-xs-6 col-md-3" style="background:red;box-shadow:inset 1px -1px 1px #444, inset -1px 1px 1px #444"><p>3</p></div>
+		<div class="col-xs-6 col-md-3" style="background:red;box-shadow:inset 1px -1px 1px #444, inset -1px 1px 1px #444"><p>3</p></div>
+	</div>
+	<h4>列偏移:</h4><br>
+	<div class="row">
+		<div class="col-xs-6 col-md-offset-3" style="background:red;box-shadow:inset 1px -1px 1px #444, inset -1px 1px 1px #444"><p>6</p></div>
+	</div>
+	<h4>列排序:</h4>
+	<div class="row">
+		<div class="col-xs-1 col-xs-push-2" style="background:red;box-shadow:inset 1px -1px 1px #444, inset -1px 1px 1px #444"><p>1</p></div>
+		<div class="col-xs-2 col-xs-pull-1" style="background:red;box-shadow:inset 1px -1px 1px #444, inset -1px 1px 1px #444"><p>2</p></div>
+		<div class="col-xs-3 col-xs-push-6" style="background:red;box-shadow:inset 1px -1px 1px #444, inset -1px 1px 1px #444"><p>3</p></div>
+		<div class="col-xs-6 col-xs-pull-3" style="background:red;box-shadow:inset 1px -1px 1px #444, inset -1px 1px 1px #444"><p>6</p></div>
+	</div>
+	<div class="row">
+		<div class="col-xs-7 col-xs-push-5" style="background:red;box-shadow:inset 1px -1px 1px #444, inset -1px 1px 1px #444"><p>7</p></div>
+		<div class="col-xs-5 col-xs-pull-7" style="background:red;box-shadow:inset 1px -1px 1px #444, inset -1px 1px 1px #444"><p>5</p></div>
+	</div>
+</div>
+<br>
+<br>
+
+
+
+</body>
+
+</html>

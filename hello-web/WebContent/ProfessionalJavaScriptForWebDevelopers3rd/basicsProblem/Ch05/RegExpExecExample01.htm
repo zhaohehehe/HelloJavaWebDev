@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RegExp exec() Example</title>
+    <script type="text/javascript">
+        var text = "mom and dad and baby";
+        
+        var pattern = /mom( and dad( and baby)?)?/gi;//?代表0个或1个匹配项
+        var matches = pattern.exec(text);
+        
+        var pattern2 = /and?(.dad)/gi;// 和 /and(.dad)?/gi结果一样
+        var matches2 = pattern2.exec(text);
+         
+        alert(matches.index);    //0
+        alert(matches.input);    //"mom and dad and baby"
+        alert(matches.length);	 /
+        alert(matches[0]);       //"mom and dad and baby"
+        alert(matches[1]);       //" and dad and baby"
+        alert(matches[2]);       //" and baby"
+        alert(matches2.index);//4
+        alert(matches2.input);//"mom and dad and baby"
+        alert(matches2.length);//2
+        alert(matches2[0]);//and dad
+        alert(matches2[1]);//dad
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

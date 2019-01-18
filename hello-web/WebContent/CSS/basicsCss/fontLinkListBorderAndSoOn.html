@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CSS Font + Link + List</title>
+<style>
+body {font-size:100%;}
+h1 {font-size:2.5em;}
+h2 {font-size:1.875em;}
+p {font-size:0.875em;}
+a.one:link {color:#ff0000;}
+a.one:visited {color:grey;}
+a.one:hover {color:#ffcc00;}
+a.one:active {color:blue;}
+
+a.two:link {color:#ff0000;}
+a.two:visited {color:#0000ff;}
+a.two:hover {font-size:150%;}
+
+a.three:link {color:#ff0000;}
+a.three:visited {color:#0000ff;}
+a.three:hover {background:#66ff66;}
+
+a.four:link {color:#ff0000;}
+a.four:visited {color:#0000ff;}
+a.four:hover {font-family:monospace;}
+
+a.five:link {color:#ff0000;text-decoration:none;}
+a.five:visited {color:#0000ff;text-decoration:none;}
+a.five:hover {text-decoration:underline;}
+a:hover{ background-color:#ff3300;}
+/*列表   */
+ul.a {list-style-type:circle;}
+ul.b {list-style-type:disc;}
+ul.c {list-style-type:square;}
+
+ol.d {list-style-type:armenian;}
+ol.e {list-style-type:cjk-ideographic;}
+ol.f {list-style-type:decimal;}
+ol.g {list-style-type:decimal-leading-zero;}
+ol.h {list-style-type:georgian;}
+ol.i {list-style-type:hebrew;}
+ol.j {list-style-type:hiragana;}
+ol.k {list-style-type:hiragana-iroha;}
+ol.l {list-style-type:katakana;}
+ol.m {list-style-type:katagana-iroha;}
+ol.n {list-style-type:lower-alpha;}
+ol.o {list-style-type:lower-greek;}
+ol.p {list-style-type:lower-latin;}
+ol.q {list-style-type:lower-roman;}
+ol.r {list-style-type:upper-alpha;}
+ol.s {list-style-type:upper-latin;}
+ol.t {list-style-type:upper-roman;}
+
+ol.u {list-style-type:none;}
+ol.v {list-style-type:inherit;}
+</style>
+</head>
+<body>
+<p><a href="#demo1"><h1>1.CSS Web安全字体组合--常用的字体组合--<span> 通用的字体系列</span></h1></a></p>
+<p><a href="#demo2"><h1><span> 2.有效字体demo</span></h1></a></p>
+<p><a href="#demo3"><h1><span> 3.font属性demo</span></h1></a></p>
+<p><a href="#demo4"><h1><span> 4.链接样式demo</span></h1></a></p>
+<p><a href="#demo5"><h1><span> 5.列表属性demo</span></h1></a></p>
+<p><a href="#demo6"><h1><span> 6.border属性demo</span></h1></a></p>
+<p><a href="#demo7"><h1><span> 7.outline属性demo</span></h1></a></p>
+<p><a href="#demo8"><h1><span> 8.margin属性demo</span></h1></a></p>
+<p><a href="#demo9"><h1><span> 9.padding属性demo</span></h1></a></p>
+<p><a href="#demo10"><h1><span>10.dimension属性demo</span></h1></a></p>
+<p><a href="#demo11"><h1><span>11.display属性demo</span></h1></a></p>
+<p><a href="#demo12"><h1><span>12.position属性demo</span></h1></a></p>
+<p><a href="#demo13"><h1><span>13.浮动属性demo</span></h1></a></p>
+<p><a href="http://www.runoob.com/css/css-pseudo-classes.html"><h1><span>14.所有CSS伪类元素</span></h1></a></p>
+<div id="demo1">
+	<h1>CSS Web安全字体组合--常用的字体组合--<span> 通用的字体系列demo</span></h1>
+	<p>font-family属性是多种字体的名称，作为一个"应变"制度，以确保浏览器/操作系统之间的最大兼容性。如果浏览器不支持的第一个字体，它尝试下一个的字体。</p>
+	<p>字体分为通用字体和特定字体，你想要的字体类型如果浏览器找不到，它会从通用的字体类型<b>(serif,sans-serif,Monospace)</b>中找到与你相似的</p>
+	<table border="1">
+		<caption><h2>Serif 字体:Serif字体中字符在行的末端拥有额外的装饰</h2></caption>
+		<thead><tr><th width="55%" align="left">字体</th><th align="left">文本示例</th></tr></thead>
+		<tbody>
+			<tr>
+				<td>Georgia, serif</td>
+				<td>
+					<h2 style="margin-top:0px;font-family: Georgia, serif">This is a heading</h2>
+					<p style="margin-bottom:0px;font-family: Georgia, serif">This is a paragraph</p>
+				</td>
+			</tr>
+			<tr>
+				<td>"Palatino Linotype", "Book Antiqua", Palatino, serif</td>
+				<td>
+					<h2 style="margin-top:0px;font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif">This is a heading</h2>
+					<p style="margin-bottom:0px;font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif">This is a paragraph</p>
+				</td>
+			</tr>
+			<tr>
+				<td>"Times New Roman", Times, serif</td>
+				<td>
+					<h2 style="margin-top:0px;font-family: 'Times New Roman', Times, serif">This is a heading</h2>
+					<p style="margin-bottom:0px;font-family: 'Times New Roman', Times, serif">This is a paragraph</p>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<table border="1">
+		<caption><h2>sans - serif字体:"Sans"是指无 - 这些字体在末端没有额外的装饰</h2></caption>
+		<thead><tr><th width="55%" align="left">字体</th><th align="left">文本示例</th></tr></thead>
+		<tbody>
+			<tr>
+				<td>Arial, Helvetica, sans-serif</td>
+				<td><h2 style="margin-top:0px;font-family: Arial, Helvetica, sans-serif">This is a heading</h2>
+					<p style="margin-bottom:0px;font-family: Arial, Helvetica, sans-serif">This is a paragraph</p>
+				</td>
+			</tr>
+			<tr>
+				<td>Arial Black, Gadget, sans-serif</td>
+				<td><h2 style="margin-top:0px;font-family: Arial Black, Gadget, sans-serif;font-weight:normal">This is a heading</h2>
+					<p style="margin-bottom:0px;font-family: Arial Black, Gadget, sans-serif">This is a paragraph</p>
+				</td>
+			</tr>
+			<tr>
+				<td>"Comic Sans MS", cursive, sans-serif</td>
+				<td><h2 style="margin-top:0px;font-family: 'Comic Sans MS', cursive, sans-serif">This is a heading</h2><p style="margin-bottom:0px;font-family: 'Comic Sans MS', cursive, sans-serif">This is a paragraph</p></td>
+			</tr>
+			<tr>
+				<td>Impact, Charcoal, sans-serif</td>
+				<td><h2 style="margin-top:0px;font-family: Impact, Charcoal, sans-serif;font-weight:normal">This is a heading</h2><p style="margin-bottom:0px;font-family: Impact, Charcoal, sans-serif">This is a paragraph</p></td>
+			</tr>
+			<tr>
+				<td>"Lucida Sans Unicode", "Lucida Grande", sans-serif</td>
+				<td><h2 style="margin-top:0px;font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif">This is a heading</h2><p style="margin-bottom:0px;font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif">This is a paragraph</p></td>
+			</tr>
+			<tr>
+				<td>Tahoma, Geneva, sans-serif</td>
+				<td><h2 style="margin-top:0px;font-family: Tahoma, Geneva, sans-serif">This is a heading</h2><p style="margin-bottom:0px;font-family: Tahoma, Geneva, sans-serif">This is a paragraph</p></td>
+			</tr>
+			<tr>
+				<td>"Trebuchet MS", Helvetica, sans-serif</td>
+				<td><h2 style="margin-top:0px;font-family: 'Trebuchet MS', Helvetica, sans-serif">This is a heading</h2><p style="margin-bottom:0px;font-family: 'Trebuchet MS', Helvetica, sans-serif">This is a paragraph</p></td>
+			</tr>
+			<tr>
+				<td>Verdana, Geneva, sans-serif</td>
+				<td><h2 style="margin-top:0px;font-family: Verdana, Geneva, sans-serif">This is a heading</h2><p style="margin-bottom:0px;font-family: Verdana, Geneva, sans-serif">This is a paragraph</p></td>
+			</tr>
+		</tbody>
+	</table>
+	<table border="1">
+		<caption><h2>Monospace 字体:所有的等宽字符具有相同的宽度</h2></caption>
+		<thead><tr><th width="55%" align="left">字体</th><th align="left">文本示例</th></tr></thead>
+		<tbody>
+			<tr>
+				<td>"Courier New", Courier, monospace</td>
+				<td><h2 style="margin-top:0px;font-family: 'Courier New', Courier, monospace">This is a heading</h2><p style="margin-bottom:0px;font-family: 'Courier New', Courier, monospace">This is a paragraph</p></td>
+			</tr>
+			<tr>
+				<td>"Lucida Console", Monaco, monospace</td>
+				<td><h2 style="margin-top:0px;font-family: 'Lucida Console', Monaco, monospace">This is a heading</h2><p style="margin-bottom:0px;font-family: 'Lucida Console', Monaco, monospace">This is a paragraph</p></td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<div id="demo2">
+	<h1>有效字体demo</h1><p>在所有浏览器中，可以显示相同的文本大小，并允许所有浏览器缩放文本的大小。</p>
+	<h2>1em=16px;字体默认16px</h2>
+	<pre>
+		body {font-size:100%;}
+		h1 {font-size:2.5em;}
+		h2 {font-size:1.875em;}
+		p {font-size:0.875em;}
+	</pre>
+</div>
+<div id="demo3">
+	<dl><h1>font属性demo</h1>
+		<dt>(1)font简写属性：可设置的属性是（按顺序）： "font-style font-variant font-weight font-size/line-height font-family"<br>
+			font-size和font-family的值是必需的。如果缺少了其他值，默认值将被插入，如果有默认值的话。
+		</dt>
+		<dt>(2)font-style属性</dt>
+		<dd>
+			<ol>
+				<li><p style="font-style:normal">normal 默认值。浏览器显示一个标准的字体样式。 </p></li>
+				<li><p style="font-style:italic">italic 浏览器会显示一个斜体的字体样式。  </p></li>
+				<li><p style="font-style:oblique">oblique 浏览器会显示一个倾斜的字体样式。 </p></li>
+				<li><p style="font-style:inherit">inherit 规定应该从父元素继承字体样式。</p></li>
+			</ol>
+		</dd>
+		<dt>(3)font-family属性</dt>
+		<dt>(4)font-size属性</dt>
+		<dd>
+			<ol>
+				<li><p style="font-size:x-small">把字体的尺寸设置为不同的尺寸，默认medium;从 xx-small,x-small,small,medium,large,x-large,xx-large</p></li>
+				<li><p style="font-size:smaller">smaller 把 font-size 设置为比父元素更小的尺寸。</p></li>
+				<li><p style="font-size:larger">larger 把 font-size 设置为比父元素更大的尺寸。</p></li>
+				<li><p style="font-size:20px">length 把 font-size 设置为一个固定的值。 </p></li>
+				<li><p style="font-size:50%">% 把 font-size 设置为基于父元素的一个百分比值。</p></li>
+				<li><p style="font-style:inherit">inherit 规定应该从父元素继承字体尺寸。 </p></li>
+			</ol>
+		</dd>
+		<dt>(5)font-variant 属性主要用于定义小型大写字母文本</dt>
+		<dd>
+			<ol>
+				<li><p style="font-variant:normal">normal 默认值。浏览器会显示一个标准的字体。</p></li>
+				<li><p style="font-variant:small-caps">Small-Caps 浏览器会将小写字母编程大写字母，而且比正常的大写字母小。 </p></li>
+				<li><p style="font-variant:inherit">inherit 规定应该从父元素继承 font-variant 属性的值。  </p></li>
+			</ol>
+		</dd>
+		<dt>(6)font-weight 属性主要用于设置文本的粗细</dt>
+		<dd>
+			<ol>
+				<li><p style="font-weight:normal">默认值。定义标准的字符。 </p></li>
+				<li><p style="font-weight:bold">bold 定义粗体字符。</p></li>
+				<li><p style="font-weight:bolder">bolder 定义更粗的字符。 </p></li>
+				<li><p style="font-weight:lighter">lighter 定义更细的字符。</p></li>
+				<li><p style="font-weight:400"> 400定义由细到粗的字符(100~900)。400 等同于 normal，而 700 等同于 bold。</p></li>
+				<li><p style="font-weight:700"> 700定义由细到粗的字符(100~900)。400 等同于 normal，而 700 等同于 bold。</p></li>
+				<li><p style="font-weight:inherit">inherit 规定应该从父元素继承字体的粗细。</p></li>
+			</ol>
+		</dd>
+		<dt>(7)font的其他属性，<b>注意：</b>字体的呈现效果依赖于浏览器</dt>
+		<dd>
+			<ol>
+				<li><p style="font:caption">和浏览器所使用 captioned 控件的字体相同。</p></li>
+				<li><p style="font:icon">和浏览器使用 icon 标签的字体属性相同。</p></li>
+				<li><p style="font:menu">浏览器使用被下拉列表使用的字体。</p></li>
+				<li><p style="font:message-box">浏览器使用被对话框使用的字体。</p></li>
+				<li><p style="font:small-caption"> caption 字体的小型版本。</p></li>
+				<li><p style="font:status-bar">浏览器使用被窗口状态栏使用的字体。</p></li>
+			</ol>
+		</dd>
+	</dl>
+
+</div>
+<div id="demo4">
+	<h1>链接样式demo</h1>
+	<dl>
+		<dd><p><b><a class="one" href="#" target="_blank">这个链接改变颜色</a></b></p></dd>
+		<dd><p><b><a class="two" href="#" target="_blank">这个链接改变字体大小</a></b></p></dd>
+		<dd><p><b><a class="three" href="#" target="_blank">这个链接改变背景颜色</a></b></p></dd>
+		<dd><p><b><a class="four" href="#" target="_blank">这个链接改变字体类型</a></b></p></dd>
+		<dd><p><b><a class="five" href="#" target="_blank">这个链接改变文字修饰</a></b></p></dd>
+	</dl>
+</div>
+<div id="demo5">
+	<dl><h1>列表属性demo</h1>
+		<dt>(1)列表属性</dt>
+		<dd>
+			<dl><dt><strong>a.</strong>简写列表属性:可以设置的属性（按顺序）:list-style:list-style-type, list-style-position, list-style-image.<br>
+					可以不设置其中的某个值，比如 "list-style:circle inside;" 也是允许的。未设置的属性会使用其默认值。
+				</dt>
+				<dt><strong>b.</strong>list-style-type属性</dt>
+				<dd>
+					<ul class="a">
+						<li>Circle type</li>
+						<li>Tea</li>
+						<li>Coca Cola</li>
+						</ul>
+					<ul class="b">
+						<li>Disc type</li>
+						<li>Tea</li>
+						<li>Coca Cola</li>
+					</ul>
+					<ul class="c">
+						<li>Square type</li>
+						<li>Tea</li>
+						<li>Coca Cola</li>
+					</ul>
+					<ol class="d">
+						<li>Armenian type</li>
+						<li>Tea</li>
+						<li>Coca Cola</li>
+					</ol>
+					<ol class="e">
+						<li>Cjk-ideographic type</li>
+						<li>Tea</li>
+						<li>Coca Cola</li>
+					</ol>
+					<ol class="f">
+						<li>Decimal type</li>
+						<li>Tea</li>
+						<li>Coca Cola</li>
+					</ol>
+					<ol class="g">
+						<li>Decimal-leading-zero type</li>
+						<li>Tea</li>
+						<li>Coca Cola</li>
+					</ol>
+					<ol class="h">
+						<li>Georgian type</li>
+						<li>Tea</li>
+						<li>Coca Cola</li>
+					</ol>
+					<ol class="i">
+						<li>Hebrew type</li>
+						<li>Tea</li>
+						<li>Coca Cola</li>
+					</ol>
+					<ol class="j">
+						<li>Hiragana type</li>
+						<li>Tea</li>
+						<li>Coca Cola</li>
+					</ol>
+					<ol class="k">
+						<li>Hiragana-iroha type</li>
+						<li>Tea</li>
+						<li>Coca Cola</li>
+					</ol>
+					<ol class="l">
+						<li>Katakana type</li>
+						<li>Tea</li>
+						<li>Coca Cola</li>
+					</ol>
+					<ol class="m">
+						<li>Katakana-iroha type</li>
+						<li>Tea</li>
+						<li>Coca Cola</li>
+					</ol>
+					<ol class="n">
+						<li>Lower-alpha type</li>
+						<li>Tea</li>
+						<li>Coca Cola</li>
+					</ol>
+					<ol class="o">
+						<li>Lower-greek type</li>
+						<li>Tea</li>
+						<li>Coca Cola</li>
+					</ol>
+					<ol class="p">
+						<li>Lower-latin type</li>
+						<li>Tea</li>
+						<li>Coca Cola</li>
+					</ol>
+					<ol class="q">
+						<li>Lower-roman type</li>
+						<li>Tea</li>
+						<li>Coca Cola</li>
+					</ol>
+					<ol class="r">
+						<li>Upper-alpha type</li>
+						<li>Tea</li>
+						<li>Coca Cola</li>
+					</ol>
+					<ol class="s">
+						<li>Upper-latin type</li>
+						<li>Tea</li>
+						<li>Coca Cola</li>
+					</ol>
+					<ol class="t">
+						<li>Upper-roman type</li>
+						<li>Tea</li>
+						<li>Coca Cola</li>
+					</ol>
+					<ol class="u">
+						<li>None type</li>
+						<li>Tea</li>
+						<li>Coca Cola</li>
+					</ol>
+					<ol class="v">
+						<li>inherit type</l>
+						<li>Tea</li>
+						<li>Coca Cola</li>
+					</ol>
+				</dd>
+				<dt><strong>c.</strong>list-style-position属性指示如何相对于对象的内容绘制列表项标记。</dt>
+				<dd><ul>
+					<li style="list-style-position:inside">inside 列表项目标记放置在文本以内(在文本处设置标记)，且环绕文本根据标记对齐。</li>
+					<li style="list-style-position:outside">outside 默认值。保持标记位于文本的左侧。列表项目标记放置在文本以外，且环绕文本不根据标记对齐。 </li>
+					<li style="list-style-position:inherit">inherit 规定应该从父元素继承 list-style-position 属性的值。 </li></ul>
+				</dd>
+				<dt><strong>d.</strong>list-style-image 属性使用图像来替换列表项的标记。<br><b>注意:</b> 请始终规定一个 "list-style-type" 属性以防图像不可用。</dt>
+				<dd><ul>
+					<li style="list-style-image:url(http://www.runoob.com/try/demo_source/sqpurple.gif);list-style-type:">url()图像路径</li>
+					<li style="list-style-image:none">默认。无图形被显示。 </li>
+					<li style="list-style-image:inherit">inherit 规定应该从父元素继承 list-style-image 属性的值。 </li></ul>
+				</dd>
+				<dt><strong>e.</strong>initial 关键字用于设置 CSS 属性为它的默认值。initial 关键字可用于任何 HTML 元素上的任何 CSS 属性。</dt>
+				<dd><div style="color:green;font-weight:bold">div中的文本是绿色的。
+						<h2 style="color:initial">div下的h2的文本是initial</h2>
+					</div>
+				</dd>
+				<dt><strong>f.</strong>inherit 关键字指定一个属性应从父元素继承它的值。inherit 关键字可用于任何 HTML 元素上的任何 CSS 属性</dt>
+			</dl>
+		</dd>
+		<dt>(2)上面的例子在所有浏览器中显示并不相同，IE和Opera显示图像标记比火狐，Chrome和Safari更高一点点。如果你想在所有的浏览器放置同样的形象标志，就应使用浏览器兼容性解决方案，过程如下:</dt>
+		<dd><pre>
+			ul{
+ 				list-style-type: none;  //设置列表样式类型为没有删除列表项标记 
+ 				padding: 0px;           //设置填充和边距0px（浏览器兼容性）
+ 				margin: 0px;
+ 			}
+ 			ul li{
+ 				background-image: url(http://www.runoob.com/try/demo_source/sqpurple.gif);
+ 				background-repeat: no-repeat;
+ 				background-position: 0px 5px; 
+ 				padding-left: 14px;    //用padding-left属性把文本置于列表中，即将文字与列表项之间有一定的间距 
+ 			}</pre>
+		</dd>
+	</dl>
+	<hr>	
+</div>
+<div id="demo6">
+	<dl><h1>border属性demo</h1>
+		<dt>(1)border简写属性：简写属性，用于把针对四个边的属性设置在一个声明中。可以设置的属性分别（按顺序）：border-width, border-style,和border-color.<br>
+				如果上述值缺少一个没有关系，例如border：＃FF0000;是允许的。
+		</dt>
+		<dt>(2)border-style属性:用于设置元素所有边框的样式，或者单独地为各边设置边框样式<br>
+				border-style:top right bottom left 属性设置一个元素的四个边框的样式。此属性可以有一到四个值。
+		</dt>
+		<dd>
+			<ol>
+				<li><p style="border-style:none">none定义无边框</p></li>
+				<li><p style="border-style:hidden">hidden 与 "none" 相同。不过应用于表时除外，对于表，hidden 用于解决边框冲突。</p></li>
+				<li><p style="border-style:dotted"> dotted 定义点状边框。在大多数浏览器中呈现为实线。</p></li>
+				<li><p style="border-style:solid"> solid 定义实线</p></li>
+				<li><p style="border-style:double">double 定义双线。双线的宽度等于 border-width 的值。</p></li>
+				<li><p style="border-style:dashed">dashed 定义虚线。在大多数浏览器中呈现为实线。</p></li>
+				<li><p style="border-style:groove;border-color:red">groove 定义 3D 凹槽边框。其效果取决于 border-color 的值。 </p></li>
+				<li><p style="border-style:ridge;border-color:red">ridge 定义 3D 垄状边框。其效果取决于 border-color 的值</p></li>
+				<li><p style="border-style:inset;border-color:red">inset 定义 3D inset 边框。其效果取决于 border-color 的值。</p></li>
+				<li><p style="border-style:outset;border-color:red">outset 定义 3D outset 边框。其效果取决于 border-color 的值。 </p></li>
+				<li><p style="border-style:inherit">inherit 规定应该从父元素继承边框样式。 </p></li>
+			</ol>
+		</dd>
+		<dt>(3)border-width属性设置一个元素的四个边框的宽度。此属性可以有一到四个值。和border-style合用</dt>
+		<dd>
+			<ol>
+				<li><p style="border-style:solid;border-width:thin">thin 定义细的边框。</p></li>
+				<li><p style="border-style:solid;border-width:medium">medium 默认。定义中等的边框。 </p></li>
+				<li><p style="border-style:solid;border-width:thick">thick 定义粗的边框。 </p></li>
+				<li><p style="border-style:solid;border-width:9px">length 允许您自定义边框的宽度。 </p></li>
+				<li><p style="border-style:solid;border-width:inherit">inherit 规定应该从父元素继承边框宽度。 </p></li>
+			</ol>
+		</dd>
+		<dt>(4)border-color属性:简写属性，设置元素的所有边框中可见部分的颜色，或为 4 个边分别设置颜色,和border-style合用</dt>
+		<dd>
+			<ol>
+				<li><p style="border-style:solid;border-color:red blue black green">color 指定背景颜色。在CSS颜色值查找颜色值的完整列表</p></li>
+				<li><p style="border-style:solid;border-color:red blue transparent">transparent 指定边框的颜色应该是透明的。这是默认 </p></li>
+				<li><p style="border-style:solid;border-color:inherit">inherit 指定边框的颜色，应该从父元素继承 </p></li>
+			</ol>
+		</dd>
+		<dt>(5)border-bottom缩写属性设置一个声明中所有底部边框属性。<br>
+				可以设置的属性分别（按顺序）：border-bottom-width, border-bottom-style,和border-bottom-color.<br>
+				如果上述值缺少一个没有关系，例如border-bottom：＃FF0000;是允许的<br>
+				注意务必先声明border-style属性才可以设置border-bottom-width属性。元素必须有边框，你才可以改变宽度。
+		</dt>
+		<dd>
+			<ol>
+				<li><p style="border-style:solid;border-bottom-width:thin">boder-bottom-width的值为(3)中border-width属性的值</p></li>
+				<li><p style="border-style:solid;border-bottom-style:dotted">boder-bottom-style的值为(2)中border-style属性的值</p></li>
+				<li><p style="border-style:solid;border-bottom-color:#ff0000">boder-bottom-color:颜色</p></li>
+				<li><p style="border-bottom:inherit">boder-bottom:inherit</p></li>
+			</ol>
+		</dd>
+		<dt>(6)border-left:boder-bottom-width,boder-bottom-style,boder-bottom-color</dt>
+		<dt>(7)border-top:boder-top-width,boder-top-style,boder-top-color</dt>
+		<dt>(8)border-right:boder-right-width,boder-right-style,boder-right-color</dt>
+	</dl>
+</div>
+<div id="demo7">
+	<dl><h1>outline属性demo</h1>
+		<dt>(1)outline-color</dt>
+		<dd>
+			<ol>
+				<li><p style="border:1px solid red;outline-style:dotted;outline-color:green">color:border是红色,outline是绿色</p></li>
+				<li><p style="outline-style:dotted;outline-color:invert">invert 默认。执行颜色反转（逆向的颜色）。可使轮廓在不同的背景颜色中都是可见。</p></li>
+				<li><p style="outline-style:dotted;outline-color:inherit">inherit 规定应该从父元素继承轮廓颜色的设置。</p></li>
+			</ol>
+			<ol  style="background-color:black;color:white">
+				<li><p style="outline-style:dotted;outline-color:invert">invert,和上面的对比，背景变为黑色，此时outline颜色反转为白色（为了清晰，字体设置成白色）</p></li>
+				<li><p style="outline-style:dotted;outline-color:inherit">inherit 规定应该从父元素继承轮廓颜色的设置。</p></li>
+			</ol>
+		</dd>
+		<dt>(2)outline-style</dt>
+		<dd>
+		<pre>
+		none 默认。定义无轮廓.	dotted 定义点状的轮廓。 	dashed 定义虚线轮廓。 
+		solid 定义实线轮廓.		double 定义双线轮廓。双线的宽度等同于 outline-width 的值。 
+		groove 定义 3D 凹槽轮廓。此效果取决于 outline-color 值。 
+		ridge 定义 3D 凸槽轮廓。此效果取决于 outline-color 值。 
+		inset 定义 3D 凹边轮廓。此效果取决于 outline-color 值。 
+		outset 定义 3D 凸边轮廓。此效果取决于 outline-color 值。 
+		inherit 规定应该从父元素继承轮廓样式的设置。  </pre>
+		</dd>
+		<dt>(3)outline-width:thin,medium(moren),thick,length(*px),inherit</dt>
+	</dl>
+</div>
+<div id="demo8">
+	<dl><h1>margin属性demo</h1><dd>margin大小可以设置像素px,也可以是厘米cm</dd>
+	</dl>
+</div>
+<div id="demo9">
+	<dl><h1>padding属性demo</h1>
+	<dd>padding大小可以设置像素px,也可以是厘米cm
+	 	<p style="padding-top:25px;padding-bottom:25px;padding-right:50px;padding-left:50px;border:1px solid red ">这是一个指定填充边距的段落25 25 50 50
+	 		这是一个指定填充边距的段落这是一个指定填充边距的段落这是一个指定填充边距的段落这是一个指定填充边距的段落这是一个指定填充边距的段落这是一个指定填充边距的段落这是一个指定填充边距的段落这是一个指定填充边距的段落
+	 	</p>
+	</dd>
+	</dl>
+</div>
+<div id="demo10">
+	<dl><h1>dimension属性demo</h1>
+		<dt>(1)height</dt>
+		<dd>
+			<ol>
+				<li><p><strong>auto:</strong> 默认。浏览器会计算出<b>实际</b>的高度。</p> </li>
+				<li><p><strong>length:</strong>使用 px、cm 等单位定义高度。</p></li>
+				<li><p><strong>%:</strong>基于<b>包含它的块级对象</b>的百分比高度。 </p></li>
+				<li><p><strong>inherit:</strong>规定应该从父元素继承 height 属性的值。 </p></li>
+			</ol>
+		</dd>
+		<dt>(2)line-height</dt>
+		<dd>
+			<ol>
+				<li><p>normal 默认。设置合理的行间距。 </p></li>
+				<li><p style="line-height:3">3:number 设置数字，此数字会与当前的字体尺寸相乘来设置行间距。 </p></li>
+				<li><p style="line-height:3px">3px:length 设置固定的行间距。 </p></li>
+				<li><p style="line-height:50%">50%:% 基于当前字体尺寸的百分比行间距。</p></li>
+				<li><p style="line-height:inherit">inherit 规定应该从父元素继承 line-height 属性的值。 </p></li>
+			</ol>
+		</dd>
+		<dt>(3)width:和height类似</dt>
+		<dt>(4)max/min-height和max/min-width</dt>
+		<dd><p><strong>auto:</strong>默认。定义对元素被允许的最大（小）高（宽）度没有限制。</p> 
+			<ol>
+				<li><p style="background-color:green;color:white;min-width:20px;max-width:100px">(min:20px max:100px)<strong>length:</strong>使用 px、cm 等单位定义最大（小）高（宽）度。</p></li>
+				<li><p style="background-color:green;color:white;min-width:120px;max-width:150px">(min:120px max:150px)<strong>%:</strong>基于<b>包含它的块级对象</b>的百分比最大（小）高（宽）度。 </p></li>
+				<li><p style="background-color:green;color:white;min-width:120px;max-width:150px">120-150<strong>test</strong></p></li>
+				<li><p><strong>inherit:</strong>规定应该从父元素继承max/min-height和max/min-width属性的值。 </p></li>
+			</ol>
+		</dd>
+	</dl>
+</div>
+<div id="demo11">
+	<dl><h1>display属性demo</h1>
+		<dt>(1)<b>隐藏元素的方法及区别：</b>display属性设置一个元素应如何显示，visibility属性指定一个元素应可见还是隐藏。</dt>
+		<dd><p>隐藏一个元素可以通过把display属性设置为"none"，或把visibility属性设置为"hidden"。<b>请注意:</b>这两种方法会产生不同的结果:<br>
+				&nbsp;&nbsp;(1)visibility:hidden可以隐藏某个元素，但隐藏的元素仍需占用与未隐藏之前一样的空间。也就是说，该元素虽然被隐藏了，但仍然会影响布局。<br>
+				&nbsp;&nbsp;(2)display:none可以隐藏某个元素，且隐藏的元素不会占用任何空间。也就是说，该元素不但被隐藏了，而且该元素原本占用的空间也会从页面布局中消失。
+			</p>
+		</dd>
+		<dt>(2)display属性</dt>
+		<dd>
+			<ol>
+				<li><p style="background-color:blue;color:white;display:none">none 此元素不会被显示。</p>none 此元素不会被显示。</li> 
+				<li><span>该span没有设置block</span><span>该span没有设置block</span><span style="background-color:blue;color:white;display:block">该span设置block,block 此元素将显示为块级元素，此元素前后会带有换行符。 </span></li>
+				<li>
+					<p><b>要显示为inline的所有元素的display:inline一定要都设置，否则不会有效果</b></p>
+					<p style="display:inline">该p元素设置inline.</p>
+					<p style="display:inline">该p元素设置inline.</p>
+					<p>该h3元素没有设置inline</p> 
+				</li>
+				<li>inline-block 行内块元素。CSS2.1 新增的值
+					<ul><b>使用display:inline-block 作用：</b>
+						<li>方式样式化列表时，既可使得列表元素能按行挨个排列，同时元素还能保持其块属性，比如高和宽、上下边距等。但是对有不同高度内容的元素时，通常要设置对齐方式如vertical-align: top;来使元素顶部对齐。</li>
+					</ul>
+					<ul><b>用display:inline-block;的空白符引起的问题：</b>
+						<li>因为元素之间是行内inline修饰排列的，因此HTML中的空格符也会影响到这个修饰。也就是说，当我们把元素的大小和顺序排列好后，如果在&lt;li&gt;元素之间有空格符，这个空格符将会产生4px的边距</li>
+					</ul>
+				</li> 
+				<li>inline-block实例：
+					<ul>&lt;li&gt;元素换行排列，中间会有空格；而且要设置宽度，否则会换行
+						<li style="background-color:red;display:inline-block;height:100px;width:20%;vertical-align:text-bottom">第一部分vertical-align:text-bottom把元素的底端与父元素字体的底端对齐</li>
+						<li style="background-color:yellow;display:inline-block;height:120px;width:15%;vertical-align:bottom">第二部分vertical-align:bottom把元素的顶端与行中最低的元素的顶端对齐。</li>
+						<li style="background-color:blue;display:inline-block;height:150px;width:10%;vertical-align:bottom">第三部分vertical-align:bottom把元素的顶端与行中最低的元素的顶端对齐。</li>
+					</ul>
+					<ul>&lt;li&gt;元素排列在一行中，不会有空格
+						<li style="background-color:red;display:inline-block">第一部分</li><li style="background-color:yellow;display:inline-block">第二部分</li><li style="background-color:blue;display:inline-block">第三部分</li>
+					</ul>
+				</li>
+				<li>list-item 此元素会作为列表显示
+					<ul><li>外侧li<p style="display:list-item">li中的p元素作为list-item 此元素会作为列表显示</p><p style="display:list-item">list-item 此元素会作为列表显示</p></li></ul>
+				</li>
+				<li>run-in 此元素会根据上下文作为块级元素或内联元素显示。
+					<ul><li><span style="display:run-in">此元素会根据上下文作为块级元素或内联元素显示。</span><span style="display:run-in">此元素会根据上下文作为块级元素或内联元素显示。</span></li></ul>
+				</li>
+				<li>compact CSS 中有值 compact，不过由于缺乏广泛支持，已经从 CSS2.1 中删除。</li>
+				<li>marker CSS 中有值 marker，不过由于缺乏广泛支持，已经从 CSS2.1 中删除。 </li>
+				<li>table 此元素会作为块级表格来显示（类似 &lt;table>），表格前后带有换行符。 </li>
+				<li>inline-table 此元素会作为内联表格来显示（类似 &lt;table>），表格前后没有换行符。 </li>
+				<li>table-row-group 此元素会作为一个或多个行的分组来显示（类似 &lt;tbody>）。</li>
+				<li>table-header-group 此元素会作为一个或多个行的分组来显示（类似 &lt;thead>）。</li>
+				<li>table-footer-group 此元素会作为一个或多个行的分组来显示（类似 &lt;tfoot>）。 </li>
+				<li>table-row 此元素会作为一个表格行显示（类似 &lt;tr>）。 </li>
+				<li>table-column-group 此元素会作为一个或多个列的分组来显示（类似 &lt;colgroup>）。 </li>
+				<li>table-column  此元素会作为一个单元格列显示（类似 &lt;col>） </li>
+				<li>table-cell 此元素会作为一个表格单元格显示（类似 &lt;td> 和 &lt;th>） </li>
+				<li>table-caption 此元素会作为一个表格标题显示（类似 &lt;caption>） </li>
+				<li>inherit 规定应该从父元素继承 display 属性的值。 </li>
+			</ol>
+		</dd>
+		<dt>(3)visibility</dt>
+		<dd>
+			<ol>
+				<li>visible 默认值。元素是可见的。</li>
+				<li>hidden 元素是不可见的。 </li>
+				<li>collapse 当在表格元素中使用时，此值可删除一行或一列，但是它不会影响表格的布局。被行或列占据的空间会留给其他内容使用。如果此值被用在其他的元素上，会呈现为 "hidden"。
+					<table border="1"style="border:5px groove blue;border-collapse:collapse">
+						<thead><th>姓名</th><th>年龄</th></thead>
+						<tbody>
+							<tr><td>张三</td><td>23</td></tr>
+							<tr><td>李四</td><td style="visibility:collapse">22</td></tr>
+							<tr style="visibility:collapse"><td>王五</td><td>26</td></tr>
+						</tbody>
+					</table>
+				</li>
+				<li>inherit 规定应该从父元素继承 visibility 属性的值。</li>
+			</ol>
+		</dd>
+	</dl>
+</div>
+<div id="demo12">
+	<dl><h1>position属性demo</h1>
+		<dt>1.Static 定位:HTML元素的默认值，即没有定位，元素出现在正常的流中。静态定位的元素不会受到top, bottom, left, right影响。</dt>
+		<dt>2.Fixed 定位:元素的位置相对于浏览器窗口是固定位置。即使窗口是滚动的它也不会移动.</dt>
+		<dt>3.Relative 定位:相对定位元素的定位是相对其正常位置。</dt>
+		<dt>4.Absolute 定位:绝对定位的元素的位置相对于最近的已定位父元素，如果元素没有已定位的父元素，那么它的位置相对于&lt;html>.</dt>
+		<dt><b>注意：</b>IE8和早期有一个问题，当使用position属性时。如果一个容器元素（在本例中&lt;div class="container">）指定的宽度，!DOCTYPE声明是缺失，IE8和早期版本会在右边增添17px的margin。<br>
+				这似乎是一个滚动的预留空间。使用position属性时始终设置在DOCTYPE声明中！
+		</dt>
+		<dd>(1)clip属性:剪辑一个绝对定位的元素<b>注意：</b>如果先有"overflow：visible"，clip属性不起作用
+			<ol>
+				<li >shape 设置元素的形状。唯一合法的形状值是：rect (top（剪）, right（留）, bottom（留）, left（剪）)
+					<div><img src="http://www.runoob.com/try/demo_source/img_tree.png" width=100px; height=100px; style="position:absolute;clip:rect(0px,60px,70px,0px);"></div>
+				</li>
+				<li>auto 默认值。不应用任何剪裁。</li>
+				<li>inherit 规定应该从父元素继承 clip 属性的值</li>
+			</ol> 
+		</dd>
+		<dd>(2)cursor属性定义了鼠标指针放在一个元素边界范围内时所用的光标形状 
+			<ol>
+				<li><p style="cursor:url(http://www.runoob.com/try/demo_source/img_tree.png)">url</p>url:需使用的自定义光标的 URL。注释：请在此列表的末端始终定义一种普通的光标，以防没有由 URL 定义的可用光标.</li>
+				<li><p style="cursor:default">default</p>default 默认光标（通常是一个箭头） </li>
+				<li><p style="cursor:auto">auto</p>auto 默认。浏览器设置的光标。</li>
+				<li><p style="cursor:crosshair">crosshair</p>crosshair 光标呈现为十字线。</li>  
+				<li><p style="cursor:pointer">pointer</p>pointer 光标呈现为指示链接的指针（一只手）</li> 
+				<li><p style="cursor:move">move</p>move 此光标指示某对象可被移动。 </li>
+				<li><p style="cursor:e-resize">e-resize</p>e-resize 此光标指示矩形框的边缘可被向右（东）移动。</li> 
+				<li><p style="cursor:ne-resize">ne-resize</p>ne-resize 此光标指示矩形框的边缘可被向上及向右移动（北/东）。 </li>
+				<li><p style="cursor:nw-resize">nw-resize</p>nw-resize 此光标指示矩形框的边缘可被向上及向左移动（北/西）。</li> 
+				<li><p style="cursor:n-resize">n-resize</p>n-resize 此光标指示矩形框的边缘可被向上（北）移动。</li> 
+				<li><p style="cursor:se-resize">se-resize</p>se-resize 此光标指示矩形框的边缘可被向下及向右移动（南/东）。</li> 
+				<li><p style="cursor:sw-resize">sw-resize</p> sw-resize 此光标指示矩形框的边缘可被向下及向左移动（南/西）。 </li>
+				<li><p style="cursor:s-resize">s-resize</p>s-resize 此光标指示矩形框的边缘可被向下移动（北/西）。 </li>
+				<li><p style="cursor:w-resize">w-resize</p> w-resize此光标指示矩形框的边缘可被向左移动（西）。 </li>
+				<li><p style="cursor:text">text</p>text 此光标指示文本。 </li>
+				<li><p style="cursor:wait">wait</p> wait 此光标指示程序正忙（通常是一只表或沙漏）。</li> 
+				<li><p style="cursor:help">help</p>help 此光标指示可用的帮助（通常是一个问号或一个气球）。 </li>
+			</ol>
+		</dd>
+		<dd>(3)overflow属性指定如果内容溢出一个元素的框，会发生什么。
+			<ol>
+				<li>visible 默认值。内容不会被修剪，会呈现在元素框之外。<div style="width:240px;height:50px;background-color:grey;color:red;overflow:visible">You can use the overflow property when you want to have better control of the layout. The default value is visible</div><br></li>
+				<li>hidden 内容会被修剪，并且其余内容是不可见的。<div style="width:240px;height:50px;background-color:grey;color:red;overflow:hidden">You can use the overflow property when you want to have better control of the layout. The default value is visible</div><br></li> 
+				<li>scroll 内容会被修剪，但是浏览器会显示滚动条以便查看其余的内容。<div style="width:240px;height:50px;background-color:grey;color:red;overflow:scroll">You can use the overflow property when you want to have better control of the layout. The default value is visible</div><br></li> 
+				<li>auto 如果内容被修剪，则浏览器会显示滚动条以便查看其余的内容。<div style="width:240px;height:50px;background-color:grey;color:red;overflow:auto">You can use the overflow property when you want to have better control of the layout. The default value is visible</div><br></li> 
+				<li>inherit 规定应该从父元素继承 overflow 属性的值。<div style="width:240px;height:50px;background-color:grey;color:red;overflow:inherit">You can use the overflow property when you want to have better control of the layout. The default value is visible</div><br></li> 
+			</ol>
+		</dd>
+		<dd>(4)overflow-y(overflow-x)属性指定如果它溢出了元素的内容区是否剪辑顶部/底部边缘内容
+			<ol>
+				<li>visible 不裁剪内容，可能会显示在内容框之外。<div style="width:240px;height:50px;background-color:grey;color:red;overflow-y:visible">You can use the overflow property when you want to have better control of the layout. The default value is visible</div><br></li>
+				<li>hidden 裁剪内容 - 不提供滚动机制。<div style="width:240px;height:50px;background-color:grey;color:red;overflow-y:hidden">You can use the overflow property when you want to have better control of the layout. The default value is visible</div><br></li> 
+				<li>scroll 裁剪内容 - 提供滚动机制。 <div style="width:240px;height:50px;background-color:grey;color:red;overflow-y:scroll">You can use the overflow property when you want to have better control of the layout. The default value is visible</div><br></li> 
+				<li>auto 如果溢出框，则应该提供滚动机制。 <div style="width:240px;height:50px;background-color:grey;color:red;overflow-y:auto">You can use the overflow property when you want to have better control of the layout. The default value is visible</div><br></li> 
+				<li>no-display 如果内容不适合内容框，则删除整个框。 <div style="width:240px;height:50px;background-color:grey;color:red;overflow-y:no-display">You can use the overflow property when you want to have better control of the layout. The default value is visible</div><br></li>
+				<li>no-content 如果内容不适合内容框，则隐藏整个内容。  <div style="width:240px;height:50px;background-color:grey;color:red;overflow-y:no-content">You can use the overflow property when you want to have better control of the layout. The default value is visible</div><br></li>
+			</ol>
+		</dd>
+		<dd>(5)z-index 属性指定一个元素的堆叠顺序。拥有更高堆叠顺序的元素总是会处于堆叠顺序较低的元素的前面。<br>
+				<b>注意：</b> z-index 进行定位元素(position:absolute, position:relative, or position:fixed)。
+			<ol>
+				<li>auto 默认。堆叠顺序与父元素相等。 </li>
+				<li>number 设置元素的堆叠顺序。
+					<div style="position:relative;border:2px solid red;height:70px">
+						<h3>This is a h3.</h3>
+						<img style="position:absolute;top:0px;left:10px;z-index:-1" src="http://www.runoob.com/try/demo_source/img_tree.png" width="60px" height="60px">
+					</div> 
+				</li>
+				<li>inherit 规定应该从父元素继承 z-index 属性的值.</li>
+			</ol>
+		</dd>
+	</dl>
+</div>
+<div id="demo13">
+	<dl><h1>浮动属性demo</h1>
+		
+		<dd>(1)float
+			<ol>
+				<li>left/right 元素向左(右)浮动。</li>
+				<li>none 默认值。元素不浮动，并会显示在其在文本中出现的位置。 </li>
+				<li>inherit 规定应该从父元素继承 float 属性的值。 </li>
+			</ol> 
+		</dd>
+		<dd>(2)clear 
+			<ol>
+				<li>left 在左侧不允许浮动元素。 </li>
+				<li>right 在右侧不允许浮动元素。</li> 
+				<li>both 在左右两侧均不允许浮动元素。</li> 
+				<li>none 默认值。允许浮动元素出现在两侧。</li> 
+				<li>inherit 规定应该从父元素继承 clear 属性的值。</li> 
+			</ol>
+		</dd>
+		<dd><p>(3)示例</p>
+			<ol style="float:left;">
+				<li style="display:inline"><a href="#">one</a></li>
+				<li style="display:inline"><a href="#">two</a></li>
+				<li style="display:inline"><a href="#">three</a></li>
+			</ol>
+			<ol style="float:left;">
+				<li style="display:inline"><a href="#">one</a></li>
+				<li style="display:inline"><a href="#">two</a></li>
+				<li style="display:inline"><a href="#">three</a></li>
+			</ol>
+		</dd>
+	</dl>
+</div>
+</body>
+</html>

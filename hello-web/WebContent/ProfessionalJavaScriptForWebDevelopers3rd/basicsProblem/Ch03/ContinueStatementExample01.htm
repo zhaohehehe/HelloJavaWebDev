@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Continue Statement Example 2</title>
+    <script type="text/javascript">
+        var num = 0;
+        
+        outermost:
+        for (var i=0; i < 10; i++) {
+             for (var j=0; j < 10; j++) {
+            	 document.write(i);
+            	 document.write(j);
+            	 document.write("\n");
+                if (i == 5 && j == 5) {
+                    continue outermost ;
+               //(1)如果continue，则continue会从该位置继续执行内层循环，即从i=5;j=6开始，然后i=5;j=7,8,9 num=99;
+               //(2)如果continue outermost，会直接跳到外层for循环，从i=6;j=0开始执行，然后i=6;j=1,2,3,...,9  num=95
+               //(3)如果是 break outermost，则会跳出内外循环，不再执行，num=55;
+               //(4)如果只有break,则和(2)一样
+                }
+                num++;
+            }
+        }
+        
+        alert(i);//10  for和while一样，最终的值是跳出条件;而且ECMAScript中没有块级作用域，所以循环内部定义的变量外部也可以访问到
+        alert(num);    //95
+
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

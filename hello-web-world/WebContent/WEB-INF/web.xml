@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>HelloWebWorld</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <servlet-name>HelloServlet</servlet-name>
+    <servlet-class>com.shengsiyuan.study.servlet.ServletAccess</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>com.shengsiyuan.study.servlet.LoginServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>DoubleColorBallServlet</servlet-name>
+    <servlet-class>com.shengsiyuan.study.servlet.DoubleColorBallServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>MyForwardServlet</servlet-name>
+  	<servlet-class>com.shengsiyuan.study.servlet.MyForwardServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>MySendRedirectServlet</servlet-name>
+  	<servlet-class>com.shengsiyuan.study.servlet.MySendRedirectServlet</servlet-class>
+  </servlet>
+   <servlet>
+  	<servlet-name>MyCustomerizedHttpServlet</servlet-name>
+  	<servlet-class>com.shengsiyuan.study.servlet.MyCustomerizedHttpServlet</servlet-class>
+  	<load-on-startup>1</load-on-startup>
+  </servlet>
+   <servlet>
+  	<servlet-name>ServletContextPageCounterServlet</servlet-name>
+  	<servlet-class>com.shengsiyuan.study.servlet.ServletContextPageCounterServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>CookieServlet</servlet-name>
+  	<servlet-class>com.shengsiyuan.study.servlet.CookieServlet</servlet-class>
+  </servlet>
+  
+  
+  
+  
+  
+
+
+  <servlet-mapping>
+  	<servlet-name>CookieServlet</servlet-name>
+  	<url-pattern>/CookieServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ServletContextPageCounterServlet</servlet-name>
+  	<url-pattern>/ServletContextPageCounterServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>MyCustomerizedHttpServlet</servlet-name>
+  	<url-pattern>/MyCustomerizedHttpServlet</url-pattern>
+  </servlet-mapping>
+   <servlet-mapping>
+  	<servlet-name>MySendRedirectServlet</servlet-name>
+  	<url-pattern>/MySendRedirectServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>MyForwardServlet</servlet-name>
+  	<url-pattern>/MyForwardServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DoubleColorBallServlet</servlet-name>
+    <url-pattern>/DoubleColorBallServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/LoginServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>HelloServlet</servlet-name>
+    <url-pattern>/HelloServlet</url-pattern>
+  </servlet-mapping>
+</web-app>

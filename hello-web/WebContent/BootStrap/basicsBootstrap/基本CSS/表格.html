@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--maximum-scale=1.0 与 user-scalable=no 一起使用。这样禁用缩放功能后，用户只能滚动屏幕  -->
+<meta name="viewport" content="width=device-width,initial-scale=1.0" charset="UTF-8">                         
+<title>表格</title>
+<!-- 新 Bootstrap 核心 CSS 文件 -->
+<link href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- 可选的Bootstrap主题文件（一般不使用） -->
+<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap-theme.min.css"></script>
+
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<base href="../../../bootstrapResource">
+</head>
+<body>
+<h3><cite>可选表格样式</cite></h3>
+<table class="table">
+	<caption>基本的表格布局</caption>
+	<thead>
+		<tr><th>姓名</th><th>年龄</th></tr>
+	</thead>
+	<tbody>
+		<tr><td>小明</td><td>8</td></tr>
+		<tr><td>小红</td><td>7</td></tr>
+	</tbody>
+</table>
+<table class="table table-striped">
+	<caption>条纹表格布局</caption>
+	<thead>
+		<tr><th>姓名</th><th>年龄</th></tr>
+	</thead>
+	<tbody>
+		<tr><td>小明</td><td>8</td></tr>
+		<tr><td>小红</td><td>7</td></tr>
+	</tbody>
+</table>
+<table class="table table-bordered">
+	<caption>边框表格布局</caption>
+	<thead>
+		<tr><th>姓名</th><th>年龄</th></tr>
+	</thead>
+	<tbody>
+		<tr><td>小明</td><td>8</td></tr>
+		<tr><td>小红</td><td>7</td></tr>
+	</tbody>
+</table>
+<table class="table table-hover">
+	<caption>悬停表格布局</caption>
+	<thead>
+		<tr><th>姓名</th><th>年龄</th></tr>
+	</thead>
+	<tbody>
+		<tr><td>小明</td><td>8</td></tr>
+		<tr><td>小红</td><td>7</td></tr>
+	</tbody>
+</table>
+<table class="table table-condensed">
+	<caption>精简表格布局</caption>
+	<thead>
+		<tr><th>姓名</th><th>年龄</th></tr>
+	</thead>
+	<tbody>
+		<tr><td>小明</td><td>8</td></tr>
+		<tr><td>小红</td><td>7</td></tr>
+	</tbody>
+</table>
+<table class="table table-bordered table-hover table-striped table-condensed">
+	<caption>所有样式表格布局</caption>
+	<thead>
+		<tr><th>姓名</th><th>年龄</th></tr>
+	</thead>
+	<tbody>
+		<tr><td>小明</td><td>8</td></tr>
+		<tr><td>小红</td><td>7</td></tr>
+	</tbody>
+</table>
+<h3><cite>表格上下文类</cite></h3>
+<table class="table table-bordered table-hover table-striped table-condensed">
+	<caption>所有样式表格布局</caption>
+	<thead>
+		<tr><th>姓名</th><th>年龄</th></tr>
+	</thead>
+	<tbody>
+		<tr class="active"><td>小明</td><td>8</td></tr>
+		<tr class="success"><td>小白</td><td>8</td></tr>
+		<tr class="warning"><td>小亮</td><td>7</td></tr>
+		<tr class="danger"><td>小红</td><td>7</td></tr>
+	</tbody>
+</table>
+<h3>
+	<cite>响应式表格</cite>
+	<small>通过把任意的 .table 包在 .table-responsive class 内，您可以让表格水平滚动以适应小型设备（小于 768px）。当在大于 768px 宽的大型设备上查看时，您将看不到任何的差别。</small>
+</h3>
+<div class="table-responsive">
+	<table class="table table-bordered table-hover table-striped table-condensed">
+		<caption>所有样式表格布局</caption>
+		<thead>
+			<tr><th>姓名</th><th>年龄</th><th>学号</th><th>学校</th><th>备注</th></tr>
+		</thead>
+		<tbody>
+			<tr class="active"><td>小明</td><td>18</td><td>201293886</td><td>大连理工大学</td><td>1111111111111111111111111111111111111111111111111111111111111</td></tr>
+			<tr class="success"><td>小白</td><td>18</td><td>201293887</td><td>大连理工大学</td><td>1111111111111111111111111111111111111111111111111111111111111</td></tr>
+			<tr class="warning"><td>小亮</td><td>17</td><td>201293888</td><td>大连理工大学</td><td>1111111111111111111111111111111111111111111111111111111111111</td></tr>
+			<tr class="danger"><td>小红</td><td>17</td><td>201293889</td><td>大连理工大学</td><td>1111111111111111111111111111111111111111111111111111111111111</td></tr>
+		</tbody>
+	</table>
+</div>
+
+</body>
+</html>

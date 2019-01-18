@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Function Type Arguments Example</title>
+    <script type="text/javascript">
+//递归中存在紧密耦合问题   
+    /* 	function factorial(num){
+    		if(num<=1){
+    			return 1;
+    		} else{
+    			return num * factorial(num-1);				//返回的是一个指针
+    		}
+    	}
+    	var trueFactorial = factorial;
+    	alert(factorial(5));//120
+    	alert(trueFactorial(5));//120
+    	factorial=function(){ 
+    		return 0; 
+    		}
+    	alert(factorial(5));//0
+    	alert(trueFactorial(5));//0 */
+    	
+//但是解除耦合之后；
+      function factorial(num){
+            if (num <= 1) {
+                return 1;
+            } else {
+                return num * arguments.callee(num-1);		//返回的是一个引用，所以无论之后怎么变，trueFactorial(5)=120,除非为trueFactorial重新赋值
+            }
+        }
+        var trueFactorial = factorial;//trueFactorial保存的是一个引用
+        alert(factorial(5));//120
+        alert(trueFactorial(5));//120
+        factorial = function(){
+            return 0;
+        };
+        alert(factorial(5));       //0
+        alert(trueFactorial(5));   //120  结果不受影响
+        trueFactorial=factorial;
+        alert(trueFactorial(5));   //0
+        
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

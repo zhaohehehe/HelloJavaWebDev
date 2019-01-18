@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--maximum-scale=1.0 与 user-scalable=no 一起使用。这样禁用缩放功能后，用户只能滚动屏幕  -->
+<meta name="viewport" content="width=device-width,initial-scale=1.0" charset="UTF-8">                         
+<title>响应式工具</title>
+<!-- 新 Bootstrap 核心 CSS 文件 -->
+<link href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- 可选的Bootstrap主题文件（一般不使用） -->
+<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap-theme.min.css"></script>
+
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<base href="../../../bootstrapResource">
+</head>
+
+<body>
+<hr>
+<table class="table table-bordered table-hover table-striped">
+	<thead>
+        <tr>
+          <th>超小屏幕<br>手机 (&lt;768px)</th>
+          <th>小屏幕<br>平板 (≥768px)</th>
+          <th>中等屏幕<br>桌面 (≥992px)</th>
+          <th>大屏幕<br>桌面 (≥1200px)</th>
+        </tr>
+   </thead>
+</table>
+<h2>打印类</h2>
+<p>下表列出了打印类。使用这些切换打印内容。</p>
+<table class="reference table table-bordered table-hover table-striped">
+      <thead>
+        <tr>
+          <th>class</th>
+          <th>浏览器</th>
+          <th>打印机</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            .visible-print-block<br>
+            .visible-print-inline<br>
+            .visible-print-inline-block
+          </td>
+          <td class="is-hidden">隐藏</td>
+          <td>可见</td>
+        </tr>
+        <tr>
+          <td>.hidden-print</td>
+          <td>可见</td>
+          <td class="is-hidden">隐藏</td>
+        </tr>
+      </tbody>
+</table>
+
+<div class="container" style="padding: 40px;">
+    <div class="row visible-on">
+        <div class="col-xs-6 col-sm-3" style="background-color: #dedef8;
+        box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+            <span class="hidden-xs">特别小型</span>
+            <span class="visible-xs">✔ 在特别小型设备上可见</span>
+        </div>
+        <div class="col-xs-6 col-sm-3" style="background-color: #dedef8;
+        box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+            <span class="hidden-sm">小型</span>
+            <span class="visible-sm">✔ 在小型设备上可见</span>
+        </div>
+        <div class="clearfix visible-xs"></div>
+        <div class="col-xs-6 col-sm-3" style="background-color: #dedef8;
+        box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+            <span class="hidden-md">中型</span>
+            <span class="visible-md">✔ 在中型设备上可见</span>
+        </div>
+        <div class="col-xs-6 col-sm-3" style="background-color: #dedef8;
+        box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+            <span class="hidden-lg">大型</span>
+            <span class="visible-lg">✔ 在大型设备上可见</span>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

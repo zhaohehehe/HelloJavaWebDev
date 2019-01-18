@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Number Example 4</title>
+    <script type="text/javascript">
+          
+        var num1 = Number("Hello world!");  //NaN
+        var num2 = Number("");              //0
+        var num3 = Number("000011");        //11
+        var num4 = Number(true);            //1
+        var num5 = Number(null);			//0
+        var num6 = Number(undefined);		//NaN
+        var num7 = Number(1.2);				//1.2 转换成对应的浮点数值
+        var num8 = Number(0xf);				//15
+        var obj = {
+        		name:"bird",
+        		age:3
+        };
+        var obj1={
+        		valueOf:function(){
+        			return "Hello world!";
+        		}
+        };
+        
+        var num9 = parseInt("1234blue");    //1234
+        var num10 = parseInt("");            //NaN
+        var num11 = Number();				//0
+        var num12 = parseInt("0xA");         //10 - hexadecimal
+        var num13 = parseInt(22.5);          //22
+        var num14 = parseInt("70");          //70 - decimal
+        var num15 = parseInt("0xf");         //15 - hexadecimal
+        var num16 = parseInt("F", 16);        //15 设置基数 2,8,10,16
+		var num17 = parseInt("F");            //NaN
+		
+		//parseFloat只能解析10进制数
+		var num18 = parseFloat("1234blue");    //1234 - integer
+	    var num19 = parseFloat("0xA");         //0      十六进制格式的字符串始终会被换成零
+	    var num20 = parseFloat("22.5");        //22.5
+	    var num21 = parseFloat("22.34.5");     //22.34
+	    var num22 = parseFloat("0908.5");      //908.5
+	    var num23 = parseFloat("3.125e7");     //31250000
+
+        alert(num1);
+        alert(num2);
+        alert(num3);
+        alert(num4);
+        alert(num5);
+        alert(num6);
+        alert(num7);
+        alert(num8);
+        alert(obj);// object 先调用对象的 valueOf()方法，如果转换结果为NaN，则调用对象的toString()
+        alert(obj1);//object
+        alert(obj1.valueOf());//Hello world!
+        alert(obj1.toString());//object
+        
+        alert(num9);
+        alert(num10);
+        alert(num11);
+        alert(num12);
+        alert(num13);
+        alert(num14);
+        alert(num15);
+ 
+		alert(num16);
+		alert(num17);
+		
+        alert(num18);
+        alert(num19);
+        alert(num20);
+        alert(num21);
+        alert(num22);
+        alert(num23);
+
+    </script>
+
+</head>
+<body>
+  
+</body>
+</html>

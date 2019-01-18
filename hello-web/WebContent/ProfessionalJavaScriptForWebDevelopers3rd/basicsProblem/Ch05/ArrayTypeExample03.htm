@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Array Type Example 8</title>
+    <script type="text/javascript">
+    
+    	var colors = ["red", "blue", "green"];    //creates an array with three strings
+   	/* 	alert(colors.toString());    //red,blue,green
+        alert(colors.valueOf());     //red,blue,green
+        alert(colors);               //red,blue,green
+ */
+        var person1 = {
+            toLocaleString : function () {
+                return "∆ÎÃÏ¥Û •";
+            },
+            
+            toString : function() {
+                return "ÀÔŒÚø’";
+            }
+        };
+        
+        var person2 = {
+            toLocaleString : function () {
+                return "÷Ì∞ÀΩ‰";
+            },
+            
+            toString : function() {
+                return "÷Ì∞ÀΩ‰";
+            }
+        };
+        
+        var people = [person1, person2];
+        alert(people);                      //ÀÔŒÚø’£¨÷Ì∞ÀΩ‰
+        alert(people.toString());           //ÀÔŒÚø’£¨÷Ì∞ÀΩ‰
+        alert(people.toLocaleString());     //∆ÎÃÏ¥Û •£¨÷Ì∞ÀΩ‰
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

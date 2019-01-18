@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Function as an Argument Example</title>
+    <script type="text/javascript">
+    //example 1   
+    	function callBirdFunction(birdFunction,callArgument){
+    		return birdFunction(callArgument);
+    	}
+    	function birdFunction(callArgument){
+    		return "Hello!I am "+callArgument[0]+"-"+callArgument[1];
+    	}
+    /* 	error!!无法接受正确参数
+    	function birdSecretFunction(){
+    		return "Hello!I am "+arguments[0]+"-"+arguments[1];
+    	} 
+    	var message = callBirdFunction(birdSecretFunction,"bird","Angela");//Hello!I am bird-undefined
+     */
+    	var message = callBirdFunction(birdFunction,["bird","Angela"]);
+    	alert(message);//Hello!I am bird-Angela
+    	
+    //example 2   	
+        function callSomeFunction(someFunction, someArgument){
+            return someFunction(someArgument);
+        }
+
+        function add10(num){
+            return num + 10;
+        }
+        
+        var result1 = callSomeFunction(add10, 10);
+        alert(result1);   //20
+        
+    //example 3     
+        function getGreeting(name){
+            return "Hello, " + name;
+        }
+        
+        var result2 = callSomeFunction(getGreeting, "Nicholas");
+        alert(result2);   //Hello, Nicholas 
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

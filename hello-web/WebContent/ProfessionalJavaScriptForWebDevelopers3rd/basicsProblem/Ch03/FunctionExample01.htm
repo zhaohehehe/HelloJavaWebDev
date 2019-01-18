@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Function Example 4</title>
+    <script type="text/javascript">
+        function sayHi(name, message) {
+            return;
+            alert("Hello " + name + ", " + message);    //never called
+        }
+
+        sayHi("Nicholas", "how are you today?");
+        
+        function addSomeNumber(num){
+            return num + 100;
+        }
+        
+        function addSomeNumber(num,num2) {
+            return num + 200;
+        }
+        
+        var result = addSomeNumber(100);    //300
+        alert(result);
+        
+    </script>
+</head>
+<body>
+
+</body>
+</html>

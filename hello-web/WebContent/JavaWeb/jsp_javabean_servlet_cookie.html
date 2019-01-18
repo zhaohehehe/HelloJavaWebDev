@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jsp和servlet</title>
+<style>
+body{
+line-height:35px;
+}
+li.head{
+	font-style:italic;
+	font-size:1.4em;
+	color: #008080;
+}
+.content{
+	color: #DAA520;
+	list-style-type:decimal-leading-zero;
+	font-style:normal;
+	font-size:0.9em;
+}
+span{
+ color:blue;
+ font-size:0.9em;
+}
+h1{
+	font-size:1.2em;
+}
+figcaption{
+	font-style:italic;
+}	
+figure{
+	text-align:center;
+}
+</style>
+</head>
+<body>
+<ol>
+	<li class="head">println()指的是代码本身换行；print()不换行；</li>
+	<li class="head">jsp和servlet其实是一样的：可以查看C:\Program Files\Java\tomcat-8.0.23\work\Catalina\localhost\HelloWeb\org\apache\jsp目录下的文件<br>
+		<h1 style="color:red;display:">*.jsp</h1>---------jsp parser(只有修改或者创建后第一次调用时才执行该步骤，否则直接执行*.class文件)----><h1 style="color:red">*.java(Servlet)</h1>------------><h1 style="color:red">*.class</h1>
+		<h1>所以，jsp最终都会转换servlet执行（先有servlet，后有jsp）</h1>
+	</li>
+	<li class="head">jsp注释
+		<ol class="content">
+			<li>&lt;%--text--%>不会显示给用户；而html注释&lt;!--text-->会显示给用户；html注释中的jsp注释也会显示&lt;!--&lt;%--text--%>--></li>
+		</ol>
+	</li>
+	<li class="head">jsp声明：&lt;%! int a=b; %>，和jsp脚本段不同
+		<ol class="content"><span>当服务器将jsp转换为servlet时，会将jsp声明转换为成员变量，而将脚本段转换为方法中的局部变量，
+			而servlet又是单实例的，这样成员变量的值只有一个，而每个用户都会访问到他，而局部变量每个用户都有一份，互不影响</span>
+			<li>脚本段&lt;%int a=9; %>:a对应servlet方法的局部变量</li>
+			<li>声明<span>(用的很少，因为会有冲突)</span>&lt;%! int a=8; %>:a对应servlet的成员变量</li>
+		</ol>
+	</li>
+	<li class="head">包含指令(插入静态文件内容)<br>
+		&lt;%@ include file="relativeURL或者相对位置" %>
+	</li>
+	<li class="head">jsp:forward
+<pre class="content">&lt;jsp:forward page="forwardTo.jsp">
+		&lt;jsp:param value="zhaohe" name="username"/>
+		&lt;jsp:param value="12" name="age"/>
+&lt;/jsp:forward></pre>
+	</li>
+	<li class="head">jsp:include：与&lt;%@ include file="">相比，可以传参数
+<pre class="content">&lt;jsp:include page="included.jsp">
+		&lt;jsp:param value="zhaohe" name="username"/>
+&lt;/jsp:include></pre>
+	</li>
+	<li class="head">javaBean:（1）JavaBean类；（2）声明JavaBean对象；（3）访问JavaBean属性(展示到jsp页面)；
+<pre><span>JavaBean的范围</span>：scope属性决定了JavaBean对象存在的范围，scope可选的值：</pre>
+<pre>（a）page：遇到jsp:forward或者jsp:include等页面转换的时候声明周期结束；</pre>
+<pre>（b）request：同request的生命周期</pre>
+<pre>（c）session：同session的生命周期</pre>
+		<figure class="content">
+ 				<img src="../JavaWeb/images/scopeSession.png" alt="javaBeanParam" width="80%" height="160px"  style="margin-top:-30px;">
+  				<figcaption  style="margin:-20px auto"><span>scope:session 底层实现代码</span><br></figcaption>
+		</figure>
+<pre>（d）application：同application的生命周期</pre>
+		<figure class="content">
+ 				<img src="../JavaWeb/images/scopeApplication.png" alt="javaBeanParam" width="80%" height="160px"  style="margin-top:-30px;">
+  				<figcaption  style="margin:-20px auto"><span>scope:application 底层实现代码</span><br></figcaption>
+		</figure>
+		<pre>
+&lt;jsp:useBean <span color="red">id="beanInstanceName"</span> class="com.shengsiyuan.study.bean.Person">&lt;/jsp:useBean>
+&lt;jsp:getProperty property="name" <span color="red">name="beanInstanceName"</span>>&lt;/jsp:getProperty>
+&lt;jsp:setProperty property="name" <span color="red">name="beanInstanceName"</span> value="tom">&lt;/jsp:getProperty>
+&lt;jsp:getProperty property="name" <span color="red">name="beanInstanceName"</span> <span style="color:red">param="param"</span>>&lt;/jsp:getProperty>
+<span>这里的param类似函数的参数，可以动态指定，如访问http://localhost:8080/HelloWebWorld/javaBean01.jsp?param=30，页面会显示相应的值50</span>
+		</pre>
+		<figure class="content">
+ 				<img src="../JavaWeb/images/javaBeanParam.png" alt="javaBeanParam" width="70%" height="100px"  style="margin-top:-60px;">
+  				<figcaption><span>jsp:setProperty param属性底层实现代码</span><br></figcaption>
+		</figure>
+	</li>
+	<li class="head">jsp9个内置对象
+		<ol class="content">
+			<li>
+				<figure>
+ 					<img src="../JavaWeb/images/request.png" alt="Request" width="70%" height="260px">
+  					<figcaption><span>request:javax.servlet.ServletRequest</span></figcaption>
+				</figure>
+				<ol>
+					<li>request.getParameterNames():Eneumeration 获得页面的所有name的枚举类型</li>
+					<li>request.getParameterValues(String name):String[]，<span>适合name值不唯一</span></li>
+					<li>request.getParameter(String name):String，<span>适合name值唯一</span></li>
+					<li>request.getAttribute(String name):String</li>
+					<li>request.setAttribute(String name,Object value)</li>
+				</ol>
+			</li>
+			<li><span>response:适用于下载文件，用的很少；简单的文本输出用out对象即可；out对象是文本级的，可以动态生成HTML文件</span></li>
+			<li><span>pageContext；常用方法getAttribute/findAttribute等，一般普通用户不会用，服务器实现用的较多。</span></li>
+			<li><span>session:javax.servlet.HttpSession</span><br>
+				session.getAttribute():Object<br>
+				session.setAttribute(String name,Object value);<br>
+				<p style="color:red">同一个浏览器窗口，session对象只有一个，不同的session对象之间不互相干扰</p>
+			</li>
+			<li><span>application:javax.servlet.ServletContext:提供一些全局信息，常用方法有：getMimeType()和getRealPath()</span><br>
+				<span style="color:red">只要服务器不关闭，appication对象的数据就会一直存在，在整个服务器运行过程，application对象只有一个。</span>
+			</li>
+			<li><span>exception对象只能在使用了&li;%@page isErrorPage="true" %>的jsp文件中使用。</span></li>
+			<li><span>config和page对象一般在servlet中使用，jsp中很少用。</span></li>
+		</ol>
+	</li>
+	<li class="head">request方式：
+		<ol class="content">
+			<li><span>&lt;jsp:forward page="request03.jsp">&lt;/jsp:forward></span><br>
+				只有一次request请求，用户不知道服务器转发，并且这个request可以一直forward下去。
+			</li>
+			<li><span>&lt;a href="request03.jsp">request03.jsp&lt;/a></span><br>
+				两次request请求，a标签链接也算一次请求，但是该请求不会再保存用户提交的数据，即初次表单的request请求不会被保存。
+			</li>
+		</ol>
+	</li>
+	<li class="head">作用范围从大到小：
+		<span>request（一个请求）&lt;session（一个浏览器窗口）&lt;application（整个服务器）</span>
+	</li>
+	<li class="head"><span>Servlet的作用更适合于通过forward已经封装好的request对象实现流程控制，而jsp适合于编写HTML代码。</span></li>
+	<li class="head"><span>因为session会占据大量的服务器资源，所以可以用hidden隐藏域的形式实现session的效果。<br>
+		适合更新信息时将数据库的主键设置成hidden，来指明需要更新的记录是哪个。
+	</span></li>
+	<li class="head">安装FireBug插件可以更好地理解get/post，帮助开发</li>
+	<li class="head">重定向方法的参数路径设置：<br>
+		<figure class="content">
+ 				<img src="../JavaWeb/images/sendRedirectPath.png" alt="sendRedirectPath" width="70%" height="260px">
+  				<figcaption>例如sendRedirectServlet.jsp请求MySendRedirectServlet：<br>
+  					如果该servlet重定向到"/sendRedirectServletResult.jsp"（绝对路径），URL为：http://localhost:8080/sendRedirectServletResult.jsp<br>
+  					如果该servlet重定向到"/HelloWebWorld/sendRedirectServletResult.jsp"（绝对路径），URL为：http://localhost:8080/HelloWebWorld/sendRedirectServletResult.jsp<br>
+  					如果该servlet重定向到"sendRedirectServletResult.jsp"（相对路径，相对于当前请求的URI，即请求该servlet的页面的同级目录），URL为：http://localhost:8080/HelloWebWorld/sendRedirectServletResult.jsp	
+  				</figcaption>
+		</figure>
+		<figure class="content">
+ 				<img src="../JavaWeb/images/sendRedirect.png" alt="sendRedirect" width="70%" height="260px">
+  				<figcaption>重定向过程，<span>实际上客户端发送2个请求，既然是response方法，说明已经返回客户端，然后再请求新的request，原来请求的数据当然不会被保存</span><br></figcaption>
+		</figure>
+	</li>
+	<li class="head">JavaBean：抽取jsp的部分数据处理代码使用类来进行封装</li>
+	<li class="head">jsp页面乱码解决办法：
+		<ol class="content">
+			<li>
+<pre>String address=request.getParameter("address");
+address=new String(address.getBytes("iso-8859-1"),"utf-8")</pre>
+			</li>
+			<li></li>
+		</ol>
+	</li>
+	<li class="head">servlet 的jar构成：<br>
+		<ol class="content">
+			<li>javax.servlet：定义通用接口和类；<span style="color:red">所有servlet都要实现javax.servlet.Servlet.</span></li>
+			<li>javax.servlet.http：基于HTTP协议通信的HttpServlet类</li>
+			<li>
+				<figure class="content">
+ 					<img src="../JavaWeb/images/servlet.png" alt="servlet" width="80%" height="230px">
+ 					<img src="../JavaWeb/images/servletDetail.png" alt="servletDetail" width="80%" height="300px"  style="margin-top:0px;">
+  					<figcaption  style="margin:-20px auto"><span>servlet 层次结构</span></figcaption>
+				</figure>
+			</li>
+		</ol>
+	</li>
+	<li class="head">
+<pre class="content">
+<span>(1)</span>客户端请求request首先到达该service方法，它的作用是Dispatches client requests to the<span> protected service</span> method。
+<span style="color:red;">//Servlet接口的service方法将ServletRequest/Response转换为HttpServletRequest/Response</span>	
+	public void service(ServletRequest req, ServletResponse res)
+        throws ServletException, IOException {
+        HttpServletRequest  request;
+        HttpServletResponse response;
+        try {
+            request = (HttpServletRequest) req;
+            response = (HttpServletResponse) res;
+        } catch (ClassCastException e) {
+            throw new ServletException("non-HTTP request or response");
+        }
+        service(request, response);
+    }
+<span>(2)</span>protect service()方法决定调用哪个个doXX()方法
+<span style="color:red">//转换完毕后，会调用HttpServlet类中自己定义的service方法</span>
+    protected void service(HttpServletRequest req, HttpServletResponse resp)
+        throws ServletException, IOException {
+        String method = req.getMethod();//doXX()
+        if (method.equals(METHOD_GET)) {
+        } else if (method.equals(METHOD_HEAD)) {
+        } else if
+        ...........................
+    }</pre>
+	</li>
+	<li class="head">ServletInput/OutputStream：用于文件上传/下载.</li>
+	<li class="head">set/getAttribute()的底层实现其实是HashMap</li>
+	<li class="head">servlet生命周期的各个阶段：
+		<ol class="content">
+			<li>init():首先装载servlet，然后init()（init()在一个周期中，只执行一次），和destroy()相比，用的较多，一般做一些加载参数之类的初始化工作。
+<pre><span>装载：（1）servlet容器（例如tomcat）启动时自动装载：可以在web.xml中要加载的servlet中设置load-on-startup，中间的数字代表加载顺序。</span>
+&lt;servlet>
+  	&lt;servlet-name>MySendRedirectServlet&lt;/servlet-name>
+  	&lt;servlet-class>com.shengsiyuan.study.servlet.MySendRedirectServlet&lt;/servlet-class>
+  	&lt;load-on-startup>1&lt;/load-on-startup>
+&lt;/servlet>1
+<span>装载：（2）servlet容器启动后，客户首次向servlet发出请求时。</span>
+<span>装载：（3）servlet文件被更新时时。</span></pre>
+			</li>
+			<li>service()
+				<ol class="content">
+					<li>tomcat源码实现：
+						<figure class="content">
+ 							<img src="../JavaWeb/images/tomcatGetParameter.png" alt="tomcatGetParameter" width="80%" height="200px" >
+  							<figcaption  style="margin:-20px auto"><span>tomcat的getParameter()底层实现代码</span><br></figcaption>
+						</figure>
+					</li>
+				</ol>
+			</li>
+			<li>destory()：当某个Web应用或者服务器终止，执行destroy()释放servlet所占用的资源。</li>
+			<li><span style="color:red;font-size:1.5em">注意：</span>
+				某些Servlet在web.xml文件中只有&lt;servlet>元素而没有&lt;servlet-mapping>元素，这样我们就无法通过url地址的方式访问这个Servlet了，<br>
+				这种Servlet通常会在&lt;servlet>元素中配置一个&lt;load-on-startup>子元素，让容器在启动的时候自动加载该Servlet，并且调用其init方法完成一些全局性的初始化工作。<br>
+				<span>例如</span>，可以从硬盘加载一个文件，放在application范围内，这样所有的jsp、servlet就都可以访问了。
+			</li>
+		</ol>
+	</li>
+	<li class="head">查看tomcat服务器的Web应用情况：
+		<figure class="content">
+ 			<img src="../JavaWeb/images/tomcatUserConfig.png" alt="tomcatUserConfig" width="80%" height="200px" >
+  			<figcaption  style="margin:-10px auto"><span>tomcat 用户权限配置 （tomcat-users.xml文件）</span><br></figcaption>
+		</figure>
+	</li>
+	<li class="head">当Servlet容器启动Web应用时，并为每个Web应用创建<span>唯一</span>的ServletContext对象（可以看做是共享内存），可以实现网页计数器。 </li>
+	<li class="head">Servlet同步问题解决方案：<br>
+		<div>
+			<div style="float:left">
+				（1）<span style="color:red">最好的办法是</span>去除实例变量，使用局部变量；<br>
+				（2）使用同步代码块；
+			</div>
+			<div style="float:left">
+			 	<video width="420" controls>
+			 		<source src="../JavaWeb/videos/servlet多线程.mp4" type="video/mp4">
+			 	</video>
+			</div>
+		</div>
+	</li>
+	<li class="head" style="clear:both">Cookie：它是用户访问Web服务器时，服务器在<span>用户硬盘</span>上存放的信息。
+<pre><span>//服务器发送Cookie给客户端</span>
+		Cookie cookie=new Cookie("cookieName"+count1++,"cookieValue"+count2++);
+		cookie.setMaxAge(10);//10秒，以秒为单位
+		resp.addCookie(cookie);
+<span>//服务器从客户端请取出Cookie，通过请求获取客户端Cookie</span>
+		Cookie[] cookies=req.getCookies();</pre>
+	</li>
+	<li class="head">session:
+		<ol class="content">
+			<li>
+				<figure class="content">
+ 					<img  src="../JavaWeb/images/session.png" alt="session" width="80%" height="200px" >
+ 					<img src="../JavaWeb/images/session2.png" alt="session" width="80%" height="200px" >
+  					<figcaption  style="margin:-10px auto"><span>session运行机制</span><br></figcaption>
+				</figure>
+			</li>
+		</ol>
+	</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RegExp Constructor Properties Example</title>
+    <script type="text/javascript">
+    
+        var text = "this has been a short summer";
+        var pattern = /(.)hort/g;
+        
+        /*长属性名
+         * Note: Opera doesn't support input, lastMatch, lastParen, or multiline.
+         * Internet Explorer doesn't support multiline.
+         */        
+       if (pattern.test(text)){
+            alert(RegExp.input);               //this has been a short summer 返回原始字符串（最近一次要匹配的字符串）
+            alert(RegExp.leftContext);         //this has been a   Input字符串中lastMatch之后的文本         
+            alert(RegExp.rightContext);        // summer Input字符串中lastMatch之后的文本
+            alert(RegExp.lastMatch);           //short 返回最近一次的匹配项
+            alert(RegExp.lastParen);           //s 返回最近一次匹配的捕获组 
+            alert(RegExp.multiline);           //undefined
+        } 
+        /*对应的短属性名，通过方括号语法访问
+         * Note: Opera doesn't support short property names.
+         * Internet Explorer doesn't support multiline.
+      	 * 还有额外9个用于存储捕获数组:RegExp.$1,RegExp.$2,...,RegExp.$9,分别用于存储第一个，第二个，。。。第九个捕获组
+         */        
+        if (pattern.test(text)){
+            alert(RegExp.$_);               //this has been a short summer
+            alert(RegExp["$`"]);            //this has been a            
+            alert(RegExp["$'"]);            // summer
+            alert(RegExp["$&"]);            //short
+            alert(RegExp["$+"]);            //s
+            alert(RegExp["$*"]);            //undefined
+        }
+        /*还有额外9个用于存储捕获数组:RegExp.$1,RegExp.$2,...,RegExp.$9,分别用于存储第一个，第二个，。。。第九个捕获组
+        *
+        */ 
+        var pattern = /(..)or(.)/g;
+              
+        if (pattern.test(text)){
+            alert(RegExp.$1);       //sh
+            alert(RegExp.$2);       //t
+        }
+            
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>变量、作用域和内存问题</title>
+<style>
+p {font-size:1em;font-weight:bold;}
+dt{font-size:1.875em; color:blue;}
+a:link{ color:#20B2AA;text-decoration:none;}
+a:visited {color:  #B0C4DE ;}
+a:hover{ color:green;text-decoration:underline;}
+</style>
+<base href="../basicsProblem/Ch04/"/>
+</head>
+<body>
+<dl>
+	<dt>基本类型和引用类型的值</dt>
+	<dd>
+		<ol>
+			<li><p><a href="DeterminingTypeExample01.htm">类型检测</a></p></li>
+			<li><p><a href="FunctionArgumentsExample01.htm">错误观点：在局部作用域中修改的对象会在全局作用域中反映出来，就说明参数是按引用传递的。正确观点：对象时按值传递的！！</a></p></li>
+			<li><p>延长作用域链方法：（1）try-catch语句的catch块，在IE8及之前，catch块的外部也可以访问到错误对象，IE9时被修复；<a href="ExecutionContextExample01.htm">（2）with语句 </a></p></li>
+			<li><p>声明变量:省略var关键字，生成的是全局变量，但不建议这么做！！</p></li>
+			<li><p>查询标识符:局部环境中的同名标识符高于父环境中的标识符。</p></li>
+		</ol>
+	</dd>
+	<dt>垃圾收集策略（自动回收）</dt>
+	<dd>
+		<ol>
+			<li><p>标记清除（2008年止，所有浏览器都不再用）:运行时，所有变量加初始标记（方法可以是反转特殊位或者记录变量列表等等）-->去掉环境中的变量以及被环境中的变量所引用的变量的标记-->为剩余的变量加标记，等待垃圾收集器删除</p></li>
+			<li><p>引用计数:引用+1，不引用-1</p>
+				<ol>
+					<li><p>IE9之前：DOM和COM（组件对象模型）都不是原生js对象，COM对象使用的是引用计数策略，而该策略会出现循环引用的问题；为了避免这样的问题，手动切除与原生js之间的联系，将其设置为null(<strong>解除引用</strong>).</p></li>
+					<li><p>IE9之后：IE9将BOM和DOM都转换成了真正的原生js对象。</p></li>
+					<li><p>性能问题：IE7之后，触发垃圾收集的变量分配，字面量和数组元素的临界值调整为动态修正；当回收例程的内存分配量低于15%（需要回收的垃圾少，都在使用）时，字面量和数组元素的临界值加倍；如果达到85%（垃圾较多），重回默认值</p></li>
+				</ol>
+			</li>
+		</ol>
+	</dd>
+</dl>
+</body>
+</html>

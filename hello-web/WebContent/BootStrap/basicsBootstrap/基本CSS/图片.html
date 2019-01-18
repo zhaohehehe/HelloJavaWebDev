@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--maximum-scale=1.0 与 user-scalable=no 一起使用。这样禁用缩放功能后，用户只能滚动屏幕  -->
+<meta name="viewport" content="width=device-width,initial-scale=1.0" charset="UTF-8">                         
+<title>图片</title>
+<!-- 新 Bootstrap 核心 CSS 文件 -->
+<link href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- 可选的Bootstrap主题文件（一般不使用） -->
+<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap-theme.min.css"></script>
+
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<base href="../../../bootstrapResource">
+</head>
+
+<body>
+<hr>
+<ul class="list">
+	<li><i>.img-rounded</i>：添加 <i>border-radius:6px</i> 来获得图片圆角。</li>
+	<li><i>.img-circle</i>：添加 <i>border-radius:50%</i> 来让整个图片变成圆形。</li>
+	<li><i>.img-thumbnail</i>：添加一些内边距（padding）和一个灰色的边框。</li>
+	<li><i>.img-responsive</i>：响应式图片，它定义了图像必须显示为块级元素，高度将与图像高度相同，图像的最大宽度是 100%，来限制图像根据它所在的设备来呈现</li>
+</ul>
+<hr>
+<img src="images/bird.jpg" class="img-rounded"/>
+<img src="images/bird.jpg" width="150px" height="150px"class="img-rounded"/>
+<img src="images/dog.jpg" class="img-circle"/>
+<img src="images/dog.jpg" class="img-thumbnail"/><br>
+<hr>
+<img src="images/dog.jpg" class="img-thumbnail img-responsive" alt="with img-responsive dog"/><hr>
+<img src="images/dog.jpg" class="img-thumbnail img-responsive" alt="without img-responsive dog"/>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>HTTP</title>
+</head>
+<body>
+<ol>
+	<li>telnet服务
+		<ol>
+			<li>首先安装telnet服务</li>
+			<li>在浏览器地址栏输入网址访问网页时，采用的都是GET方法获取资源<br>
+		<pre>
+ (1)命令行输入 telnet ip或者域名  端口号
+ (2)输入以下命令：
+	HEAD /index.html HTTP/1.1
+	Host:www.sina.com.cn 
+	
+	GET / HTTP/1.1 //默认首页
+	Host:localhost
+	Connection:Keep-Alive //持续连接（http 1.1默认连接方式）
+	Connection:close //断开连接
+  (3)输入完成后：敲<b>2次</b>回车
+		</pre>
+			</li>
+		</ol>
+	</li>
+	<li>get/post的本质区别：<b>底层实现不同</b>
+		<ol>
+			<li>GET:<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;(1)请求URL包含请求参数:&nbsp;GET /HelloWebWorld/LoginServlet?username=hello&password=world HTTP/1.1</li>
+			<li>POST:<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;(1)请求URL:&nbsp;POST /HelloWebWorld/LoginServlet HTTP/1.1<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;(2)请求体包含请求参数:&nbsp;Connection:Keep-Alive(CRLF)(CRLF)&nbsp;&nbsp;&nbsp;&nbsp;username=hello&password=world
+			</li>
+			<li>结论：因为url长度有限，所以get资源大小有限，上传文件要使用post</li>
+			<li>浏览器永远不能和Servlet直接打交道，一定要通过服务器（Tomcat）</li>
+		</ol>
+	</li>
+	<li><h3>tomcat服务器实现了HttpServletRequest req, HttpServletResponse resp（接口），所以我们可以按照一定的规则进行Web开发</h3></li>
+	<li>绝对路径和相对路径
+		<ol>
+			<li>绝对路径：action="/HelloWebWorld/LoginServlet"：HelloWebWorld是死的，一旦在tomcat配置文件中有改动，这里也必须改变。</li>
+			<li>相对路径（推荐使用）：action="LoginServlet"：相对于当前项目，即使tomcat的path变化不影响。</li>
+		</ol>
+	</li>
+
+</ol>
+
+
+</body>
+</html>

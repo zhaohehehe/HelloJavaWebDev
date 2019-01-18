@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--maximum-scale=1.0 与 user-scalable=no 一起使用。这样禁用缩放功能后，用户只能滚动屏幕  -->
+<meta name="viewport" content="width=device-width,initial-scale=1.0" charset="UTF-8">                         
+<title>图标</title>
+<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+	<!--[if lt IE 9]>
+	<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+<!-- twitter图标 CSS 文件 -->
+<link href="../../bootstrapResource/css/bootstrap-2-0-1.css" rel="stylesheet">
+
+<!-- 新 Bootstrap 核心 CSS 文件 -->
+<link href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- 可选的Bootstrap主题文件（一般不使用） -->
+<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap-theme.min.css"></script>
+
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<base href="../../../bootstrapResource">
+</head>
+
+<body>
+<hr>
+<h2><small>字体图标基础语法及图标连接列表（请在图标和文本之间保留适当空格）</small></h2>
+<a href="http://www.runoob.com/bootstrap/bootstrap-glyphicons.html" class="btn btn-primary">点击查看图标列表</a>
+<div class="container">
+      <h2>Minus Glyph</h2>
+      <p>Minus icon: <span class="glyphicon glyphicon-minus"></span></p>    
+      <p>Minus icon as a link:
+        <a href="#">
+          <span class="glyphicon glyphicon-minus"></span>
+        </a>
+      </p>
+      <p>Minus icon on a button:
+        <button type="button" class="btn btn-default btn-sm">
+          <span class="glyphicon glyphicon-minus"></span> Minus
+        </button>
+      </p>
+      <p>Minus icon on a styled link button:
+        <a href="#" class="btn btn-info btn-lg">
+          <span class="glyphicon glyphicon-minus"></span> Minus
+        </a>
+      </p> 
+       <p>定制字体图标
+        <button class="btn btn-info btn-lg" style="font-size:60px;color: rgb(21, 106, 64);text-shadow:black 5px 3px 3px">
+          <span class="glyphicon glyphicon-cloud"></span> Cloud
+        </button>
+      </p> 
+</div>
+<hr>
+<h2><small>icon图标基础语法:&lt;class="icon_class_name icon-white"&gt; &lt;/i&gt;</small></h2>
+<h3><small>(1)搜索表单</small></h3>
+<div class="container">
+	<div class="row">
+		<div class="span12">
+			<strong>span12:设置所跨的列数</strong><br>
+			<strong>.well:设置带有颜色的背景边界</strong><br>
+			<strong>.search-query:设置普通矩形输入框的圆角</strong><br>
+			<form class="well form-search">
+				<input type="text" class="input-medium search-query" style="height:28px">
+				<button type="submit" class="btn btn-default"><i class="icon-search"></i> 搜索</button>
+			</form>
+		</div>
+	</div>
+	<footer>
+		<p>&copy; Company 2013</p>
+	</footer>
+</div>
+<h3><small>(2)在导航中使用图标（见顶端导航）</small></h3>
+<div class="container">
+	<strong>.navbar-fixed-top:设置导航栏在页面顶端</strong><br>
+	<strong>.navbar-inner:设置导航栏的标签融入一起</strong>
+	<strong>.btn-navbar:设置button为导航button</strong>
+</div>
+<div class="navbar navbar-fixed-top">
+	<div class="navbar-inner">
+		<div class="container">
+			<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</a>
+			<a class="brand" href="#">runoob</a>
+			<div class="nav-collapse">
+				<ul class="nav">
+					<li class="active"><a href="#"><i class="icon-user icon-white"></i> Home</a></li>
+					<li><a href="#about"><i class="icon-user icon-white"></i> User</a></li>
+					<li><a href="#about"><i class="icon-download icon-white"></i> Downlaod</a></li>
+					<li><a href="#about"><i class="icon-upload icon-white"></i> Upload</a></li>
+					<li><a href="#about"><i class="icon-play-circle  icon-white"></i> Play Circle</a></li>
+					<li><a href="#about"><i class="icon-bookmark  icon-white"></i> Bookmark</a></li>
+					<li><a href="#about"><i class="icon-gift icon-white"></i> Gift</a></li>
+				</ul>
+			</div><!--/.nav-collapse -->
+		</div>
+	</div>
+</div>
+<hr>
+<h3><small>(3)在按钮或者按钮组中使用图标</small></h3>
+<div class="container">
+	<strong>.divider:设置用于分割的直线</strong>
+</div>
+<div class="container">
+	<div class="row">
+		<div class="span4">
+			<div class="btn-toolbar" style="margin-bottom: 9px">
+				<div class="btn-group">
+					<a class="btn" href="#"><i class="icon-align-left"></i></a>
+					<a class="btn" href="#"><i class="icon-align-center"></i></a>
+					<a class="btn" href="#"><i class="icon-align-right"></i></a>
+					<a class="btn" href="#"><i class="icon-align-justify"></i></a>
+				</div>
+				<div class="btn-group">
+					<a class="btn btn-primary" href="#"><i class="icon-user icon-white"></i> User</a>
+					<a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="#"><i class="icon-pencil"></i> Edit</a></li>
+						<li><a href="#"><i class="icon-trash"></i> Delete</a></li>
+						<li><a href="#"><i class="icon-ban-circle"></i> Ban</a></li>
+						<li class="divider"></li>
+						<li><a href="#"><i class="i"></i> Make admin</a></li>
+					</ul>
+				</div>
+			</div>
+			<p>
+				<a class="btn" href="#"><i class="icon-refresh"></i> Refresh</a>
+				<a class="btn btn-success" href="#"><i class="icon-shopping-cart icon-white"></i> Checkout</a>
+				<a class="btn btn-danger" href="#"><i class="icon-trash icon-white"></i> Delete</a>
+			</p>
+			<p>
+				<a class="btn btn-large" href="#"><i class="icon-comment"></i> Comment</a>
+				<a class="btn btn-small" href="#"><i class="icon-cog"></i> Settings</a>
+				<a class="btn btn-small btn-info" href="#"><i class="icon-info-sign icon-white"></i> More Info</a>
+			</p>
+		</div>
+	</div>
+</div>
+</body>
+</html>

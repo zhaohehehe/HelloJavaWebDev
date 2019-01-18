@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Equality Operators Example 1</title>
+    <script type="text/javascript">
+    	var obj={
+    			valueOf:function(){
+    				return "bird"
+    			}
+    	};
+    	var obj1=new Object();
+    	var obj2=new Object();
+    	var obj3=obj1;
+    	var a="bird";
+     	alert(obj == a);// true 先调用valueOf()方法
+    	alert(obj === a);//false
+    	alert(obj1==obj2);//false
+    	alert(obj1===obj2);//false
+    	alert(obj1==null);//false
+    	alert(obj1==undefined);//false
+    	 
+    	alert(obj1==obj3);//true
+    	alert(obj1===obj3);//true
+    	
+            
+        alert(null == undefined);    //true
+        alert(null === undefined);   //false
+        
+        alert("NaN" == NaN);        //false
+        alert("NaN" === NaN);       //false
+        alert(NaN == NaN);          //false
+        alert(NaN === NaN);         //false
+        alert(NaN != NaN);          //true
+        alert(NaN !== NaN);         //true
+        
+        alert(false == 0);          //true
+        alert(false === 0);         //false
+        alert(true == 1);           //true
+        alert(true === 1);          //false
+        
+        alert(null == 0);           //false
+        alert(undefined == 0);      //false
+        
+        alert(5 == "5");            //true 先将字符串转换为数值
+        alert(5 === "5");           //false      
+        alert(5 != "5");            //false
+        alert(5 !== "5");           //true      
+    </script>
+
+</head>
+<body>
+  
+</body>
+</html>

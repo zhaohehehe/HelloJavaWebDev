@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Array Reduction Example</title>
+</head>
+<body>
+    <script type="text/javascript">
+        
+        var values = [2,2,3,4,5];
+        var sum = values.reduce(function(prev, cur, index, array){
+            return prev + cur;
+        });
+        var sum1 = values.reduceRight(function(prev,cur,index,array){
+        	return prev+cur;
+        });
+        alert(sum);//15
+        alert(sum1);//15
+        var sum2 = values.reduce(function(prev,cur,index,array){
+        	//document.write(index);//1234
+        	//document.write(prev);//2undefinedundefinedundefined
+        	document.write(cur);//2345
+        });
+
+
+    </script>
+</body>
+</html>

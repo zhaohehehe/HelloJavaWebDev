@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Object Type Example 4</title>
+</head>
+<body>
+ <script type="text/javascript">
+
+//new Object()构造对象
+    var person1 = new Object();
+    person1.name = "Nicholas";
+    person1.age = 29;
+//对象字面量表示    
+    var person2 = {
+            name : "Nicholas",
+            "another name" : "Nic",
+            age : 29
+        }; 
+        document.write(person2.name+"<hr>");//Nicholas
+        document.write(person2["age"]+"<hr>");//29
+        document.write(person2.anothername+"<hr>");//undefined 因为对象中anothername有空格
+        document.write(person2["another name"]+"<hr>");//Nic 对于含有非字母，非数字的可以用字面量来访问，不建议使用
+
+    function displayInfo(args) {
+            if (typeof args.name == "string"){
+            	document.write("Name: " + args.name + "<br/>");
+            	
+            }
+            if (typeof args.age == "number") {
+                document.write("Age: " + args.age + "<br/>");
+            }
+            if(typeof args.name=="undefined"&&typeof args.age=="undefined"){
+            	document.write("No info to display <br/>");
+            }
+            return;  
+        }
+        
+        displayInfo({ 
+            name: "Nicholas", 
+            age: 29
+        });
+      	displayInfo({
+      		age:34
+      	});
+        displayInfo({ });//=new Object()
+        
+
+
+    </script>
+</body>
+</html>
