@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<package name="struts2" extends="struts-default" >
+		<interceptors>
+			<interceptor name="theInterceptor1" class="com.zhaohe.study.interceptor.TheInterceptor1">
+				<param name="test">struts2</param>
+			</interceptor>
+			<interceptor name="theInterceptor2" class="com.zhaohe.study.interceptor.TheInterceptor2">
+			</interceptor>
+			<interceptor name="theInterceptor3" class="com.zhaohe.study.interceptor.TheInterceptor3">
+			</interceptor>
+			<interceptor name="loginInterceptor" class="com.zhaohe.study.interceptor.LoginInterceptor">
+			</interceptor>
+			<interceptor-stack name="myDefaultInterceptorStack">
+				<!-- <interceptor-ref name="loginInterceptor"></interceptor-ref> -->
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<!-- 自定义默认的引用 -->
+		<default-interceptor-ref name="myDefaultInterceptorStack"></default-interceptor-ref>
+		<global-results>
+			<result name="usernameException">/usernameException.jsp</result>
+			<result name="passwordException">/passwordException.jsp</result>
+			<result name="login">/error.jsp</result>
+		</global-results>
+		
+		<global-exception-mappings>
+			<exception-mapping result="usernameException" exception="com.zhaohe.study.exception.UsernameException"></exception-mapping>
+			<exception-mapping result="passwordException" exception="com.zhaohe.study.exception.PasswordException"></exception-mapping>
+		</global-exception-mappings>
+		
+		<!-- 测试fileUpload时，请注释掉：
+		<interceptor-stack name="myDefaultInterceptorStack">
+				<interceptor-ref name="loginInterceptor"></interceptor-ref>
+		</interceptor-stack>
+		-->
+		<action name="uploadFileAction" class="com.zhaohe.study.struts2.UploadFileAction">
+			<result name="success">/uploadFileResult.jsp</result>
+		</action>
+		
+		<action name="login" class="com.zhaohe.study.struts2.LoginAction">
+			<result name="success">/success.jsp</result>
+			<result name="input">/index.jsp</result>
+		</action>
+		
+		<action name="loginMD" class="com.zhaohe.study.struts2.LoginActionMD">
+			<result name="success">/success.jsp</result>
+			<result name="input">/index.jsp</result>
+		</action>
+		<action name="userAction" class="com.zhaohe.study.struts2.UserAction">
+			<result name="success">/typeTransferOutput.jsp</result>
+		</action>
+		<action name="userAction2" class="com.zhaohe.study.struts2.UserAction2" method="myExecute">
+			<result name="success">/typeTransferOutputStruts.jsp</result>
+		</action>
+		<action name="registerAction" class="com.zhaohe.study.struts2.RegisterAction">
+			<exception-mapping result="usernameException" exception="com.zhaohe.study.exception.UsernameException"></exception-mapping>
+			<exception-mapping result="passwordException" exception="com.zhaohe.study.exception.PasswordException"></exception-mapping>
+			<result name="success">/registerResult.jsp</result>
+			<result name="input">/register.jsp</result>
+			<!-- <result name="usernameException">/usernameException.jsp</result>
+			<result name="passwordException">/passwordException.jsp</result>
+	 -->	</action>
+		<action name="registerActionValidateStruct" class="com.zhaohe.study.struts2.RegisterActionValidateStruct">
+			<result name="success">/registerResult.jsp</result>
+			<result name="input">/registerValidateStruct.jsp</result>
+		</action>
+		
+		<!-- <action name="action01redirectAction" class="com.zhaohe.study.struts2.Action01redirectAction">
+			<result name="success" type="redirectAction">
+				<param name="actionName">action02redirectAction</param>
+				<param name="username">${username}</param>
+				<param name="password">${password}</param>
+				<param name="usernameAndPassword">${usernameAndPassword}</param>
+			</result>
+		</action> -->
+		<action name="action01redirectAction" class="com.zhaohe.study.struts2.Action01redirectAction" method="myExecute">
+			<result name="success" type="chain">
+				<param name="actionName">action02redirectAction</param>
+				<param name="username">${username}</param>
+				<param name="password">${password}</param>
+				<param name="usernameAndPassword">${usernameAndPassword}</param>
+			</result>
+			<interceptor-ref name="theInterceptor1"></interceptor-ref>
+			<interceptor-ref name="theInterceptor2"></interceptor-ref>
+			<!-- MethodFilterInterceptor -->
+			<interceptor-ref name="theInterceptor3">
+				<param name="includeMethods">execute,myExecute</param>
+				<param name="excludeMethods">myExecute</param>
+			</interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+		</action>
+		<action name="action02redirectAction" class="com.zhaohe.study.struts2.Action02redirectAction">
+			<result name="success">/action02Dispatcher.jsp</result>
+		</action>
+		<action name="token" class="com.zhaohe.study.struts2.TokenAction">
+			<result name="success">/tokenSuccess.jsp</result>
+			<result name="invalid.token">/tokenFail.jsp</result>
+			<interceptor-ref name="token"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+		</action>
+		
+	</package>
+	
+	<package name="user " extends="struts-default" namespace="/userNamespace">
+		<action name="userNamespaceAction" class="com.zhaohe.study.struts2.UserNamespaceAction">
+			<result name="success">success.jsp</result>
+		</action>
+	</package>
+	<package name="server" extends="struts-default"></package>
+	
+	
+</struts>

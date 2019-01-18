@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE validators PUBLIC "-//Apache Struts//XWork Validator 1.0//EN" "http://struts.apache.org/dtds/xwork-validator-1.0.dtd">
+<validators>
+<!--字段优先：  -->
+	<!-- <field name="username">
+	requiredstring:字符串类型 
+		<field-validator type="requiredstring">
+			<message>RegisterActionValidateStruct-validation.xml:username can't be blank!</message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="minLength">4</param>
+			<param name="maxLength">6</param>
+			<param name="trim">false</param>
+			<message key="username.invalid"></message>
+			<message>RegisterActionValidateStruct-validation.xml:username should be between [${minLength},${maxLength}]</message>
+		</field-validator>
+	</field>
+	required:除了字符串以外的其他类型 
+	<field name="age">
+		<field-validator type="required">
+			<message>RegisterActionValidateStruct-validation.xml:age can't be blank!</message>
+		</field-validator>
+		<field-validator type="int">
+			<param name="min">10</param>
+			<param name="max">50</param>
+			<message>RegisterActionValidateStruct-validation.xml:age should be between [${min},${max}]</message>
+		</field-validator>
+	</field>
+	<field name="birthday">
+		<field-validator type="date">
+			<param name="min">2005-1-1</param>
+			<param name="max">2009-12-31</param>
+			<message>RegisterActionValidateStruct-validation.xml:birthday should be between [${min},${max}]</message>
+		</field-validator>
+	</field>
+ -->
+ <!-- 校验器优先 -->
+ 	<validator type="requiredstring">
+ 		<param name="fieldName">username</param>
+ 		<message key="username.invalid"></message>
+ 		<!-- <message>RegisterActionValidateStruct-validation.xml:username can't be blank!!</message> -->
+ 	</validator>
+ 	
+ 	<validator type="stringlength">
+ 		<param name="fieldName">username</param>
+ 		<param name="minLength">4</param>
+ 		<param name="maxLength">6</param>
+ 		<message>RegisterActionValidateStruct-validation.xml:length of username should be between [${minLength},${maxLength}]</message>
+ 	</validator>
+</validators>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
